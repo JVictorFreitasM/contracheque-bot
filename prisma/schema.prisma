@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Funcionario {
+  cpf           String   @id
+
+  codigo        Int      @unique
+
+  nome          String
+
+  telefone      String?
+
+  email         String?
+
+  ativo         Boolean  @default(true)
+
+  createdAt     DateTime @default(now())
+
+  updatedAt     DateTime @updatedAt
+}
+
+model Envio {
+  id          Int      @id @default(autoincrement())
+
+  cpf         String
+  competencia String
+  arquivo     String
+
+  status      String
+
+  erro        String?
+
+  enviadoEm   DateTime?
+
+  createdAt   DateTime @default(now())
+}
