@@ -7,12 +7,10 @@ async function salvar(dados){
         },
         update: {
             nome: dados.nome,
-            telefoe: dados.telefone,
+            telefone: dados.telefone,
             email: dados.email
         },
-        create: {
-            dados
-        }
+        create: dados
     })
 }
 
@@ -35,7 +33,6 @@ async function buscarPorCodigo(codigo) {
 async function listarTodos(){
     return prisma.funcionario.findMany()
 }
-
 
 module.exports = {
     salvar,

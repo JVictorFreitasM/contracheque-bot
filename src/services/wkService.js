@@ -5,6 +5,8 @@ let tokenCache = null;
 let tokenExpiration = null;
 
 async function autenticar() {
+    console.log('Agora:', new Date());
+    console.log('Expira:', tokenExpiration);
 
     if (
         tokenCache &&
@@ -15,20 +17,22 @@ async function autenticar() {
     }
 
     const response = await axios.post(
-        '/api/v1/token',
+        `${process.env.WK_BASE_URL}/api/v1/token`,
         {
             empresa: process.env.WK_EMPRESA,
             nomeUsuario: process.env.WK_USUARIO,
             senha: process.env.WK_SENHA
         }
     );
+    console.log('Resposta da autenticação:', response.status, response.statusText);
+    console.log(response.data);
 
     tokenCache = response.data.token;
 
     tokenExpiration = new Date(
         response.data.expiration
     );
-
+    console.log('TOKEN EXPIRATION:', tokenExpiration);
     return tokenCache;
 }
 
@@ -36,46 +40,83 @@ async function get(url) {
 
     const token = await autenticar();
 
-    const response = await axios.get(
-        url,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-    );
+    try {
 
-    return response.data;
+        const response = await axios.get(
+            url,
+            {
+                timeout: 120000,
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+        return response.data;
+
+    }
+    catch (error) {
+
+        console.log('STATUS:',
+            error.response?.status
+        );
+
+        console.log('HEADERS:',
+            error.response?.headers
+        );
+
+        console.log('BODY:',
+            error.response?.data
+        );
+
+        throw error;
+    }
 }
 
 async function listarFuncionarios() {
 
     return get(
-        '/api/folha/v1/empregado'
+        `${process.env.WK_BASE_URL}/api/folha/v1/empregado`
     );
 
 }
+async function listarPessoas() {
 
+    return get(
+        `${process.env.WK_BASE_URL}/api/empresarial/v1/pessoa`
+    );
+
+}
 async function sincronizarFuncionarios() {
 
     const funcionarios =
         await listarFuncionarios();
 
     let total = 0;
+    let ignorados = 0;
 
     for (const funcionario of funcionarios) {
 
-        console.log(
-            `Sincronizando ${funcionario.codigo} - ${funcionario.nome}`
-        );
+        const cpf =
+            funcionario.documento?.cpf;
+
+        if (!cpf) {
+
+            console.log(
+                `Funcionário ${funcionario.nome} sem CPF`
+            );
+
+            ignorados++;
+
+            continue;
+        }
 
         await funcionarioRepository.salvar({
 
             codigo:
                 funcionario.codigo,
 
-            cpf:
-                funcionario.documento?.cpf,
+            cpf,
 
             nome:
                 funcionario.nome,
@@ -95,7 +136,8 @@ async function sincronizarFuncionarios() {
     }
 
     return {
-        total
+        total,
+        ignorados
     };
 
 }
@@ -103,5 +145,6 @@ async function sincronizarFuncionarios() {
 module.exports = {
     autenticar,
     listarFuncionarios,
-    sincronizarFuncionarios
+    sincronizarFuncionarios,
+    listarPessoas
 };

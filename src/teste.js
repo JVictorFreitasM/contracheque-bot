@@ -5,27 +5,17 @@ const wkService =
 
 async function main() {
 
-    try {
+    const funcionarios =
+        await wkService.sincronizarFuncionarios();
 
-        const resultado =
-            await wkService
-                .sincronizarFuncionarios();
-
-        console.log(
-            'Resultado:',
-            resultado
-        );
-
-    } catch (error) {
-
-        console.error(
-            'Erro:',
-            error.response?.data ||
-            error.message
-        );
-
-    }
+    console.log(
+        'Quantidade:',
+        funcionarios.total,
+        'Ignorados:',
+        funcionarios.ignorados
+    );
 
 }
 
 main();
+
