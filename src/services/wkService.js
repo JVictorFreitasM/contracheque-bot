@@ -48,7 +48,11 @@ async function get(url) {
                 timeout: 120000,
                 headers: {
                     Authorization: `Bearer ${token}`
+                },
+                params: {
+                    Situacao: 'Ativos'
                 }
+
             }
         );
 
@@ -87,10 +91,21 @@ async function listarPessoas() {
     );
 
 }
+
 async function sincronizarFuncionarios() {
+
+    const dataSincronizacao = new Date();
 
     const funcionarios =
         await listarFuncionarios();
+
+    if (funcionarios.length < 100) {
+
+        throw new Error(
+            `Quantidade inesperada de funcionários: ${funcionarios.length}`
+        );
+
+    }
 
     let total = 0;
     let ignorados = 0;
@@ -127,13 +142,23 @@ async function sincronizarFuncionarios() {
                     : null,
 
             email:
-                funcionario.endereco?.emailCorporativo
+                funcionario.endereco?.emailCorporativo,
+
+            ativo: true,
+
+            ultimaSincronizacao:
+                dataSincronizacao
 
         });
 
         total++;
 
     }
+
+    await funcionarioRepository
+        .inativarNaoSincronizados(
+            dataSincronizacao
+        );
 
     return {
         total,

@@ -1,17 +1,68 @@
 const prisma = require("../lib/prisma");
 
-async function salvar(dados){
-    return prisma.funcionario.upsert({
+// async function salvar(dados){
+//     return prisma.funcionario.upsert({
+//         where: {
+//             cpf: dados.cpf
+//         },
+//         update: {
+//             nome: dados.nome,
+//             telefone: dados.telefone,
+//             email: dados.email
+//         },
+//         create: dados
+//     })
+// }
+async function salvar(funcionario) {
+await prisma.funcionario.upsert({
+    where: {
+        cpf: funcionario.cpf
+    },
+
+    update: {
+        codigo: funcionario.codigo,
+        nome: funcionario.nome,
+        telefone: funcionario.telefone,
+        email: funcionario.email,
+        ativo: true,
+        ultimaSincronizacao:
+            funcionario.ultimaSincronizacao
+    },
+
+    create: funcionario
+});
+}
+
+async function inativarNaoSincronizados(
+    dataSincronizacao
+) {
+
+    return prisma.funcionario.updateMany({
+
         where: {
-            cpf: dados.cpf
+
+            OR: [
+
+                {
+                    ultimaSincronizacao: null
+                },
+
+                {
+                    ultimaSincronizacao: {
+                        lt: dataSincronizacao
+                    }
+                }
+
+            ]
+
         },
-        update: {
-            nome: dados.nome,
-            telefone: dados.telefone,
-            email: dados.email
-        },
-        create: dados
-    })
+
+        data: {
+            ativo: false
+        }
+
+    });
+
 }
 
 async function buscarPorCpf(cpf){
@@ -38,5 +89,6 @@ module.exports = {
     salvar,
     buscarPorCpf,
     buscarPorCodigo,
-    listarTodos
+    listarTodos,
+    inativarNaoSincronizados
 }

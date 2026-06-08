@@ -1,8 +1,13 @@
 const fs = require('fs');
 const pdfParse = require('pdf-parse');
+const path = require('path');
 
-async function extrairTextoDoPdf(path) {
-    const buffer = fs.readFileSync(path);
+
+
+console.log(pdfParse);
+
+async function extrairTextoDoPdf(caminho) {
+    const buffer = fs.readFileSync(caminho);
 
     const resultado = await pdfParse(buffer);
     return resultado.text;
@@ -22,7 +27,20 @@ function extrairCpf(texto) {
         .replace(/\D/g, '');
 }
 
+function extrairCodigo(texto) {
+
+    const match =
+        texto.match(
+            /Código\s*:?[\s\r\n]*(\d+)/i
+        );
+
+    return match
+        ? Number(match[1])
+        : null;
+}
+
 module.exports = {
     extrairTextoDoPdf,
-    extrairCpf
+    extrairCpf,
+    extrairCodigo
 }

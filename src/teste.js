@@ -1,21 +1,28 @@
 require('dotenv').config();
 
-const wkService =
-    require('./services/wkService');
+const pdfService =
+    require('./services/pdfService');
 
 async function main() {
 
-    const funcionarios =
-        await wkService.sincronizarFuncionarios();
+    const path = require('path');
 
-    console.log(
-        'Quantidade:',
-        funcionarios.total,
-        'Ignorados:',
-        funcionarios.ignorados
+    const arquivo = path.join(
+        __dirname,
+        '..',
+        'contracheque exemplos',
+        '01_1.pdf'
     );
+
+console.log(arquivo);
+
+    const texto =
+        await pdfService.extrairTextoDoPdf(
+            arquivo
+        );
+
+    console.log(texto);
 
 }
 
 main();
-
