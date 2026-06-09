@@ -1,0 +1,18 @@
+module.exports = {
+
+    PROCESSADO:
+        'PROCESSADO',
+
+    FUNCIONARIO_NAO_ENCONTRADO:
+        'FUNCIONARIO_NAO_ENCONTRADO',
+
+    NOME_DIVERGENTE:
+        'NOME_DIVERGENTE',
+
+    SEM_TELEFONE:
+        'SEM_TELEFONE',
+
+    ERRO_PDF:
+        'ERRO_PDF'
+
+};

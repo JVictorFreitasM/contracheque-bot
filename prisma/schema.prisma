@@ -28,17 +28,18 @@ model Funcionario {
 }
 
 model Envio {
-  id          Int      @id @default(autoincrement())
 
-  cpf         String
-  competencia String
-  arquivo     String
+  id Int @id @default(autoincrement())
 
-  status      String
+  codigoFuncionario Int?
 
-  erro        String?
+  nomeFuncionario String?
 
-  enviadoEm   DateTime?
+  arquivoPdf String
 
-  createdAt   DateTime @default(now())
+  status String
+
+  mensagemErro String?
+
+  dataProcessamento DateTime @default(now())
 }

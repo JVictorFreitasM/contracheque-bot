@@ -1,0 +1,288 @@
+[2026-06-09 11:34:02] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-09 11:34:02] INFO: Processando arquivo: 01_1.pdf
+[2026-06-09 11:34:02] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-09 11:34:02] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_1.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO: Processando arquivo: 01_2.pdf
+[2026-06-09 11:34:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-09 11:34:03] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_2.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO: Processando arquivo: 01_3.pdf
+[2026-06-09 11:34:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-09 11:34:03] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_3.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO: Processando arquivo: 01_4.pdf
+[2026-06-09 11:34:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-09 11:34:03] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_4.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO: Processando arquivo: 01_5.pdf
+[2026-06-09 11:34:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-09 11:34:03] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_5.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO: Processando arquivo: 01_6.pdf
+[2026-06-09 11:34:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-09 11:34:03] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:34:03] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:34:03] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:34:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: ReferenceError: reutrn is not defined
+    at Object.criar (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:5)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:174:35)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:34:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: reutrn is not defined
+[2026-06-09 11:34:03] WARN: 01_6.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:34:03] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 6  ====================================== 
+[2026-06-09 11:37:03] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_1.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_1.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_1.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_1.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_2.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_2.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_2.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_2.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_2.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_2.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_3.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_3.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_3.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_3.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_3.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_3.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_4.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_4.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_4.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_4.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_4.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_4.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_5.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_5.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_5.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_5.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_5.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_5.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO: Processando arquivo: 01_6.pdf
+[2026-06-09 11:37:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-09 11:37:03] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:37:03] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:37:03] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:37:03] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Error: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf' -> 'C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\erro\01_6.pdf'
+    at Object.renameSync (node:fs:1013:11)
+    at Object.moverParaErro (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\arquivoService.js:27:8)
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:190:28)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-09 11:37:03] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create({
+          data: {
+            arquivoPdf: "C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_6.pdf",
+            status: "ERRO_PDF",
+            mensagemErro: "ENOENT: no such file or directory, rename 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\uploads\\01_6.pdf' -> 'C:\\Users\\Copperline\\Desktop\\contracheque automatico\\contracheque-bot\\erro\\01_6.pdf'",
+        +   codigoFuncionario: Int
+          }
+        })
+
+Argument `codigoFuncionario` is missing.
+[2026-06-09 11:37:03] WARN: 01_6.pdf processado com erro. Status: ERRO_PDF
+[2026-06-09 11:37:03] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 6  ====================================== 
+[2026-06-09 11:40:56] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_1.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:40:56] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_2.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:40:56] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_3.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:40:56] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_4.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:40:56] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_5.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:40:56] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO: Processando arquivo: 01_6.pdf
+[2026-06-09 11:40:56] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-09 11:40:56] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:40:56] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:40:56] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:40:56] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 

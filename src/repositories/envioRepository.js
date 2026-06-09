@@ -1,7 +1,7 @@
 const prisma = require('../lib/prisma');
 
 async function criar(dados) {
-    reutrn.prisma.create({
+    return prisma.envio.create({
         data: dados
     });
 }
