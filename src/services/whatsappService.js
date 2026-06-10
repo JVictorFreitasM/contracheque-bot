@@ -1,13 +1,13 @@
+async function enviarPdf(telefone, caminhoArquivo){
+    console.log(
+        `[WHATSAPP] Enviando ${caminhoArquivo} para ${telefone}`
+    );
 
-
-async function enviarPdf(telefone, arquivo){
-    await whatsappService.enviarPdf(
-    funcionario.telefone,
-    caminho
-);
+    return {
+        sucesso: true,
+        protocolo: Date.now().toString()
+    }
 }
-
-
 module.exports = {
     enviarPdf
 }

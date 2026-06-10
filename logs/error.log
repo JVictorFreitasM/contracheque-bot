@@ -172,3 +172,191 @@ C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\reposit
         })
 
 Argument `codigoFuncionario` is missing.
+[2026-06-10 08:18:21] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:26] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:30] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:33] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:33] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:33] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 11:02:34] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:02:34] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:08:51] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:15:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:15:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone

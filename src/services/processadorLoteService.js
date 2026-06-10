@@ -64,7 +64,8 @@ async function processarPasta() {
             );
 
         logger.info(
-            `Processando arquivo: ${pdf}`
+            `==========================================================================================\n
+            Processando arquivo: ${pdf}`
         );
 
         try {

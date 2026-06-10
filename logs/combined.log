@@ -286,3 +286,1008 @@ Argument `codigoFuncionario` is missing.
 [2026-06-09 11:40:56] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
 [2026-06-09 11:40:56] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
 [2026-06-09 11:40:56] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 
+[2026-06-09 11:42:55] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-09 11:42:55] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-09 11:46:17] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_1.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:46:17] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_2.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:46:17] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_3.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:46:17] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_4.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:46:17] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_5.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:46:17] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO: Processando arquivo: 01_6.pdf
+[2026-06-09 11:46:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-09 11:46:17] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:46:17] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:46:17] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:46:17] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:46:17] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 
+[2026-06-09 11:51:51] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-09 11:51:51] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-09 11:54:30] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_1.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-09 11:54:30] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_2.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-09 11:54:30] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_3.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-09 11:54:30] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_4.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-09 11:54:30] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_5.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-09 11:54:30] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO: Processando arquivo: 01_6.pdf
+[2026-06-09 11:54:30] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-09 11:54:30] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:54:30] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:54:30] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-09 11:54:30] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-09 11:54:30] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 
+[2026-06-10 08:18:17] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 08:18:17] INFO: Processando arquivo: 01_1.pdf
+[2026-06-10 08:18:17] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 08:18:17] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:18:21] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:26] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:26] WARN: 01_1.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:26] INFO: Processando arquivo: 01_2.pdf
+[2026-06-10 08:18:26] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 08:18:26] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:18:30] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:33] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:33] WARN: 01_2.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:33] INFO: Processando arquivo: 01_3.pdf
+[2026-06-10 08:18:33] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 08:18:33] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:18:33] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:33] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Can't reach database server at `localhost:5433`
+
+Please make sure your database server is running at `localhost:5433`.
+[2026-06-10 08:18:33] WARN: 01_3.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:33] INFO: Processando arquivo: 01_4.pdf
+[2026-06-10 08:18:33] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 08:18:33] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 08:18:34] WARN: 01_4.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:34] INFO: Processando arquivo: 01_5.pdf
+[2026-06-10 08:18:34] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 08:18:34] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 08:18:34] WARN: 01_5.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:34] INFO: Processando arquivo: 01_6.pdf
+[2026-06-10 08:18:34] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 08:18:34] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:18:34] ERROR: Erro ao processar C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: PrismaClientInitializationError: 
+Invalid `prisma.funcionario.findUnique()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\funcionarioRepository.js:77:31
+
+  74 }
+  75 
+  76 async function buscarPorCodigo(codigo) {
+→ 77     return prisma.funcionario.findUnique(
+Error querying the database: FATAL: the database system is starting up
+    at ei.handleRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:7568)
+    at ei.handleAndLogRequestError (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async Object.processarArquivo (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:73:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:73:17)
+    at async C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\processar-lote.js:8:5
+[2026-06-10 08:18:34] ERROR: Falha ao registrar erro do arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Error querying the database: FATAL: the database system is starting up
+[2026-06-10 08:18:34] WARN: 01_6.pdf processado com erro. Status: ERRO_PDF
+[2026-06-10 08:18:34] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 6  ====================================== 
+[2026-06-10 08:18:49] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 08:18:49] INFO: Processando arquivo: 01_1.pdf
+[2026-06-10 08:18:49] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 08:18:49] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:18:50] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO: Processando arquivo: 01_2.pdf
+[2026-06-10 08:18:50] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 08:18:50] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:18:50] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO: Processando arquivo: 01_3.pdf
+[2026-06-10 08:18:50] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 08:18:50] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:18:50] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO: Processando arquivo: 01_4.pdf
+[2026-06-10 08:18:50] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 08:18:50] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:18:50] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO: Processando arquivo: 01_5.pdf
+[2026-06-10 08:18:50] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 08:18:50] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 08:18:50] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO: Processando arquivo: 01_6.pdf
+[2026-06-10 08:18:50] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 08:18:50] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:18:50] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:18:50] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:18:50] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:18:50] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 
+[2026-06-10 08:31:11] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 08:31:11] INFO: Processando arquivo: 01_1.pdf
+[2026-06-10 08:31:11] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 08:31:11] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:31:11] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:31:11] WARN: Funcionário sem telefone. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 08:31:11] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:31:11] INFO: Processando arquivo: 01_2.pdf
+[2026-06-10 08:31:11] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 08:31:12] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:31:12] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:31:12] WARN: Funcionário sem telefone. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 08:31:12] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:31:12] INFO: Processando arquivo: 01_3.pdf
+[2026-06-10 08:31:12] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 08:31:12] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:31:12] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:31:12] WARN: Funcionário sem telefone. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 08:31:12] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:31:12] INFO: Processando arquivo: 01_4.pdf
+[2026-06-10 08:31:12] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 08:31:12] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:31:12] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:31:12] WARN: Funcionário sem telefone. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 08:31:12] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:31:12] INFO: Processando arquivo: 01_5.pdf
+[2026-06-10 08:31:12] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 08:31:12] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 08:31:12] WARN: Funcionário não encontrado. Código: 666
+[2026-06-10 08:31:12] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 08:31:12] INFO: Processando arquivo: 01_6.pdf
+[2026-06-10 08:31:12] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 08:31:12] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:31:12] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:31:12] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 08:31:12] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 08:31:12] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 5  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:19:57] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 09:19:57] INFO: Processando arquivo: 01_1.pdf
+[2026-06-10 09:19:57] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 09:19:57] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:19:57] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:19:57] INFO: Arquivo validado com sucesso. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:19:57] INFO: Enviando PDF para 86988888889
+[2026-06-10 09:19:57] INFO: PDF enviado com sucesso para 86988888889
+[2026-06-10 09:19:57] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:19:57] INFO: Processando arquivo: 01_2.pdf
+[2026-06-10 09:19:57] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 09:19:57] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:19:57] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:19:57] INFO: Arquivo validado com sucesso. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:19:57] INFO: Enviando PDF para 86988888888
+[2026-06-10 09:19:57] INFO: PDF enviado com sucesso para 86988888888
+[2026-06-10 09:19:57] INFO: 01_2.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:19:57] INFO: Processando arquivo: 01_3.pdf
+[2026-06-10 09:19:57] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 09:19:58] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:19:58] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:19:58] INFO: Arquivo validado com sucesso. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:19:58] INFO: Enviando PDF para 86988888887
+[2026-06-10 09:19:58] INFO: PDF enviado com sucesso para 86988888887
+[2026-06-10 09:19:58] INFO: 01_3.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:19:58] INFO: Processando arquivo: 01_4.pdf
+[2026-06-10 09:19:58] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 09:19:58] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:19:58] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:19:58] INFO: Arquivo validado com sucesso. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:19:58] INFO: Enviando PDF para 86988888886
+[2026-06-10 09:19:58] INFO: PDF enviado com sucesso para 86988888886
+[2026-06-10 09:19:58] INFO: 01_4.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:19:58] INFO: Processando arquivo: 01_5.pdf
+[2026-06-10 09:19:58] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 09:19:58] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 09:19:58] WARN: Funcionário não encontrado. Código: 666
+[2026-06-10 09:19:58] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 09:19:58] INFO: Processando arquivo: 01_6.pdf
+[2026-06-10 09:19:58] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 09:19:58] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:19:58] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:19:58] INFO: Arquivo validado com sucesso. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:19:58] INFO: Enviando PDF para 86988888885
+[2026-06-10 09:19:58] INFO: PDF enviado com sucesso para 86988888885
+[2026-06-10 09:19:58] INFO: 01_6.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:19:58] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 5  Erros: 1  --------------------------------------  PROCESSADO: 5  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:24:34] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-10 09:24:34] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:25:14] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_1.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:25:14] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:25:14] INFO: Arquivo validado com sucesso. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:25:14] INFO: Enviando PDF para 86988888889
+[2026-06-10 09:25:14] INFO: PDF enviado com sucesso para 86988888889
+[2026-06-10 09:25:14] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_2.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:25:14] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:25:14] INFO: Arquivo validado com sucesso. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:25:14] INFO: Enviando PDF para 86988888888
+[2026-06-10 09:25:14] INFO: PDF enviado com sucesso para 86988888888
+[2026-06-10 09:25:14] INFO: 01_2.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_3.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:25:14] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:25:14] INFO: Arquivo validado com sucesso. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:25:14] INFO: Enviando PDF para 86988888887
+[2026-06-10 09:25:14] INFO: PDF enviado com sucesso para 86988888887
+[2026-06-10 09:25:14] INFO: 01_3.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_4.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:25:14] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:25:14] INFO: Arquivo validado com sucesso. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:25:14] INFO: Enviando PDF para 86988888886
+[2026-06-10 09:25:14] INFO: PDF enviado com sucesso para 86988888886
+[2026-06-10 09:25:14] INFO: 01_4.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_5.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 09:25:14] WARN: Funcionário não encontrado. Código: 666
+[2026-06-10 09:25:14] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 09:25:14] INFO: Processando arquivo: 01_6.pdf
+[2026-06-10 09:25:14] INFO: ==========================================================
+
+            Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 09:25:14] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:25:14] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:25:14] INFO: Arquivo validado com sucesso. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:25:14] INFO: Enviando PDF para 86988888885
+[2026-06-10 09:25:14] INFO: PDF enviado com sucesso para 86988888885
+[2026-06-10 09:25:14] INFO: 01_6.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:25:14] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 5  Erros: 1  --------------------------------------  PROCESSADO: 5  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:27:32] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-10 09:27:32] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:28:03] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:28:03] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:28:03] INFO: Arquivo validado com sucesso. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:28:03] INFO: Enviando PDF para 86988888889
+[2026-06-10 09:28:03] INFO: PDF enviado com sucesso para 86988888889
+[2026-06-10 09:28:03] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:28:03] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:28:03] INFO: Arquivo validado com sucesso. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:28:03] INFO: Enviando PDF para 86988888888
+[2026-06-10 09:28:03] INFO: PDF enviado com sucesso para 86988888888
+[2026-06-10 09:28:03] INFO: 01_2.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:28:03] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:28:03] INFO: Arquivo validado com sucesso. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:28:03] INFO: Enviando PDF para 86988888887
+[2026-06-10 09:28:03] INFO: PDF enviado com sucesso para 86988888887
+[2026-06-10 09:28:03] INFO: 01_3.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:28:03] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:28:03] INFO: Arquivo validado com sucesso. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:28:03] INFO: Enviando PDF para 86988888886
+[2026-06-10 09:28:03] INFO: PDF enviado com sucesso para 86988888886
+[2026-06-10 09:28:03] INFO: 01_4.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 09:28:03] WARN: Funcionário não encontrado. Código: 666
+[2026-06-10 09:28:03] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 09:28:03] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 09:28:03] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 09:28:03] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:28:03] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:28:03] INFO: Arquivo validado com sucesso. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:28:03] INFO: Enviando PDF para 86988888885
+[2026-06-10 09:28:03] INFO: PDF enviado com sucesso para 86988888885
+[2026-06-10 09:28:03] INFO: 01_6.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:28:03] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 5  Erros: 1  --------------------------------------  PROCESSADO: 5  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 09:32:05] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:32:05] INFO: Funcionário encontrado. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:32:05] INFO: Arquivo validado com sucesso. Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 09:32:05] INFO: Enviando PDF para 86988888889
+[2026-06-10 09:32:05] INFO: PDF enviado com sucesso para 86988888889
+[2026-06-10 09:32:05] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:32:05] INFO: Funcionário encontrado. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:32:05] INFO: Arquivo validado com sucesso. Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 09:32:05] INFO: Enviando PDF para 86988888888
+[2026-06-10 09:32:05] INFO: PDF enviado com sucesso para 86988888888
+[2026-06-10 09:32:05] INFO: 01_2.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:32:05] INFO: Funcionário encontrado. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:32:05] INFO: Arquivo validado com sucesso. Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 09:32:05] INFO: Enviando PDF para 86988888887
+[2026-06-10 09:32:05] INFO: PDF enviado com sucesso para 86988888887
+[2026-06-10 09:32:05] INFO: 01_3.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:32:05] INFO: Funcionário encontrado. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:32:05] INFO: Arquivo validado com sucesso. Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 09:32:05] INFO: Enviando PDF para 86988888886
+[2026-06-10 09:32:05] INFO: PDF enviado com sucesso para 86988888886
+[2026-06-10 09:32:05] INFO: 01_4.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 09:32:05] WARN: Funcionário não encontrado. Código: 666
+[2026-06-10 09:32:05] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 09:32:05] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 09:32:05] INFO: Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 09:32:05] INFO: Dados extraídos do PDF. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:32:05] INFO: Funcionário encontrado. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:32:05] WARN: Funcionário sem telefone. Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 09:32:05] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 09:32:05] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 4  Erros: 2  --------------------------------------  PROCESSADO: 4  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 1  ERRO_PDF: 0  ====================================== 
+[2026-06-10 10:14:21] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-10 10:14:21] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:01:48] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-10 11:01:48] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:02:34] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 11:02:34] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 11:02:34] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:02:34] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:02:34] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:02:34] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-10 11:02:34] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:02:34] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:02:34] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 617
+[2026-06-10 11:02:34] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:02:34] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:34] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:02:34] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:34] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 11:02:34] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:02:34] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:02:34] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:02:34] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-10 11:02:34] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:02:34] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:02:34] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-10 11:02:34] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:02:34] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:34] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:02:34] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:34] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 11:02:34] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:02:34] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:02:35] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:02:35] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:02:35] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 11:02:35] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:02:35] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:02:35] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:02:35] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 11:02:35] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-10 11:02:35] WARN: [FUNCIONARIO] Código 666 não encontrado
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Registrando erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:02:35] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:02:35] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 11:02:35] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:02:35] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-10 11:02:35] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:02:35] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:02:35] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-10 11:02:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:02:35] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:02:35] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 5  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:07:38] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:07:38] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:07:38] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 617
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:07:38] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:07:38] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:07:38] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:07:38] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:07:38] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:07:38] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:07:38] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:07:38] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:07:38] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:07:38] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-10 11:07:38] WARN: [FUNCIONARIO] Código 666 não encontrado
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:07:38] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:07:38] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 11:07:38] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:07:38] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-10 11:07:38] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:07:38] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:07:38] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-10 11:07:38] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:07:38] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:07:38] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 5  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:08:50] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:08:50] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:08:50] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 617
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:08:50] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:08:50] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:08:50] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:08:50] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:08:50] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:08:50] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:08:50] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:08:50] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:08:50] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:08:50] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 11:08:50] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-10 11:08:50] WARN: [FUNCIONARIO] Código 666 não encontrado
+[2026-06-10 11:08:50] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Registrando erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:08:50] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:08:50] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:08:50] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 11:08:50] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:08:50] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:08:51] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:08:51] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-10 11:08:51] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:08:51] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:08:51] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-10 11:08:51] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:08:51] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:51] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:08:51] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:08:51] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 5  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:10:41] INFO: Iniciando processamento. 0 PDF(s) encontrados.
+[2026-06-10 11:10:41] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 0  Processados: 0  Erros: 0  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:10:59] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 11:10:59] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 11:10:59] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:10:59] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:11:00] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:11:00] INFO: [TELEFONE] {"telefone":"86988888889"}
+[2026-06-10 11:11:00] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 617
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:11:00] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 11:11:00] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:11:00] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:11:00] INFO: [TELEFONE] {"telefone":"86988888888"}
+[2026-06-10 11:11:00] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:11:00] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 11:11:00] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:11:00] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:11:00] INFO: [TELEFONE] {"telefone":"86988888887"}
+[2026-06-10 11:11:00] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:11:00] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 11:11:00] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:11:00] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:11:00] INFO: [TELEFONE] {"telefone":"86988888886"}
+[2026-06-10 11:11:00] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:11:00] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 11:11:00] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-10 11:11:00] WARN: [FUNCIONARIO] Código 666 não encontrado
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:11:00] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:11:00] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 11:11:00] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:11:00] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-10 11:11:00] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:11:00] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:11:00] INFO: [TELEFONE] {"telefone":null}
+[2026-06-10 11:11:00] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-10 11:11:00] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:11:00] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:11:00] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 0  Erros: 6  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 5  ERRO_PDF: 0  ====================================== 
+[2026-06-10 11:15:41] INFO: Iniciando processamento. 6 PDF(s) encontrados.
+[2026-06-10 11:15:41] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-10 11:15:41] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:15:41] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:15:41] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:15:41] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-10 11:15:42] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:15:42] INFO: [TELEFONE] {"telefone":"86988888889"}
+[2026-06-10 11:15:42] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988888889
+[2026-06-10 11:15:42] INFO: [WHATSAPP] Iniciando envio para 5586988888889
+[2026-06-10 11:15:42] INFO: [WHATSAPP] PDF enviado com sucesso para 5586988888889
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-10 11:15:42] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 11:15:42] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-10 11:15:42] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:15:42] INFO: [TELEFONE] {"telefone":"86988888888"}
+[2026-06-10 11:15:42] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988888888
+[2026-06-10 11:15:42] INFO: [WHATSAPP] Iniciando envio para 5586988888888
+[2026-06-10 11:15:42] INFO: [WHATSAPP] PDF enviado com sucesso para 5586988888888
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-10 11:15:42] INFO: 01_2.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 11:15:42] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-10 11:15:42] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:15:42] INFO: [TELEFONE] {"telefone":"86988888887"}
+[2026-06-10 11:15:42] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988888887
+[2026-06-10 11:15:42] INFO: [WHATSAPP] Iniciando envio para 5586988888887
+[2026-06-10 11:15:42] INFO: [WHATSAPP] PDF enviado com sucesso para 5586988888887
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-10 11:15:42] INFO: 01_3.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 11:15:42] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-10 11:15:42] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:15:42] INFO: [TELEFONE] {"telefone":"86988888886"}
+[2026-06-10 11:15:42] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988888886
+[2026-06-10 11:15:42] INFO: [WHATSAPP] Iniciando envio para 5586988888886
+[2026-06-10 11:15:42] INFO: [WHATSAPP] PDF enviado com sucesso para 5586988888886
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-10 11:15:42] INFO: 01_4.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-10 11:15:42] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-10 11:15:42] WARN: [FUNCIONARIO] Código 666 não encontrado
+[2026-06-10 11:15:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-10 11:15:42] WARN: [PROCESSAMENTO] Registrando erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:15:42] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-10 11:15:42] WARN: 01_5.pdf processado com erro. Status: FUNCIONARIO_NAO_ENCONTRADO
+[2026-06-10 11:15:42] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-10 11:15:42] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:15:42] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-10 11:15:42] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-10 11:15:42] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-10 11:15:42] INFO: [TELEFONE] {"telefone":null}
+[2026-06-10 11:15:42] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-10 11:15:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-10 11:15:42] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-10 11:15:42] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-10 11:15:42] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-10 11:15:42] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 6  Processados: 4  Erros: 2  --------------------------------------  PROCESSADO: 4  FUNCIONARIO_NAO_ENCONTRADO: 1  NOME_DIVERGENTE: 0  SEM_TELEFONE: 1  ERRO_PDF: 0  ====================================== 

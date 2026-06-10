@@ -1,18 +1,18 @@
 module.exports = {
 
-    PROCESSADO:
-        'PROCESSADO',
+    PROCESSADO: 'PROCESSADO',
+
+    ERRO_ENVIO: 'ERRO_ENVIO',
+
+    ERRO_PDF: 'ERRO_PDF',
+
+    SEM_TELEFONE: 'SEM_TELEFONE',
 
     FUNCIONARIO_NAO_ENCONTRADO:
         'FUNCIONARIO_NAO_ENCONTRADO',
 
     NOME_DIVERGENTE:
-        'NOME_DIVERGENTE',
+        'NOME_DIVERGENTE'
 
-    SEM_TELEFONE:
-        'SEM_TELEFONE',
-
-    ERRO_PDF:
-        'ERRO_PDF'
 
 };
