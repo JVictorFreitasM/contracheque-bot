@@ -1,9 +1,22 @@
 services:
+
   postgres:
     image: postgres:17
+    container_name: postgres-contracheque
+    restart: unless-stopped
+
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: contracheque
+
     ports:
       - "5433:5432"
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-contracheque
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"

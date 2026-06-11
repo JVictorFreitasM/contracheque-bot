@@ -31,26 +31,11 @@ function extrairFuncionario(texto) {
 }
 
 
-// function extrairCpf(texto) {
-
-//     const match =
-//         texto.match(
-//             /\d{3}\.?\d{3}\.?\d{3}-?\d{2}/
-//         );
-
-//     if (!match)
-//         return null;
-
-//     return match[0]
-//         .replace(/\D/g, '');
-// }
-
 function extrairCodigo(texto) {
 
-    const match =
-        texto.match(
-            /Código\s*:?[\s\r\n]*(\d+)/i
-        );
+    const match = texto.match(
+        /Código[\s\S]{0,50}?(\d{1,10})/i
+    );
 
     return match
         ? Number(match[1])

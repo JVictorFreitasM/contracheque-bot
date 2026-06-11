@@ -11,3 +11,4 @@ async function enviarPdf(telefone, caminhoArquivo){
 module.exports = {
     enviarPdf
 }
+

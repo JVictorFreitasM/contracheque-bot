@@ -62,6 +62,7 @@ async function processarArquivo(
             );
 
         await enviarContracheque(
+            funcionario,
             telefone,
             caminhoPdf
         );

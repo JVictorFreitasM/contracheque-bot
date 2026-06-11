@@ -1,50 +1,50 @@
-const whatsappService =
-    require('../../services/whatsappService');
+const envioQueue =
+    require('../../queues/envioQueue');
 
 const logger =
     require('../../config/logger');
 
-const STATUS =
-    require('../../utils/statusEnvio');
-
 async function enviarContracheque(
+    funcionario,
     telefone,
     caminhoPdf
 ) {
 
     logger.info(
-        `[WHATSAPP] Iniciando envio para ${telefone}`
+        `[FILA] Criando job para envio do PDF para ${telefone}`
     );
 
-    const resultado =
-        await whatsappService.enviarPdf(
+    const job =
+    await envioQueue.add(
+
+        'enviar-pdf',
+
+        {
+            codigoFuncionario:
+                funcionario.codigo,
+
+            nomeFuncionario:
+                funcionario.nome,
+
             telefone,
+
             caminhoPdf
-        );
+        }
 
-    if (!resultado.sucesso) {
-
-        logger.error(
-            `[WHATSAPP] Falha no envio para ${telefone}`
-        );
-
-        const erro =
-            new Error(
-                resultado.erro || 'Falha no envio'
-            );
-
-        erro.status =
-            STATUS.ERRO_ENVIO;
-
-        throw erro;
-
-    }
+    );
 
     logger.info(
-        `[WHATSAPP] PDF enviado com sucesso para ${telefone}`
+        `[FILA] Job ${job.id} criado para ${telefone}`
     );
 
-    return resultado;
+    return {
+
+        sucesso: true,
+
+        jobId:
+            job.id
+
+    };
 
 }
 
