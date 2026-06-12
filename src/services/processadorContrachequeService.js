@@ -28,6 +28,9 @@ const enviarContracheque =
 const registrarErroProcessamento =
     require('../useCases/contracheque/registrarErroProcessamento');
 
+const gerarHashArquivo =
+    require('../utils/gerarHashArquivo');
+
 async function processarArquivo(
     caminhoPdf
 ) {
@@ -41,10 +44,50 @@ async function processarArquivo(
             `[PROCESSADOR] Iniciando processamento do arquivo: ${caminhoPdf}`
         );
 
+        // =====================================
+        // HASH DO ARQUIVO
+        // =====================================
+
+        const hashArquivo =
+            gerarHashArquivo(caminhoPdf);
+
+        logger.info(
+            `[HASH]${hashArquivo}`
+        )
+        
+        const envioPorHash =
+            await envioRepository.buscarPorHash(
+                hashArquivo
+            );
+
+        if (envioPorHash) {
+
+            logger.warn(
+                `[DUPLICADO] Arquivo já processado anteriormente`
+            );
+
+            return {
+                sucesso: false,
+                status: 'DUPLICADO_HASH'
+            };
+        }
+
+        // =====================================
+        // EXTRAÇÃO PDF
+        // =====================================
+
         dadosPdf =
             await extrairDadosPdf(
                 caminhoPdf
             );
+
+        logger.info(
+            `[PDF] Código: ${dadosPdf.codigo} | Nome: ${dadosPdf.nome} | Competência: ${dadosPdf.competencia}`
+        );
+
+        // =====================================
+        // FUNCIONÁRIO
+        // =====================================
 
         funcionario =
             await localizarFuncionario(
@@ -61,27 +104,92 @@ async function processarArquivo(
                 funcionario
             );
 
+        // =====================================
+        // CPF + COMPETÊNCIA
+        // =====================================
+
+        if (
+            funcionario.cpf &&
+            dadosPdf.competencia
+        ) {
+
+            const envioExistente =
+                await envioRepository
+                    .buscarPorCpfCompetencia(
+                        funcionario.cpf,
+                        dadosPdf.competencia
+                    );
+
+            if (envioExistente) {
+
+                logger.warn(
+                    `[DUPLICADO] CPF ${funcionario.cpf} já recebeu contracheque da competência ${dadosPdf.competencia}`
+                );
+
+                return {
+                    sucesso: false,
+                    status: 'DUPLICADO_COMPETENCIA'
+                };
+            }
+
+        }
+
+        // =====================================
+        // ENVIO
+        // =====================================
+
         await enviarContracheque(
             funcionario,
             telefone,
             caminhoPdf
         );
 
-        await envioRepository.criar({
+        // =====================================
+        // REGISTRO
+        // =====================================
 
-            codigoFuncionario:
-                funcionario.codigo,
+        try {
 
-            nomeFuncionario:
-                funcionario.nome,
+            await envioRepository.criar({
 
-            arquivoPdf:
-                caminhoPdf,
+                codigoFuncionario:
+                    funcionario.codigo,
 
-            status:
-                STATUS.PROCESSADO
+                cpf:
+                    funcionario.cpf,
 
-        });
+                competencia:
+                    dadosPdf.competencia,
+
+                nomeFuncionario:
+                    funcionario.nome,
+
+                arquivoPdf:
+                    caminhoPdf,
+
+                hashArquivo,
+
+                status:
+                    STATUS.PROCESSADO
+
+            });
+
+        } catch (error) {
+
+            if (error.code === 'P2002') {
+
+                logger.warn(
+                    '[DUPLICADO] Registro já existente'
+                );
+
+                return {
+                    sucesso: false,
+                    status: 'DUPLICADO'
+                };
+            }
+
+            throw error;
+        }
 
         arquivoService.moverParaProcessados(
             caminhoPdf

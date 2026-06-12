@@ -33,13 +33,21 @@ model Envio {
 
   codigoFuncionario Int?
 
+  cpf         String?
+  competencia String?
+
   nomeFuncionario String?
 
   arquivoPdf String
+
+  hashArquivo String? @unique
 
   status String
 
   mensagemErro String?
 
   dataProcessamento DateTime @default(now())
+
+  @@unique([cpf, competencia])
+
 }

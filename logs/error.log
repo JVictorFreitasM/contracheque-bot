@@ -370,3 +370,36 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-11 09:54:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
 [2026-06-11 09:54:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
 [2026-06-11 09:54:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 08:13:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 08:13:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 08:13:42] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:41:19] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:47:13] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: gerarHashArquivo is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_1.pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_2.pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_3.pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: crypto.createHash is not a function
+[2026-06-12 09:50:36] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: crypto.createHash is not a function
+[2026-06-12 09:51:54] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 09:51:54] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 09:51:54] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 09:53:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Cannot read properties of undefined (reading 'trim')
+[2026-06-12 09:53:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Cannot read properties of undefined (reading 'trim')
+[2026-06-12 09:53:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Cannot read properties of undefined (reading 'trim')
+[2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone

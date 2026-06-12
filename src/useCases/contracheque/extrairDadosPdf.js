@@ -44,7 +44,7 @@ async function extrairDadosPdf(
     }
 
     logger.info(
-        `[PDF] Código: ${dadosPdf.codigo} | Nome: ${dadosPdf.nome}`
+        `[PDF] Código: ${dadosPdf.codigo} | Nome: ${dadosPdf.nome} | Competencia ${dadosPdf.competencia}`
     );
 
     return dadosPdf;

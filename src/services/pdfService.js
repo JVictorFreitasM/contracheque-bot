@@ -16,18 +16,45 @@ async function extrairTextoDoPdf(caminho) {
 
 function extrairFuncionario(texto) {
 
-    const match = texto.match(
-        /CódigoNome Funcionário[\s\S]*?(\d+)([A-ZÀ-Ú][A-ZÀ-Ú\s]+)/u
-    );
+    const funcionarioMatch =
+        texto.match(
+            /CódigoNome Funcionário[\s\S]*?(\d+)([A-ZÀ-Ú][A-ZÀ-Ú\s]+)/u
+        );
 
-    if (!match) {
-        return null;
+    if (!funcionarioMatch) {
+
+        throw new Error(
+            'Funcionário não encontrado no PDF'
+        );
+
+    }
+
+    const competenciaMatch =
+        texto.match(
+            /Per[ií]odo\s+da\s+Folha:\s*(\d{2}\/\d{4})/i
+        );
+
+    if (!competenciaMatch) {
+
+        throw new Error(
+            'Competência não encontrada no PDF'
+        );
+
     }
 
     return {
-        codigo: Number(match[1]),
-        nome: match[2].trim()
+
+        codigo:
+            Number(funcionarioMatch[1]),
+
+        nome:
+            funcionarioMatch[2].trim(),
+
+        competencia:
+            competenciaMatch[1]
+
     };
+
 }
 
 
