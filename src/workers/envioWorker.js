@@ -4,8 +4,8 @@ const { Worker } =
 const connection =
     require('../config/redis');
 
-const whatsappService =
-    require('../services/whatsappService');
+const n8nService =
+    require('../services/n8nService');
 
 const logger =
     require('../config/logger');
@@ -20,7 +20,7 @@ new Worker(
             `[WORKER] Processando envio para ${job.data.telefone}`
         );
 
-        await whatsappService.enviarPdf(
+        await n8nService.enviarPdf(
 
             job.data.telefone,
 

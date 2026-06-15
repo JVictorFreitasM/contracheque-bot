@@ -403,3 +403,15 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
 [2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
 [2026-06-12 09:58:12] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 10:07:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 10:07:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 10:07:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 10:21:43] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 10:21:43] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 10:21:43] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 10:23:41] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 10:23:41] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 10:23:41] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone

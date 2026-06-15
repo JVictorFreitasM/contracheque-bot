@@ -14,5 +14,4 @@ module.exports = {
     NOME_DIVERGENTE:
         'NOME_DIVERGENTE'
 
-
 };

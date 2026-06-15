@@ -7,8 +7,8 @@ const funcionarioRepository =
 const envioRepository =
     require('../repositories/envioRepository');
 
-const whatsappService =
-    require('./whatsappService');
+const n8nService =
+    require('./n8nService');
 
 async function processarArquivo(caminho) {
 
