@@ -6,7 +6,12 @@ async function enviarPdf(
     telefone,
     caminhoPdf
 ) {
+    console.log('CAMINHO RECEBIDO:', caminhoPdf);
 
+    console.log(
+    'EXISTE?',
+    fs.existsSync(caminhoPdf)
+);
     if (!fs.existsSync(caminhoPdf)) {
         throw new Error(
             `PDF não encontrado: ${caminhoPdf}`
@@ -18,7 +23,7 @@ async function enviarPdf(
           .toString('base64');
 
     return axios.post(
-        'http://localhost:5678/webhook-test/enviar-contracheque',
+        'http://localhost:5678/webhook/enviar-contracheque',
         {
             telefone,
             nomeArquivo: path.basename(caminhoPdf),

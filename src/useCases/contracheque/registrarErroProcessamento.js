@@ -12,7 +12,8 @@ async function registrarErroProcessamento({
     status,
     mensagemErro,
     funcionario,
-    dadosPdf
+    dadosPdf,
+    hashArquivo
 }) {
 
     logger.warn(
@@ -25,12 +26,20 @@ async function registrarErroProcessamento({
             funcionario?.codigo ??
             dadosPdf?.codigo,
 
+        cpf:
+            funcionario?.cpf,
+
+        competencia:
+            dadosPdf?.competencia,
+
         nomeFuncionario:
             funcionario?.nome ??
             dadosPdf?.nome,
 
         arquivoPdf:
             caminhoPdf,
+
+        hashArquivo,
 
         status,
 

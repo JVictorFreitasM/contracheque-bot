@@ -31,6 +31,9 @@ const registrarErroProcessamento =
 const gerarHashArquivo =
     require('../utils/gerarHashArquivo');
 
+const envioContrachequeQueue =
+    require('../queues/envioContrachequeQueue');
+
 async function processarArquivo(
     caminhoPdf
 ) {
@@ -138,22 +141,14 @@ async function processarArquivo(
         // ENVIO
         // =====================================
 
-        await enviarContracheque(
-            funcionario,
-            telefone,
-            caminhoPdf
-        );
-
-        // =====================================
-        // REGISTRO
-        // =====================================
-
-        try {
-
-            await envioRepository.criar({
-
+        await envioContrachequeQueue.add(
+            'enviar',
+            {
                 codigoFuncionario:
                     funcionario.codigo,
+
+                nomeFuncionario:
+                    funcionario.nome,
 
                 cpf:
                     funcionario.cpf,
@@ -161,36 +156,18 @@ async function processarArquivo(
                 competencia:
                     dadosPdf.competencia,
 
-                nomeFuncionario:
-                    funcionario.nome,
-
-                arquivoPdf:
-                    caminhoPdf,
-
                 hashArquivo,
 
-                status:
-                    STATUS.PROCESSADO
+                telefone,
 
-            });
-
-        } catch (error) {
-
-            if (error.code === 'P2002') {
-
-                logger.warn(
-                    '[DUPLICADO] Registro já existente'
-                );
-
-                return {
-                    sucesso: false,
-                    status: 'DUPLICADO'
-                };
+                caminhoPdf
             }
+        );
+        // =====================================
+        // REGISTRO
+        // =====================================
 
-            throw error;
-        }
-
+        
         arquivoService.moverParaProcessados(
             caminhoPdf
         );
@@ -227,7 +204,9 @@ async function processarArquivo(
 
             funcionario,
 
-            dadosPdf
+            dadosPdf,
+
+            hashArquivo
 
         });
 

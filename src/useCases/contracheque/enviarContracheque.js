@@ -7,7 +7,9 @@ const logger =
 async function enviarContracheque(
     funcionario,
     telefone,
-    caminhoPdf
+    caminhoPdf,
+    cpf,
+    competencia
 ) {
 
     logger.info(
@@ -25,6 +27,10 @@ async function enviarContracheque(
 
             nomeFuncionario:
                 funcionario.nome,
+
+            cpf,
+
+            competencia,
 
             telefone,
 
