@@ -35,7 +35,8 @@ const envioContrachequeQueue =
     require('../queues/envioContrachequeQueue');
 
 async function processarArquivo(
-    caminhoPdf
+    caminhoPdf,
+    opcoes = {}
 ) {
 
     let dadosPdf = null;
@@ -51,8 +52,12 @@ async function processarArquivo(
         // HASH DO ARQUIVO
         // =====================================
 
-        const hashArquivo =
+        let hashArquivo =
             gerarHashArquivo(caminhoPdf);
+
+        if (opcoes.isTeste) {
+            hashArquivo = `${hashArquivo}-TESTE-${Date.now()}`;
+        }
 
         logger.info(
             `[HASH]${hashArquivo}`
@@ -83,6 +88,10 @@ async function processarArquivo(
             await extrairDadosPdf(
                 caminhoPdf
             );
+
+        if (opcoes.isTeste) {
+            dadosPdf.competencia = `TESTE-${Date.now()}`;
+        }
 
         logger.info(
             `[PDF] Código: ${dadosPdf.codigo} | Nome: ${dadosPdf.nome} | Competência: ${dadosPdf.competencia}`
@@ -144,23 +153,21 @@ async function processarArquivo(
         await envioContrachequeQueue.add(
             'enviar',
             {
-                codigoFuncionario:
-                    funcionario.codigo,
-
-                nomeFuncionario:
-                    funcionario.nome,
-
-                cpf:
-                    funcionario.cpf,
-
-                competencia:
-                    dadosPdf.competencia,
-
+                codigoFuncionario: funcionario.codigo,
+                nomeFuncionario: funcionario.nome,
+                cpf: funcionario.cpf,
+                competencia: dadosPdf.competencia,
                 hashArquivo,
-
                 telefone,
-
-                caminhoPdf
+                caminhoPdf,
+                isTeste: opcoes.isTeste || false
+            },
+            {
+                attempts: 3,
+                backoff: {
+                    type: 'exponential',
+                    delay: 5000
+                }
             }
         );
         // =====================================
@@ -168,9 +175,7 @@ async function processarArquivo(
         // =====================================
 
         
-        arquivoService.moverParaProcessados(
-            caminhoPdf
-        );
+        // Arquivo será movido pelo Worker após o envio para o n8n
 
         logger.info(
             `[PROCESSADOR] Arquivo processado com sucesso: ${caminhoPdf}`

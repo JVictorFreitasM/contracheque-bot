@@ -1,13 +1,8 @@
 const { Worker } = require('bullmq');
-const n8nService =
-    require('../services/n8nService');
-
-const envioRepository =
-    require('../repositories/envioRepository');
-
-const arquivoService =
-    require('../services/arquivoService');
-
+const n8nService = require('../services/n8nService');
+const envioRepository = require('../repositories/envioRepository');
+const arquivoService = require('../services/arquivoService');
+const logger = require('../config/logger');
 require('dotenv').config();
 
 const connection = {
@@ -15,16 +10,16 @@ const connection = {
     port: Number(process.env.REDIS_PORT)
 };
 
-console.log('[WORKER] Iniciando...');
+logger.info('[WORKER] Iniciando...');
 
 const worker = new Worker(
     'envio-contracheque',
-
     async (job) => {
-
-        console.log(
-            `[WORKER] Processando job ${job.id}`
-        );
+        if (job.data.isTeste) {
+            logger.info(`[WORKER - MODO TESTE] Iniciando processamento do job ${job.id}`);
+        } else {
+            logger.info(`[WORKER] Iniciando processamento do job ${job.id}`);
+        }
 
         const {
             codigoFuncionario,
@@ -37,72 +32,48 @@ const worker = new Worker(
         } = job.data;
 
         try {
-
-            await n8nService.enviarPdf(
-                telefone,
-                caminhoPdf
-            );
+            logger.info(`[WORKER] Enviando PDF para n8n via webhook: ${caminhoPdf}`);
+            
+            await n8nService.enviarPdf(telefone, caminhoPdf, nomeFuncionario, cpf, competencia);
 
             await envioRepository.criar({
-
                 codigoFuncionario,
-
                 cpf,
-
                 competencia,
-
                 nomeFuncionario,
-
-                arquivoPdf:
-                    caminhoPdf,
-
+                arquivoPdf: caminhoPdf,
                 hashArquivo,
-
-                status:
-                    'ENVIADO'
-
+                status: 'ENVIADO'
             });
 
-            logger.info(
-                `[PROCESSADOR] Job enviado para fila: ${caminhoPdf}`
-            );
+            // Mover para processados APENAS em caso de sucesso absoluto
+            arquivoService.moverParaProcessados(caminhoPdf);
+
+            logger.info(`[WORKER] Job ${job.id} concluído com sucesso. Arquivo movido para processados: ${caminhoPdf}`);
 
         } catch (erro) {
+            logger.error(`[WORKER] Erro no job ${job.id}: ${erro.message}`);
+            
+            // Só move pra erro e registra se esgotaram as tentativas
+            if (job.attemptsMade >= job.opts.attempts) {
+                await envioRepository.criar({
+                    codigoFuncionario,
+                    cpf,
+                    competencia,
+                    nomeFuncionario,
+                    arquivoPdf: caminhoPdf,
+                    hashArquivo,
+                    status: 'ERRO',
+                    mensagemErro: erro.message
+                });
 
-            await envioRepository.criar({
-
-                codigoFuncionario,
-
-                cpf,
-
-                competencia,
-
-                nomeFuncionario,
-
-                arquivoPdf:
-                    caminhoPdf,
-
-                hashArquivo,
-
-                status:
-                    'ERRO',
-
-                mensagemErro:
-                    erro.message
-
-            });
-
-            arquivoService.moverParaErro(
-                caminhoPdf
-            );
-
-            console.log(
-                `[WORKER] Arquivo movido para erro`
-            );
+                arquivoService.moverParaErro(caminhoPdf);
+                logger.error(`[WORKER] Job ${job.id} falhou definitivamente. Arquivo movido para erro.`);
+            }
+            
+            throw erro; // Lança erro para o BullMQ tentar novamente se necessário
         }
-
     },
-
     {
         connection,
         concurrency: 5
@@ -110,29 +81,17 @@ const worker = new Worker(
 );
 
 worker.on('ready', () => {
-    console.log(
-        '[WORKER] Conectado ao Redis'
-    );
+    logger.info('[WORKER] Conectado ao Redis');
 });
 
 worker.on('completed', (job) => {
-    console.log(
-        `[WORKER] Job ${job.id} concluído`
-    );
+    logger.info(`[WORKER] Job ${job.id} finalizado`);
 });
 
 worker.on('failed', (job, err) => {
-    console.error(
-        `[WORKER] Job ${job?.id} falhou`
-    );
-
-    console.error(err);
+    logger.error(`[WORKER] Job ${job?.id} falhou na tentativa ${job?.attemptsMade}. Erro: ${err.message}`);
 });
 
 worker.on('error', (err) => {
-    console.error(
-        '[WORKER] Erro'
-    );
-
-    console.error(err);
+    logger.error(`[WORKER] Erro crítico no worker: ${err.message}`);
 });

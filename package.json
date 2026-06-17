@@ -6,21 +6,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "worker-envio":
-      "node src/workers/envioContrachequeWorker.js"
+    "teste-envio": "node src/scripts/testeEnvio.js",
+    "worker-envio": "node src/workers/envioContrachequeWorker.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@bull-board/api": "^8.0.0",
+    "@bull-board/express": "^8.0.0",
     "@prisma/client": "^6.16.2",
     "axios": "^1.17.0",
     "bullmq": "^5.78.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "form-data": "^4.0.6",
     "ioredis": "^5.11.1",
     "multer": "^2.1.1",
+    "node-cron": "^4.2.1",
     "pdf-parse": "^1.1.1",
     "winston": "^3.19.0"
   },

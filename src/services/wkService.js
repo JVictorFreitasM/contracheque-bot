@@ -1,5 +1,6 @@
 const axios = require('../lib/axios');
 const funcionarioRepository = require('../repositories/funcionarioRepository');
+const logger = require('../config/logger');
 
 let tokenCache = null;
 let tokenExpiration = null;
@@ -93,78 +94,54 @@ async function listarPessoas() {
 }
 
 async function sincronizarFuncionarios() {
-
+    logger.info('[SYNC] Início da Sincronização de Funcionários (ERP -> PostgreSQL)');
+    const inicio = Date.now();
     const dataSincronizacao = new Date();
 
-    const funcionarios =
-        await listarFuncionarios();
+    try {
+        const funcionarios = await listarFuncionarios();
 
-    if (funcionarios.length < 100) {
-
-        throw new Error(
-            `Quantidade inesperada de funcionários: ${funcionarios.length}`
-        );
-
-    }
-
-    let total = 0;
-    let ignorados = 0;
-
-    for (const funcionario of funcionarios) {
-
-        const cpf =
-            funcionario.documento?.cpf;
-
-        if (!cpf) {
-
-            console.log(
-                `Funcionário ${funcionario.nome} sem CPF`
-            );
-
-            ignorados++;
-
-            continue;
+        if (!funcionarios || funcionarios.length === 0) {
+            throw new Error(`Retorno vazio da API do ERP. Cancelando sincronização para proteção de dados.`);
         }
 
-        await funcionarioRepository.salvar({
+        let total = 0;
+        let ignorados = 0;
 
-            codigo:
-                funcionario.codigo,
+        for (const funcionario of funcionarios) {
+            const cpf = funcionario.documento?.cpf;
 
-            cpf,
+            if (!cpf) {
+                ignorados++;
+                continue;
+            }
 
-            nome:
-                funcionario.nome,
-
-            telefone:
-                funcionario.endereco?.celular
+            await funcionarioRepository.salvar({
+                codigo: funcionario.codigo,
+                cpf,
+                nome: funcionario.nome,
+                telefone: funcionario.endereco?.celular
                     ? `${funcionario.endereco.dddCelular || ''}${funcionario.endereco.celular}`
                     : null,
+                email: funcionario.endereco?.emailCorporativo,
+                ativo: true,
+                ultimaSincronizacao: dataSincronizacao
+            });
 
-            email:
-                funcionario.endereco?.emailCorporativo,
+            total++;
+        }
 
-            ativo: true,
+        await funcionarioRepository.inativarNaoSincronizados(dataSincronizacao);
 
-            ultimaSincronizacao:
-                dataSincronizacao
+        const tempoDecorrido = ((Date.now() - inicio) / 1000).toFixed(2);
+        logger.info(`[SYNC] Sincronização finalizada em ${tempoDecorrido}s. Recebidos: ${funcionarios.length} | Inseridos/Atualizados: ${total} | Ignorados (sem CPF): ${ignorados}`);
 
-        });
+        return { total, ignorados };
 
-        total++;
-
+    } catch (erro) {
+        logger.error(`[SYNC] Falha crítica na sincronização ERP -> PostgreSQL: ${erro.message}`);
+        throw erro;
     }
-
-    await funcionarioRepository
-        .inativarNaoSincronizados(
-            dataSincronizacao
-        );
-
-    return {
-        total,
-        ignorados
-    };
-
 }
 
 module.exports = {

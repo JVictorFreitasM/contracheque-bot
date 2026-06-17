@@ -415,3 +415,72 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
 [2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
 [2026-06-12 10:24:44] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-16 11:36:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-16 11:36:58] ERROR: Erro inesperado ao processar 01_4.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:209:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:74:17)
+    at async C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\testes\teste-processarlote.js:8:5
+[2026-06-16 11:36:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-16 11:36:58] ERROR: Erro inesperado ao processar 01_5.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:209:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:74:17)
+    at async C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\testes\teste-processarlote.js:8:5
+[2026-06-16 11:36:58] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-16 11:36:58] ERROR: Erro inesperado ao processar 01_6.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:209:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:74:17)
+    at async C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\testes\teste-processarlote.js:8:5
+[2026-06-17 08:40:28] ERROR: [WORKER] Erro no job 4: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [WORKER] Erro no job 5: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [WORKER] Job 4 falhou na tentativa 1. Erro: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [WORKER] Job 5 falhou na tentativa 1. Erro: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [WORKER] Erro no job 6: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-17 08:40:28] ERROR: Erro inesperado ao processar 01_4.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 08:40:28] ERROR: [WORKER] Job 6 falhou na tentativa 1. Erro: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [WORKER] Erro no job 7: Request failed with status code 404
+[2026-06-17 08:40:28] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-17 08:40:28] ERROR: Erro inesperado ao processar 01_5.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 08:40:28] ERROR: [WORKER] Job 7 falhou na tentativa 1. Erro: Request failed with status code 404
+[2026-06-17 08:40:29] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-17 08:40:29] ERROR: Erro inesperado ao processar 01_6.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 08:40:33] ERROR: [WORKER] Erro no job 4: Request failed with status code 404
+[2026-06-17 08:40:33] ERROR: [WORKER] Job 4 falhou na tentativa 2. Erro: Request failed with status code 404
+[2026-06-17 08:40:33] ERROR: [WORKER] Erro no job 5: Request failed with status code 404
+[2026-06-17 08:40:33] ERROR: [WORKER] Job 5 falhou na tentativa 2. Erro: Request failed with status code 404
+[2026-06-17 08:40:33] ERROR: [WORKER] Erro no job 6: Request failed with status code 404
+[2026-06-17 08:40:33] ERROR: [WORKER] Job 6 falhou na tentativa 2. Erro: Request failed with status code 404
+[2026-06-17 08:40:34] ERROR: [WORKER] Erro no job 7: Request failed with status code 404
+[2026-06-17 08:40:34] ERROR: [WORKER] Job 7 falhou na tentativa 2. Erro: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Erro no job 4: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Erro no job 5: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Erro no job 6: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Job 4 falhou na tentativa 3. Erro: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Job 5 falhou na tentativa 3. Erro: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Job 6 falhou na tentativa 3. Erro: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Erro no job 7: Request failed with status code 404
+[2026-06-17 08:40:44] ERROR: [WORKER] Job 7 falhou na tentativa 3. Erro: Request failed with status code 404
+[2026-06-17 09:14:31] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Nome divergente
+[2026-06-17 09:14:31] ERROR: Erro inesperado ao processar 01_4.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 09:14:31] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário não encontrado
+[2026-06-17 09:14:31] ERROR: Erro inesperado ao processar 01_5.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 09:14:31] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-17 09:14:31] ERROR: Erro inesperado ao processar 01_6.pdf: ReferenceError: hashArquivo is not defined
+    at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
+    at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
+    at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)

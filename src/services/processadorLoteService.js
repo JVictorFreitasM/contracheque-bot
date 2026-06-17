@@ -7,7 +7,7 @@ const processadorContracheque =
 const logger =
     require('../config/logger');
 
-async function processarPasta() {
+async function processarPasta(opcoes = {}) {
 
     const pastaUploads =
         path.resolve('uploads');
@@ -26,17 +26,18 @@ async function processarPasta() {
             pastaUploads
         );
 
-    const pdfs =
-        arquivos.filter(
-            arquivo =>
-                arquivo
-                    .toLowerCase()
-                    .endsWith('.pdf')
-        );
+    const pdfs = arquivos.filter(arquivo => arquivo.toLowerCase().endsWith('.pdf'));
 
-    logger.info(
-        `Iniciando processamento. ${pdfs.length} PDF(s) encontrados.`
-    );
+    if (pdfs.length === 0) {
+        logger.info('Nenhum PDF pendente encontrado na fila de uploads.');
+        return;
+    }
+
+    if (opcoes.isTeste) {
+        logger.info(`[LOTE MENSAL - MODO TESTE] Iniciando processamento forçado de ${pdfs.length} PDF(s) pendentes.`);
+    } else {
+        logger.info(`[LOTE MENSAL] Iniciando processamento. ${pdfs.length} PDF(s) pendentes encontrados.`);
+    }
 
     let processados = 0;
     let erros = 0;
@@ -73,7 +74,8 @@ async function processarPasta() {
             const resultado =
                 await processadorContracheque
                     .processarArquivo(
-                        caminhoCompleto
+                        caminhoCompleto,
+                        opcoes
                     );
 
             if (resultado.sucesso) {
