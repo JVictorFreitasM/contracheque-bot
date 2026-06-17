@@ -3000,3 +3000,81 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-17 09:14:37] INFO: [WORKER] Job 9 finalizado
 [2026-06-17 09:14:38] INFO: [WORKER] Job 10 concluído com sucesso. Arquivo movido para processados: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
 [2026-06-17 09:14:38] INFO: [WORKER] Job 10 finalizado
+[2026-06-17 11:30:25] INFO: =====================================
+[2026-06-17 11:30:25] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-17 11:30:25] INFO: =====================================
+[2026-06-17 11:30:25] INFO: [CRON] Agendador iniciado
+[2026-06-17 11:30:25] INFO: [CRON] Hoje é dia 17, o dia de envio configurado é 5. Aguardando.
+[2026-06-17 11:30:25] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-17 11:30:25] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-17 11:30:25] INFO: [WORKER] Iniciando...
+[2026-06-17 11:30:25] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-17 11:30:26] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:26] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:27] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:27] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:28] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:28] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:29] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:29] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:30] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:30] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:31] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:31] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:32] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:32] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:33] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:33] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:36] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:36] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:46] INFO: =====================================
+[2026-06-17 11:34:46] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-17 11:34:46] INFO: =====================================
+[2026-06-17 11:34:46] INFO: [CRON] Agendador iniciado
+[2026-06-17 11:34:46] INFO: [CRON] Hoje é dia 17, o dia de envio configurado é 5. Aguardando.
+[2026-06-17 11:34:46] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-17 11:34:46] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-17 11:34:46] INFO: [WORKER] Iniciando...
+[2026-06-17 11:34:46] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-17 11:34:47] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:47] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:48] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:48] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:49] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:49] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:50] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:50] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:51] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:51] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:52] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:52] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:53] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:53] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:54] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:54] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:35:05] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:35:05] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:37:29] INFO: =====================================
+[2026-06-17 11:37:29] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-17 11:37:29] INFO: =====================================
+[2026-06-17 11:37:29] INFO: [CRON] Agendador iniciado
+[2026-06-17 11:37:29] INFO: [CRON] Hoje é dia 17, o dia de envio configurado é 5. Aguardando.
+[2026-06-17 11:37:29] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-17 11:37:29] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-17 11:37:29] INFO: [WORKER] Iniciando...
+[2026-06-17 11:37:29] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-17 11:37:29] INFO: [WORKER] Conectado ao Redis
+[2026-06-17 11:40:17] INFO: =====================================
+[2026-06-17 11:40:17] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-17 11:40:17] INFO: =====================================
+[2026-06-17 11:40:17] INFO: [CRON] Agendador iniciado
+[2026-06-17 11:40:17] INFO: [CRON] Hoje é dia 17, o dia de envio configurado é 5. Aguardando.
+[2026-06-17 11:40:17] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-17 11:40:17] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-17 11:40:17] INFO: [WORKER] Iniciando...
+[2026-06-17 11:40:17] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-17 11:40:17] INFO: [WORKER] Conectado ao Redis

@@ -1,0 +1,19 @@
+/* src/pages/Dashboard.css */
+/* Minimal styling for the Dashboard page – adjust as needed */
+.dashboard-container {
+  padding: 1.5rem;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-chart {
+  max-width: 100%;
+  height: 300px;
+}

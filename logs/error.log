@@ -484,3 +484,43 @@ Error querying the database: FATAL: the database system is starting up
     at Object.processarArquivo (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorContrachequeService.js:214:13)
     at async Object.processarPasta (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\services\processadorLoteService.js:75:17)
     at async iniciarTeste (C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\scripts\testeEnvio.js:15:9)
+[2026-06-17 11:30:26] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:26] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:27] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:27] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:28] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:28] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:29] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:29] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:30] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:30] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:31] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:31] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:32] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:32] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:33] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:33] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:36] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:36] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:30:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:47] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:47] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:48] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:48] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:49] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:49] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:50] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:50] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:51] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:51] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:52] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:52] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:53] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:53] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:54] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:54] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:34:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:35:05] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-17 11:35:05] ERROR: [WORKER] Erro crítico no worker: 
