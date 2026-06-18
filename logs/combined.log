@@ -3399,3 +3399,33 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-18 09:41:55] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
 [2026-06-18 09:41:55] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 7  Processados: 0  Erros: 7  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 7  ERRO_PDF: 0  ====================================== 
 [2026-06-18 09:41:55] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.
+[2026-06-18 09:44:25] INFO: =====================================
+[2026-06-18 09:44:26] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-18 09:44:26] INFO: =====================================
+[2026-06-18 09:44:26] INFO: [CRON] Agendador iniciado
+[2026-06-18 09:44:26] INFO: [CRON] Hoje é dia 18, o dia de envio configurado é 5. Aguardando.
+[2026-06-18 09:44:26] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-18 09:44:26] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-18 09:44:26] INFO: [WORKER] Iniciando...
+[2026-06-18 09:44:26] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-18 09:44:26] INFO: [WORKER] Conectado ao Redis
+[2026-06-18 09:55:56] INFO: =====================================
+[2026-06-18 09:55:56] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-18 09:55:56] INFO: =====================================
+[2026-06-18 09:55:56] INFO: [CRON] Agendador iniciado
+[2026-06-18 09:55:56] INFO: [CRON] Hoje é dia 18, o dia de envio configurado é 5. Aguardando.
+[2026-06-18 09:55:56] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-18 09:55:56] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-18 09:55:56] INFO: [WORKER] Iniciando...
+[2026-06-18 09:55:56] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-18 09:55:56] INFO: [WORKER] Conectado ao Redis
+[2026-06-18 09:57:52] INFO: =====================================
+[2026-06-18 09:57:52] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-18 09:57:52] INFO: =====================================
+[2026-06-18 09:57:52] INFO: [CRON] Agendador iniciado
+[2026-06-18 09:57:52] INFO: [CRON] Hoje é dia 18, o dia de envio configurado é 5. Aguardando.
+[2026-06-18 09:57:52] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-18 09:57:52] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-18 09:57:52] INFO: [WORKER] Iniciando...
+[2026-06-18 09:57:52] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-18 09:57:52] INFO: [WORKER] Conectado ao Redis

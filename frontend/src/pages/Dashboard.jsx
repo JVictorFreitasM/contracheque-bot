@@ -32,7 +32,7 @@ export default function Dashboard() {
             result.pendentes,
             result.enviados,
             result.erros,
-            result.duplicidades || 0,
+            result.duplicados || 0,
           ],
           meses: ['Pendentes', 'Enviados', 'Erros', 'Duplicados'],
           statusDistribuicao: {
