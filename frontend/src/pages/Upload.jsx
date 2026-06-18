@@ -17,7 +17,7 @@ export default function Upload() {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    multiple: false,
+    multiple: true,
     accept: {
       'application/pdf': ['.pdf'],
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
@@ -30,7 +30,7 @@ export default function Upload() {
     setUploading(true);
     setProgress(0);
     const formData = new FormData();
-    formData.append('file', files[0]);
+    files.forEach((file) => formData.append('files', file));
 
     try {
       const response = await axios.post('/api/uploads', formData, {
@@ -40,10 +40,13 @@ export default function Upload() {
           setProgress(pct);
         },
       });
-      setMessage({ type: 'success', text: response.data.message || 'Arquivo enviado com sucesso!' });
+      setMessage({
+        type: 'success',
+        text: response.data.message || `Enviado ${files.length} arquivo${files.length > 1 ? 's' : ''} com sucesso!`,
+      });
       setFiles([]);
     } catch (err) {
-      setMessage({ type: 'danger', text: err.response?.data?.error || 'Falha ao enviar o arquivo.' });
+      setMessage({ type: 'danger', text: err.response?.data?.error || 'Falha ao enviar os arquivos.' });
     } finally {
       setUploading(false);
     }
@@ -101,8 +104,8 @@ export default function Upload() {
                     <i className="fas fa-file"></i>
                   </div>
                   <div>
-                    <div style={{ fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{files[0].name}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{formatSize(files[0].size)}</div>
+                    <div style={{ fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{files.length} arquivo{files.length > 1 ? 's' : ''} selecionado{files.length > 1 ? 's' : ''}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{files.map((file) => file.name).join(', ')}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -128,7 +131,7 @@ export default function Upload() {
                   {uploading ? (
                     <><i className="fas fa-spinner fa-spin"></i> Enviando...</>
                   ) : (
-                    <><i className="fas fa-paper-plane"></i> Enviar Arquivo</>
+                    <><i className="fas fa-paper-plane"></i> Enviar {files.length} arquivo{files.length > 1 ? 's' : ''}</>
                   )}
                 </button>
               </div>

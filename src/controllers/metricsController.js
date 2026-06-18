@@ -7,7 +7,7 @@ async function getMetrics(req, res) {
     const pendentes = await prisma.envio.count({ where: { status: STATUS.PENDENTE } });
     const enviados = await prisma.envio.count({ where: { status: STATUS.ENVIADO } });
     const erros = await prisma.envio.count({ where: { status: STATUS.ERRO } });
-    const duplicidades = await prisma.envio.count({ where: { status: 'DUPLICADO_HASH' } });
+    const duplicidades = await prisma.envio.count({ where: { status: STATUS.DUPLICADO_HASH } });
     const funcionariosSincronizados = await prisma.funcionario.count();
     // última sincronização – assume campo ultimaSincronizacao em Funcionario
     const ultimaSincronizacao = await prisma.funcionario.findFirst({

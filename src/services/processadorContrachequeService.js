@@ -41,7 +41,7 @@ async function processarArquivo(
 
     let dadosPdf = null;
     let funcionario = null;
-
+    let hashArquivo = null
     try {
 
         logger.info(
@@ -52,7 +52,7 @@ async function processarArquivo(
         // HASH DO ARQUIVO
         // =====================================
 
-        let hashArquivo =
+        hashArquivo =
             gerarHashArquivo(caminhoPdf);
 
         if (opcoes.isTeste) {
@@ -76,7 +76,7 @@ async function processarArquivo(
 
             return {
                 sucesso: false,
-                status: 'DUPLICADO_HASH'
+                status: STATUS.DUPLICADO_HASH
             };
         }
 
@@ -140,7 +140,7 @@ async function processarArquivo(
 
                 return {
                     sucesso: false,
-                    status: 'DUPLICADO_COMPETENCIA'
+                    status: STATUS.DUPLICADO_COMPETENCIA
                 };
             }
 

@@ -36,4 +36,4 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, fileFilter });
 
-module.exports = upload.single('file'); // expects field name "file"
+module.exports = upload.array('files'); // expects field name "files"
