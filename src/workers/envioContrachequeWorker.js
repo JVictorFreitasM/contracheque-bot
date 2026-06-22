@@ -1,5 +1,5 @@
 const { Worker } = require('bullmq');
-const n8nService = require('../services/n8nService');
+const evolutionSenderService = require('../services/evolutionSenderService');
 const envioRepository = require('../repositories/envioRepository');
 const arquivoService = require('../services/arquivoService');
 const logger = require('../config/logger');
@@ -28,34 +28,38 @@ const worker = new Worker(
             competencia,
             hashArquivo,
             telefone,
-            caminhoPdf
+            caminhoPdf,
+            envioId, // Novo campo injetado em caso de reenvio
+            traceId
         } = job.data;
 
         try {
-            logger.info(`[WORKER] Enviando PDF para n8n via webhook: ${caminhoPdf}`);
-            
-            await n8nService.enviarPdf(telefone, caminhoPdf, nomeFuncionario, cpf, competencia);
-
-            await envioRepository.criar({
-                codigoFuncionario,
+            logger.info(JSON.stringify({
+                traceId,
                 cpf,
-                competencia,
+                telefone,
+                arquivo: caminhoPdf,
+                status: "processing",
+                timestamp: new Date().toISOString()
+            }));
+            
+            const response = await evolutionSenderService.enviarPdfDireto({
+                telefone,
+                caminhoPdf,
                 nomeFuncionario,
-                arquivoPdf: caminhoPdf,
-                hashArquivo,
-                status: 'ENVIADO'
+                competencia
             });
 
-            // Mover para processados APENAS em caso de sucesso absoluto
-            arquivoService.moverParaProcessados(caminhoPdf);
-
-            logger.info(`[WORKER] Job ${job.id} concluído com sucesso. Arquivo movido para processados: ${caminhoPdf}`);
-
-        } catch (erro) {
-            logger.error(`[WORKER] Erro no job ${job.id}: ${erro.message}`);
-            
-            // Só move pra erro e registra se esgotaram as tentativas
-            if (job.attemptsMade >= job.opts.attempts) {
+            if (envioId) {
+                // Se é um reenvio, o registro já existe, basta atualizar
+                await envioRepository.atualizar(envioId, {
+                    status: 'ENVIADO',
+                    mensagemErro: null,
+                    ultimoErro: null,
+                    dataEnvio: new Date()
+                });
+            } else {
+                // Primeiro envio, deve criar o registro
                 await envioRepository.criar({
                     codigoFuncionario,
                     cpf,
@@ -63,12 +67,62 @@ const worker = new Worker(
                     nomeFuncionario,
                     arquivoPdf: caminhoPdf,
                     hashArquivo,
-                    status: 'ERRO',
-                    mensagemErro: erro.message
+                    status: 'ENVIADO',
+                    dataEnvio: new Date()
                 });
+            }
+
+            arquivoService.moverParaProcessados(caminhoPdf);
+
+            logger.info(JSON.stringify({
+                traceId,
+                cpf,
+                telefone,
+                arquivo: caminhoPdf,
+                status: "sent",
+                timestamp: new Date().toISOString(),
+                evolutionResponse: response,
+                retryCount: job.attemptsMade
+            }));
+
+            // Delay de 1 segundo para rate limit (1 envio/seg)
+            await new Promise(r => setTimeout(r, 1000));
+
+        } catch (erro) {
+            logger.error(`[WORKER] Erro no job ${job.id}: ${erro.message}`);
+            
+            // Só move pra erro e registra se esgotaram as tentativas
+            if (job.attemptsMade >= job.opts.attempts) {
+                if (envioId) {
+                    await envioRepository.atualizar(envioId, {
+                        status: 'ERRO',
+                        mensagemErro: erro.message,
+                        ultimoErro: erro.message
+                    });
+                } else {
+                    await envioRepository.criar({
+                        codigoFuncionario,
+                        cpf,
+                        competencia,
+                        nomeFuncionario,
+                        arquivoPdf: caminhoPdf,
+                        hashArquivo,
+                        status: 'ERRO',
+                        mensagemErro: erro.message
+                    });
+                }
 
                 arquivoService.moverParaErro(caminhoPdf);
-                logger.error(`[WORKER] Job ${job.id} falhou definitivamente. Arquivo movido para erro.`);
+                logger.error(JSON.stringify({
+                    traceId,
+                    cpf,
+                    telefone,
+                    arquivo: caminhoPdf,
+                    status: "failed",
+                    timestamp: new Date().toISOString(),
+                    evolutionResponse: erro.response ? erro.response.data : erro.message,
+                    retryCount: job.attemptsMade
+                }));
             }
             
             throw erro; // Lança erro para o BullMQ tentar novamente se necessário
@@ -76,7 +130,7 @@ const worker = new Worker(
     },
     {
         connection,
-        concurrency: 5
+        concurrency: 1
     }
 );
 

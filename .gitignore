@@ -4,3 +4,6 @@ node_modules
 /node_modules
 /contracheque exemplos
 /src/generated/prisma
+/erro
+/uploads
+/processados

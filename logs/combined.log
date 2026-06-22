@@ -3429,3 +3429,238 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-18 09:57:52] INFO: [WORKER] Iniciando...
 [2026-06-18 09:57:52] INFO: [WORKER] Inicializado junto com a aplicação principal
 [2026-06-18 09:57:52] INFO: [WORKER] Conectado ao Redis
+[2026-06-19 11:03:35] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-19 11:06:23] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-19 11:06:23] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1781877983443_01_1.pdf
+[2026-06-19 11:32:26] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-19 11:32:26] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1781879546865_01_1.pdf
+[2026-06-19 11:36:05] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-19 11:36:05] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1781879765320_01_1.pdf
+[2026-06-19 11:44:55] INFO: =====================================
+[2026-06-19 11:44:55] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-19 11:44:55] INFO: =====================================
+[2026-06-19 11:44:55] INFO: [CRON] Agendador iniciado
+[2026-06-19 11:44:55] INFO: [CRON] Hoje é dia 19, o dia de envio configurado é 5. Aguardando.
+[2026-06-19 11:44:55] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-19 11:44:55] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-19 11:44:55] INFO: [WORKER] Iniciando...
+[2026-06-19 11:44:55] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-19 11:44:56] INFO: [WORKER] Conectado ao Redis
+[2026-06-19 11:44:56] INFO: [WORKER] Iniciando processamento do job 18
+[2026-06-19 11:44:56] INFO: [WORKER] Enviando PDF para n8n via webhook: C:/Users/Copperline/Desktop/bot-contracheque-n8n-evolutionAPI/contracheque automatico/contracheque-bot/uploads/01_2.pdf
+[2026-06-19 11:44:56] ERROR: [WORKER] Erro no job 18: PDF não encontrado: C:/Users/Copperline/Desktop/bot-contracheque-n8n-evolutionAPI/contracheque automatico/contracheque-bot/uploads/01_2.pdf
+[2026-06-19 11:44:56] ERROR: [WORKER] Job 18 falhou na tentativa 1. Erro: ENOENT: no such file or directory, rename 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf' -> 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\erro\01_2.pdf'
+[2026-06-19 11:45:51] INFO: =====================================
+[2026-06-19 11:45:51] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-19 11:45:51] INFO: =====================================
+[2026-06-19 11:45:51] INFO: [CRON] Agendador iniciado
+[2026-06-19 11:45:51] INFO: [CRON] Hoje é dia 19, o dia de envio configurado é 5. Aguardando.
+[2026-06-19 11:45:51] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-19 11:45:51] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-19 11:45:51] INFO: [WORKER] Iniciando...
+[2026-06-19 11:45:51] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-19 11:45:51] INFO: [WORKER] Conectado ao Redis
+[2026-06-19 11:58:37] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-19 11:58:37] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1781881117559_01_1.pdf
+[2026-06-22 09:12:46] INFO: =====================================
+[2026-06-22 09:12:46] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-22 09:12:46] INFO: =====================================
+[2026-06-22 09:12:46] INFO: [CRON] Agendador iniciado
+[2026-06-22 09:12:46] INFO: [CRON] Hoje é dia 22, o dia de envio configurado é 5. Aguardando.
+[2026-06-22 09:12:46] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-22 09:12:46] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-22 09:12:46] INFO: [WORKER] Iniciando...
+[2026-06-22 09:12:46] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-22 09:12:46] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 09:43:39] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 09:43:39] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782132219354_01_1.pdf
+[2026-06-22 09:44:52] INFO: =====================================
+[2026-06-22 09:44:52] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-22 09:44:52] INFO: =====================================
+[2026-06-22 09:44:52] INFO: [CRON] Agendador iniciado
+[2026-06-22 09:44:52] INFO: [CRON] Hoje é dia 22, o dia de envio configurado é 5. Aguardando.
+[2026-06-22 09:44:52] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-22 09:44:52] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-22 09:44:52] INFO: [WORKER] Iniciando...
+[2026-06-22 09:44:52] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-22 09:44:52] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 09:58:16] INFO: =====================================
+[2026-06-22 09:58:16] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-22 09:58:16] INFO: =====================================
+[2026-06-22 09:58:16] INFO: [CRON] Agendador iniciado
+[2026-06-22 09:58:16] INFO: [CRON] Hoje é dia 22, o dia de envio configurado é 5. Aguardando.
+[2026-06-22 09:58:16] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-22 09:58:16] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-22 09:58:16] INFO: [WORKER] Iniciando...
+[2026-06-22 09:58:16] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-22 09:58:17] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 09:59:58] INFO: =====================================
+[2026-06-22 09:59:58] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-22 09:59:58] INFO: =====================================
+[2026-06-22 09:59:58] INFO: [CRON] Agendador iniciado
+[2026-06-22 09:59:58] INFO: [CRON] Hoje é dia 22, o dia de envio configurado é 5. Aguardando.
+[2026-06-22 09:59:58] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-22 09:59:58] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-22 09:59:58] INFO: [WORKER] Iniciando...
+[2026-06-22 09:59:58] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-22 09:59:58] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 10:00:03] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:00:03] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782133203469_01_1.pdf
+[2026-06-22 10:15:08] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:15:08] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782134108569_01_1.pdf
+[2026-06-22 10:18:31] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:18:31] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782134311045_01_1.pdf
+[2026-06-22 10:18:47] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:18:47] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782134327835_01_1.pdf
+[2026-06-22 10:33:30] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:33:30] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782135210475_01_1.pdf
+[2026-06-22 10:35:01] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:35:01] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782135301046_01_1.pdf
+[2026-06-22 10:41:41] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 10:41:41] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782135701460_01_1.pdf
+[2026-06-22 11:02:53] INFO: [N8N] Gerada mensagem personalizada para CPF undefined: "Olá, Colaborador.  Segue em anexo o seu contracheque referente à competência do período.  Atenciosamente, Departamento de Recursos Humanos"
+[2026-06-22 11:02:53] INFO: [N8N] PDF copiado para depuração: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\debug_output_pdfs\1782136973646_01_1.pdf
+[2026-06-22 11:35:04] INFO: =====================================
+[2026-06-22 11:35:04] INFO: INICIANDO MODO DE TESTE (ENVIO IMEDIATO)
+[2026-06-22 11:35:04] INFO: =====================================
+[2026-06-22 11:35:04] INFO: [WORKER] Iniciando...
+[2026-06-22 11:35:04] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-22 11:35:04] INFO: [TESTE] Forçando sincronização prévia com ERP...
+[2026-06-22 11:35:04] INFO: [SYNC] Início da Sincronização de Funcionários (ERP -> PostgreSQL)
+[2026-06-22 11:35:04] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 11:35:32] INFO: [SYNC] Sincronização finalizada em 28.29s. Recebidos: 157 | Inseridos/Atualizados: 157 | Ignorados (sem CPF): 0
+[2026-06-22 11:35:32] INFO: [TESTE] Sincronização prévia concluída.
+[2026-06-22 11:35:32] INFO: Nenhum PDF pendente encontrado na fila de uploads.
+[2026-06-22 11:35:32] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.
+[2026-06-22 11:38:23] INFO: =====================================
+[2026-06-22 11:38:23] INFO: INICIANDO MODO DE TESTE (ENVIO IMEDIATO)
+[2026-06-22 11:38:23] INFO: =====================================
+[2026-06-22 11:38:23] INFO: [WORKER] Iniciando...
+[2026-06-22 11:38:23] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-22 11:38:23] INFO: [TESTE] Forçando sincronização prévia com ERP...
+[2026-06-22 11:38:23] INFO: [SYNC] Início da Sincronização de Funcionários (ERP -> PostgreSQL)
+[2026-06-22 11:38:23] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 11:38:31] INFO: [SYNC] Sincronização finalizada em 8.33s. Recebidos: 157 | Inseridos/Atualizados: 157 | Ignorados (sem CPF): 0
+[2026-06-22 11:38:31] INFO: [TESTE] Sincronização prévia concluída.
+[2026-06-22 11:38:31] INFO: [LOTE MENSAL - MODO TESTE] Iniciando processamento forçado de 7 PDF(s) pendentes.
+[2026-06-22 11:38:31] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-22 11:38:31] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:38:32] INFO: [HASH]f6f82f6f963e72c1ea3e85b2e934b879b8cdf9a0621e5fdfb696bf4cb51e6d6f-TESTE-1782139112002
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competência: TESTE-1782139112145
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 617
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:38:32] WARN: 01_1.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2(1).pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:38:32] INFO: [HASH]f6b1a303246dd1bdaaaddb6fc7d86890f66faa5e20da579a5ecb7dadbdad2c7c-TESTE-1782139112180
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competência: TESTE-1782139112205
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:38:32] WARN: 01_2(1).pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:38:32] INFO: [HASH]f6b1a303246dd1bdaaaddb6fc7d86890f66faa5e20da579a5ecb7dadbdad2c7c-TESTE-1782139112217
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competência: TESTE-1782139112237
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:38:32] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:38:32] INFO: [HASH]b72b78e0657b800328b43e318ed6e2beaa4e5169389f07f2c976659648875100-TESTE-1782139112257
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO | Competência: TESTE-1782139112281
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:38:32] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:38:32] INFO: [HASH]bc75f8c1ea87b85f13007e7053e19f746c760737c597664c2faf40064363ec4c-TESTE-1782139112294
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO | Competência: TESTE-1782139112334
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:38:32] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:38:32] INFO: [HASH]8354320f8074aa77e1a63bcf1e6ca8e52584025b77831f090d61b33e5d68f683-TESTE-1782139112371
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA | Competência: TESTE-1782139112393
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 666 - EMERSON ALVES COSTA MOURA
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 666
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:38:32] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-22 11:38:32] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:38:32] INFO: [HASH]67df2a78b3c19b4a34ae9be69c3f594a3c0b5c4659c56db3d706c417c131123b-TESTE-1782139112406
+[2026-06-22 11:38:32] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:38:32] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA | Competencia 09/2025
+[2026-06-22 11:38:32] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA | Competência: TESTE-1782139112424
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-22 11:38:32] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-22 11:38:32] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:38:32] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:38:32] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:38:32] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:38:32] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 7  Processados: 0  Erros: 7  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 7  ERRO_PDF: 0  ====================================== 
+[2026-06-22 11:38:32] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.

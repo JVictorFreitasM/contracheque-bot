@@ -9,7 +9,7 @@ await n8nService.enviarPdf(
     '5586988661130',
     path.resolve(
         __dirname,
-        '../../uploads/01_2.pdf'
+        '../../uploads/01_1.pdf'
     )
 );
 

@@ -150,19 +150,35 @@ async function processarArquivo(
         // ENVIO
         // =====================================
 
+        const traceId = `${funcionario.cpf}-${dadosPdf.competencia}-${Date.now()}`;
+        const jobId = `${funcionario.cpf}-${dadosPdf.competencia}`;
+
+        const payloadJob = {
+            codigoFuncionario: funcionario.codigo,
+            nomeFuncionario: funcionario.nome,
+            cpf: funcionario.cpf,
+            competencia: dadosPdf.competencia,
+            hashArquivo,
+            telefone,
+            caminhoPdf,
+            isTeste: opcoes.isTeste || false,
+            traceId
+        };
+
+        logger.info(JSON.stringify({
+            traceId,
+            cpf: funcionario.cpf,
+            telefone,
+            arquivo: caminhoPdf,
+            status: "queued",
+            timestamp: new Date().toISOString()
+        }));
+
         await envioContrachequeQueue.add(
             'enviar',
+            payloadJob,
             {
-                codigoFuncionario: funcionario.codigo,
-                nomeFuncionario: funcionario.nome,
-                cpf: funcionario.cpf,
-                competencia: dadosPdf.competencia,
-                hashArquivo,
-                telefone,
-                caminhoPdf,
-                isTeste: opcoes.isTeste || false
-            },
-            {
+                jobId,
                 attempts: 3,
                 backoff: {
                     type: 'exponential',
@@ -175,7 +191,7 @@ async function processarArquivo(
         // =====================================
 
         
-        // Arquivo será movido pelo Worker após o envio para o n8n
+        // Arquivo será movido pelo Worker após o envio
 
         logger.info(
             `[PROCESSADOR] Arquivo processado com sucesso: ${caminhoPdf}`

@@ -11,6 +11,7 @@ const { getErros } = require('../controllers/errosController');
 const { getLotes } = require('../controllers/lotesController');
 const { getFuncionarios } = require('../controllers/funcionariosController');
 const { getRelatorios } = require('../controllers/relatoriosController');
+const { reenviarContracheque, reenviarTodosErros } = require('../controllers/reenvioController');
 
 const monitoramentoController = (req, res) => {
   res.json({
@@ -33,6 +34,8 @@ router.get('/erros', getErros);
 router.get('/lotes', getLotes);
 router.get('/funcionarios', getFuncionarios);
 router.get('/relatorios', getRelatorios);
+router.post('/contracheques/:id/reenviar', reenviarContracheque);
+router.post('/contracheques/reenviar-erros', reenviarTodosErros);
 router.get('/monitoramento', monitoramentoController);
 router.route('/configuracoes').get(configuracoesController).put(configuracoesController);
 

@@ -10,6 +10,7 @@ datasource db {
 enum StatusEnvio {
   PENDENTE
   PROCESSANDO
+  REENVIANDO
 
   PROCESSADO
   ENVIADO
@@ -73,6 +74,10 @@ model Envio {
   jobId String?
 
   tentativas Int @default(0)
+
+  ultimaTentativaEnvio DateTime?
+
+  ultimoErro String?
 
   dataProcessamento DateTime @default(now())
 

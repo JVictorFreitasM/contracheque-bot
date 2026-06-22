@@ -8,6 +8,11 @@ const { STATUS } = require('../utils/statusEnvio');
  */
 async function getErros(req, res) {
   try {
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.max(1, parseInt(req.query.limit) || 20);
+    const search = req.query.search || '';
+    const skip = (page - 1) * limit;
+
     const errorStatuses = [
       STATUS.ERRO_ENVIO,
       STATUS.ERRO_PDF,
@@ -15,21 +20,54 @@ async function getErros(req, res) {
       STATUS.FUNCIONARIO_NAO_ENCONTRADO,
       STATUS.NOME_DIVERGENTE,
     ];
-    const erros = await prisma.envio.findMany({
-      where: { status: { in: errorStatuses } },
-      select: {
-        id: true,
-        nomeFuncionario: true,
-        cpf: true,
-        competencia: true,
-        arquivoPdf: true,
-        status: true,
-        dataProcessamento: true,
-        mensagemErro: true,
-      },
-      orderBy: { dataProcessamento: 'desc' },
+
+    let whereClause = { status: { in: errorStatuses } };
+
+    if (search) {
+      const searchNum = parseInt(search);
+      whereClause = {
+        ...whereClause,
+        OR: [
+          { nomeFuncionario: { contains: search, mode: 'insensitive' } },
+          { mensagemErro: { contains: search, mode: 'insensitive' } },
+        ],
+      };
+      
+      // If search string is a valid number, we also search by exact 'codigoFuncionario' (matrícula)
+      if (!isNaN(searchNum)) {
+        whereClause.OR.push({ codigoFuncionario: searchNum });
+      }
+    }
+
+    const [erros, total] = await Promise.all([
+      prisma.envio.findMany({
+        where: whereClause,
+        select: {
+          id: true,
+          nomeFuncionario: true,
+          cpf: true,
+          competencia: true,
+          arquivoPdf: true,
+          status: true,
+          dataProcessamento: true,
+          mensagemErro: true,
+        },
+        orderBy: { dataProcessamento: 'desc' },
+        skip,
+        take: limit,
+      }),
+      prisma.envio.count({ where: whereClause })
+    ]);
+
+    const totalPages = Math.ceil(total / limit);
+
+    res.json({
+      data: erros,
+      page,
+      limit,
+      total,
+      totalPages
     });
-    res.json(erros);
   } catch (err) {
     console.error('Erro ao buscar registros de erro:', err);
     res.status(500).json({ error: 'Falha ao obter erros' });
