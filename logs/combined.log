@@ -3664,3 +3664,205 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-22 11:38:32] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
 [2026-06-22 11:38:32] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 7  Processados: 0  Erros: 7  --------------------------------------  PROCESSADO: 0  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 7  ERRO_PDF: 0  ====================================== 
 [2026-06-22 11:38:32] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.
+[2026-06-22 11:42:47] INFO: =====================================
+[2026-06-22 11:42:47] INFO: INICIANDO TESTE (SEM SINCRONIZAÇÃO ERP)
+[2026-06-22 11:42:47] INFO: =====================================
+[2026-06-22 11:42:47] INFO: [WORKER] Iniciando...
+[2026-06-22 11:42:47] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-22 11:42:47] INFO: [TESTE] Sincronização com o ERP pulada. Usando apenas dados locais do Banco.
+[2026-06-22 11:42:47] INFO: [LOTE MENSAL - MODO TESTE] Iniciando processamento forçado de 7 PDF(s) pendentes.
+[2026-06-22 11:42:47] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-22 11:42:47] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:42:47] INFO: [HASH]f6f82f6f963e72c1ea3e85b2e934b879b8cdf9a0621e5fdfb696bf4cb51e6d6f-TESTE-1782139367740
+[2026-06-22 11:42:47] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:42:47] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competencia 09/2025
+[2026-06-22 11:42:47] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competência: TESTE-1782139367920
+[2026-06-22 11:42:47] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-22 11:42:47] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 11:42:47] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-22 11:42:47] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:47] INFO: [TELEFONE] {"telefone":"86988661130"}
+[2026-06-22 11:42:47] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988661130
+[2026-06-22 11:42:47] INFO: {"traceId":"055.393.363/99-TESTE-1782139367920-1782139367934","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"queued","timestamp":"2026-06-22T14:42:47.934Z"}
+[2026-06-22 11:42:47] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:42:47] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-22 11:42:47] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2(1).pdf
+[2026-06-22 11:42:47] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:42:47] INFO: [HASH]f6b1a303246dd1bdaaaddb6fc7d86890f66faa5e20da579a5ecb7dadbdad2c7c-TESTE-1782139367945
+[2026-06-22 11:42:47] INFO: [WORKER - MODO TESTE] Iniciando processamento do job 055.393.363/99-TESTE-1782139367920
+[2026-06-22 11:42:47] INFO: {"traceId":"055.393.363/99-TESTE-1782139367920-1782139367934","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"processing","timestamp":"2026-06-22T14:42:47.948Z"}
+[2026-06-22 11:42:47] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:42:47] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competencia 09/2025
+[2026-06-22 11:42:47] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competência: TESTE-1782139367995
+[2026-06-22 11:42:47] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf
+[2026-06-22 11:42:48] WARN: 01_2(1).pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO: ==========================================================================================
+
+            Processando arquivo: 01_2.pdf
+[2026-06-22 11:42:48] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:42:48] INFO: [HASH]f6b1a303246dd1bdaaaddb6fc7d86890f66faa5e20da579a5ecb7dadbdad2c7c-TESTE-1782139368016
+[2026-06-22 11:42:48] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:42:48] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competencia 09/2025
+[2026-06-22 11:42:48] INFO: [PDF] Código: 629 | Nome: WEBSTON CRISTIAN LEMOS E SILVA | Competência: TESTE-1782139368047
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Buscando código 629
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 629 - WEBSTON CRISTIAN LEMOS E SILVA
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 629
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf
+[2026-06-22 11:42:48] WARN: 01_2.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO: ==========================================================================================
+
+            Processando arquivo: 01_3.pdf
+[2026-06-22 11:42:48] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:42:48] INFO: [HASH]b72b78e0657b800328b43e318ed6e2beaa4e5169389f07f2c976659648875100-TESTE-1782139368062
+[2026-06-22 11:42:48] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:42:48] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO | Competencia 09/2025
+[2026-06-22 11:42:48] INFO: [PDF] Código: 647 | Nome: ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO | Competência: TESTE-1782139368087
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Buscando código 647
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 647 - ALEXANDRE JOSE CANTUARIA MONTEIRO ROSA FILHO
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 647
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf
+[2026-06-22 11:42:48] WARN: 01_3.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO: ==========================================================================================
+
+            Processando arquivo: 01_4.pdf
+[2026-06-22 11:42:48] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:42:48] INFO: [HASH]bc75f8c1ea87b85f13007e7053e19f746c760737c597664c2faf40064363ec4c-TESTE-1782139368100
+[2026-06-22 11:42:48] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:42:48] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO | Competencia 09/2025
+[2026-06-22 11:42:48] INFO: [PDF] Código: 661 | Nome: MATIAS HENRIQUE RIBEIRO ARAUJO | Competência: TESTE-1782139368119
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Buscando código 661
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 661 - MATIAS HENRIQUE RIBEIRO ARAUJO
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 661
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf
+[2026-06-22 11:42:48] WARN: 01_4.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO: ==========================================================================================
+
+            Processando arquivo: 01_5.pdf
+[2026-06-22 11:42:48] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:42:48] INFO: [HASH]8354320f8074aa77e1a63bcf1e6ca8e52584025b77831f090d61b33e5d68f683-TESTE-1782139368129
+[2026-06-22 11:42:48] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:42:48] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA | Competencia 09/2025
+[2026-06-22 11:42:48] INFO: [PDF] Código: 666 | Nome: EMERSON ALVES COSTA MOURA | Competência: TESTE-1782139368143
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Buscando código 666
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 666 - EMERSON ALVES COSTA MOURA
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 666
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf
+[2026-06-22 11:42:48] WARN: 01_5.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO: ==========================================================================================
+
+            Processando arquivo: 01_6.pdf
+[2026-06-22 11:42:48] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:42:48] INFO: [HASH]67df2a78b3c19b4a34ae9be69c3f594a3c0b5c4659c56db3d706c417c131123b-TESTE-1782139368156
+[2026-06-22 11:42:48] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:42:48] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA | Competencia 09/2025
+[2026-06-22 11:42:48] INFO: [PDF] Código: 696 | Nome: CARLOS EDUARDO DOS SANTOS COSTA | Competência: TESTE-1782139368169
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Buscando código 696
+[2026-06-22 11:42:48] INFO: [FUNCIONARIO] Encontrado: 696 - CARLOS EDUARDO DOS SANTOS COSTA
+[2026-06-22 11:42:48] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:42:48] INFO: [TELEFONE] {"telefone":null}
+[2026-06-22 11:42:48] WARN: [VALIDACAO_TELEFONE] Funcionário sem telefone. Código: 696
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Registrando erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] WARN: [PROCESSAMENTO] Arquivo movido para pasta de erro: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf
+[2026-06-22 11:42:48] WARN: 01_6.pdf processado com erro. Status: SEM_TELEFONE
+[2026-06-22 11:42:48] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 7  Processados: 1  Erros: 6  --------------------------------------  PROCESSADO: 1  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 6  ERRO_PDF: 0  ====================================== 
+[2026-06-22 11:42:48] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.
+[2026-06-22 11:42:50] INFO: {"traceId":"055.393.363/99-TESTE-1782139367920-1782139367934","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"sent","timestamp":"2026-06-22T14:42:50.275Z","evolutionResponse":{"key":{"remoteJid":"558688661130@s.whatsapp.net","fromMe":true,"id":"3EB0879DA0AB31FE7CAF27"},"pushName":"Você","status":"PENDING","message":{"documentMessage":{"url":"https://mmg.whatsapp.net/v/t62.7119-24/565339671_1518881153353152_4854859305885576080_n.enc?ccb=11-4&oh=01_Q5Aa4wGFj4HU7xI817O9QxiMAeWXZtgVeabpj_EExhv8jCxwkQ&oe=6A60ABA6&_nc_sid=5e03e0&mms3=true","mimetype":"application/pdf","fileSha256":{"0":246,"1":248,"2":47,"3":111,"4":150,"5":62,"6":114,"7":193,"8":234,"9":62,"10":133,"11":178,"12":233,"13":52,"14":184,"15":121,"16":184,"17":205,"18":249,"19":160,"20":98,"21":30,"22":95,"23":223,"24":182,"25":150,"26":191,"27":76,"28":181,"29":30,"30":109,"31":111},"fileLength":{"low":63213,"high":0,"unsigned":true},"mediaKey":{"0":68,"1":46,"2":93,"3":246,"4":158,"5":248,"6":252,"7":14,"8":147,"9":16,"10":222,"11":0,"12":143,"13":137,"14":206,"15":40,"16":44,"17":90,"18":159,"19":49,"20":169,"21":50,"22":178,"23":117,"24":210,"25":235,"26":90,"27":222,"28":255,"29":47,"30":104,"31":3},"fileName":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","fileEncSha256":{"0":26,"1":131,"2":179,"3":214,"4":86,"5":25,"6":102,"7":179,"8":49,"9":13,"10":157,"11":78,"12":194,"13":96,"14":57,"15":166,"16":41,"17":217,"18":221,"19":114,"20":148,"21":200,"22":61,"23":124,"24":25,"25":170,"26":60,"27":110,"28":187,"29":0,"30":170,"31":162},"directPath":"/v/t62.7119-24/565339671_1518881153353152_4854859305885576080_n.enc?ccb=11-4&oh=01_Q5Aa4wGFj4HU7xI817O9QxiMAeWXZtgVeabpj_EExhv8jCxwkQ&oe=6A60ABA6&_nc_sid=5e03e0","mediaKeyTimestamp":{"low":1782139368,"high":0,"unsigned":false},"caption":"Olá, ITHALLO MIGUEL COSTA SARAIVA. Segue seu contracheque referente a TESTE-1782139367920.","contextInfo":{"mentionedJid":[],"groupMentions":[],"ephemeralSettingTimestamp":{"low":1781966568,"high":0,"unsigned":false},"disappearingMode":{"initiator":0}}}},"contextInfo":{"mentionedJid":[],"groupMentions":[],"ephemeralSettingTimestamp":{"low":1781966568,"high":0,"unsigned":false},"disappearingMode":{"initiator":0}},"messageType":"documentMessage","messageTimestamp":1782139368,"instanceId":"a4f01e8f-0b24-4248-b511-f0b4c6a40059","source":"web"},"retryCount":0}
+[2026-06-22 11:42:51] INFO: [WORKER] Job 055.393.363/99-TESTE-1782139367920 finalizado
+[2026-06-22 11:56:22] INFO: =====================================
+[2026-06-22 11:56:22] INFO: INICIANDO TESTE (SEM SINCRONIZAÇÃO ERP)
+[2026-06-22 11:56:22] INFO: =====================================
+[2026-06-22 11:56:22] INFO: [WORKER] Iniciando...
+[2026-06-22 11:56:22] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-22 11:56:22] INFO: [TESTE] Sincronização com o ERP pulada. Usando apenas dados locais do Banco.
+[2026-06-22 11:56:22] INFO: [LOTE MENSAL - MODO TESTE] Iniciando processamento forçado de 1 PDF(s) pendentes.
+[2026-06-22 11:56:22] INFO: ==========================================================================================
+
+            Processando arquivo: 01_1.pdf
+[2026-06-22 11:56:22] INFO: [PROCESSADOR] Iniciando processamento do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:56:22] INFO: [HASH]f6f82f6f963e72c1ea3e85b2e934b879b8cdf9a0621e5fdfb696bf4cb51e6d6f-TESTE-1782140182434
+[2026-06-22 11:56:22] INFO: [PDF] Extraindo texto do arquivo: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:56:22] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competencia 09/2025
+[2026-06-22 11:56:22] INFO: [PDF] Código: 617 | Nome: ITHALLO MIGUEL COSTA SARAIVA | Competência: TESTE-1782140182639
+[2026-06-22 11:56:22] INFO: [FUNCIONARIO] Buscando código 617
+[2026-06-22 11:56:22] INFO: [WORKER] Conectado ao Redis
+[2026-06-22 11:56:22] INFO: [FUNCIONARIO] Encontrado: 617 - ITHALLO MIGUEL COSTA SARAIVA
+[2026-06-22 11:56:22] INFO: [VALIDACAO_NOME] Nome validado
+[2026-06-22 11:56:22] INFO: [TELEFONE] {"telefone":"86988661130"}
+[2026-06-22 11:56:22] INFO: [VALIDACAO_TELEFONE] Telefone encontrado: 5586988661130
+[2026-06-22 11:56:22] INFO: {"traceId":"055.393.363/99-TESTE-1782140182639-1782140182654","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"queued","timestamp":"2026-06-22T14:56:22.654Z"}
+[2026-06-22 11:56:22] INFO: [PROCESSADOR] Arquivo processado com sucesso: C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf
+[2026-06-22 11:56:22] INFO: 01_1.pdf processado com sucesso. Status: PROCESSADO
+[2026-06-22 11:56:22] INFO:  ====================================== RESUMO DO PROCESSAMENTO ======================================  PDFs encontrados: 1  Processados: 1  Erros: 0  --------------------------------------  PROCESSADO: 1  FUNCIONARIO_NAO_ENCONTRADO: 0  NOME_DIVERGENTE: 0  SEM_TELEFONE: 0  ERRO_PDF: 0  ====================================== 
+[2026-06-22 11:56:22] INFO: [TESTE] Processamento do lote iniciado. Acompanhe os logs do worker para finalização.
+[2026-06-22 11:56:22] INFO: [WORKER - MODO TESTE] Iniciando processamento do job 055.393.363/99-TESTE-1782140182639
+[2026-06-22 11:56:22] INFO: {"traceId":"055.393.363/99-TESTE-1782140182639-1782140182654","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"processing","timestamp":"2026-06-22T14:56:22.663Z"}
+[2026-06-22 11:56:23] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: EBUSY: resource busy or locked, rename 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf' -> 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\processados\01_1.pdf'
+[2026-06-22 11:56:23] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 1. Erro: EBUSY: resource busy or locked, rename 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf' -> 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\processados\01_1.pdf'
+[2026-06-22 11:56:28] INFO: [WORKER - MODO TESTE] Iniciando processamento do job 055.393.363/99-TESTE-1782140182639
+[2026-06-22 11:56:28] INFO: {"traceId":"055.393.363/99-TESTE-1782140182639-1782140182654","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"processing","timestamp":"2026-06-22T14:56:28.748Z"}
+[2026-06-22 11:56:29] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:29] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 2. Erro: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:39] INFO: [WORKER - MODO TESTE] Iniciando processamento do job 055.393.363/99-TESTE-1782140182639
+[2026-06-22 11:56:39] INFO: {"traceId":"055.393.363/99-TESTE-1782140182639-1782140182654","cpf":"055.393.363/99","telefone":"5586988661130","arquivo":"C:\\Users\\Copperline\\Desktop\\bot-contracheque-n8n-evolutionAPI\\contracheque automatico\\contracheque-bot\\uploads\\01_1.pdf","status":"processing","timestamp":"2026-06-22T14:56:39.557Z"}
+[2026-06-22 11:56:40] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:40] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 3. Erro: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)

@@ -1,5 +1,6 @@
 const { Worker } = require('bullmq');
 const evolutionSenderService = require('../services/evolutionSenderService');
+const { criptografarPdf } = require('../services/pdfEncryptService');
 const envioRepository = require('../repositories/envioRepository');
 const arquivoService = require('../services/arquivoService');
 const logger = require('../config/logger');
@@ -33,6 +34,7 @@ const worker = new Worker(
             traceId
         } = job.data;
 
+        let caminhoFinal = null;
         try {
             logger.info(JSON.stringify({
                 traceId,
@@ -42,13 +44,23 @@ const worker = new Worker(
                 status: "processing",
                 timestamp: new Date().toISOString()
             }));
+
+            // Criptografar PDF
+            const resultado = await criptografarPdf(
+                caminhoPdf,
+                caminhoPdf.replace('.pdf', '_secure.pdf'),
+                cpf
+            );
+            caminhoFinal = resultado.caminhoSaida;
             
             const response = await evolutionSenderService.enviarPdfDireto({
                 telefone,
-                caminhoPdf,
+                caminhoPdf: caminhoFinal,
                 nomeFuncionario,
                 competencia
             });
+
+
 
             if (envioId) {
                 // Se é um reenvio, o registro já existe, basta atualizar
@@ -126,6 +138,12 @@ const worker = new Worker(
             }
             
             throw erro; // Lança erro para o BullMQ tentar novamente se necessário
+        } finally {
+            // Apagar arquivo criptografado temporário para economizar espaço
+            const fs = require('fs');
+            if (caminhoFinal && fs.existsSync(caminhoFinal)) {
+                fs.unlinkSync(caminhoFinal);
+            }
         }
     },
     {

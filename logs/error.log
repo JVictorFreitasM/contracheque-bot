@@ -575,3 +575,47 @@ Error querying the database: FATAL: the database system is starting up
 [2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
 [2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário sem telefone
 [2026-06-22 11:38:32] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2(1).pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_2.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_4.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário sem telefone
+[2026-06-22 11:42:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
+[2026-06-22 11:56:23] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: EBUSY: resource busy or locked, rename 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf' -> 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\processados\01_1.pdf'
+[2026-06-22 11:56:23] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 1. Erro: EBUSY: resource busy or locked, rename 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_1.pdf' -> 'C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\processados\01_1.pdf'
+[2026-06-22 11:56:29] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:29] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 2. Erro: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:40] ERROR: [WORKER] Erro no job 055.393.363/99-TESTE-1782140182639: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
+[2026-06-22 11:56:40] ERROR: [WORKER] Job 055.393.363/99-TESTE-1782140182639 falhou na tentativa 3. Erro: 
+Invalid `prisma.envio.create()` invocation in
+C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\src\repositories\envioRepository.js:4:25
+
+  1 const prisma = require('../lib/prisma');
+  2 
+  3 async function criar(dados) {
+→ 4     return prisma.envio.create(
+Unique constraint failed on the fields: (`hashArquivo`)
