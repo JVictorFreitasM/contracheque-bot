@@ -97,8 +97,11 @@ const worker = new Worker(
                 retryCount: job.attemptsMade
             }));
 
-            // Delay de 1 segundo para rate limit (1 envio/seg)
-            await new Promise(r => setTimeout(r, 1000));
+            // Delay configurável (rate limit)
+            const configuracaoService = require('../services/configuracaoService');
+            const config = await configuracaoService.obterConfiguracao();
+            const delayMs = config.intervalo_envio * 1000;
+            await new Promise(r => setTimeout(r, delayMs));
 
         } catch (erro) {
             logger.error(`[WORKER] Erro no job ${job.id}: ${erro.message}`);

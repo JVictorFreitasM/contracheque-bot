@@ -20,10 +20,7 @@ const monitoramentoController = (req, res) => {
     jobs: { awaiting: 0, active: 0, completed: 0, failed: 0 }
   });
 };
-const configuracoesController = (req, res) => {
-  if (req.method === 'GET') return res.json({});
-  if (req.method === 'PUT') return res.json({ message: 'Configurações atualizadas' });
-};
+const configuracoesController = require('../controllers/configuracoesController');
 
 // Rotas
 router.get('/dashboard/indicadores', getMetrics);
@@ -37,6 +34,6 @@ router.get('/relatorios', getRelatorios);
 router.post('/contracheques/:id/reenviar', reenviarContracheque);
 router.post('/contracheques/reenviar-erros', reenviarTodosErros);
 router.get('/monitoramento', monitoramentoController);
-router.route('/configuracoes').get(configuracoesController).put(configuracoesController);
+router.route('/configuracoes').get(configuracoesController.obterConfiguracoes).put(configuracoesController.atualizarConfiguracoes);
 
 module.exports = router;

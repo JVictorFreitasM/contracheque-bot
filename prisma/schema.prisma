@@ -90,3 +90,13 @@ model Envio {
   @@unique([cpf, competencia])
 
 }
+
+model Configuracao {
+  id Int @id @default(autoincrement())
+  evolution_url String
+  evolution_instance String
+  evolution_api_key String
+  intervalo_envio Int @default(30)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}

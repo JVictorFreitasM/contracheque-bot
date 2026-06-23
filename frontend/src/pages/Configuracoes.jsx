@@ -4,12 +4,10 @@ import axios from 'axios';
 
 export default function Configuracoes() {
   const [config, setConfig] = useState({
-    whatsappApiUrl: '',
-    whatsappToken: '',
-    uploadDir: './uploads',
-    maxFileSize: 10,
-    autoSend: true,
-    notifyErrors: true,
+    evolution_url: '',
+    evolution_instance: '',
+    evolution_api_key: '',
+    intervalo_envio: 30
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -19,8 +17,8 @@ export default function Configuracoes() {
     axios
       .get('/api/configuracoes')
       .then((res) => {
-        if (res.data && typeof res.data === 'object' && Object.keys(res.data).length > 0) {
-          setConfig((prev) => ({ ...prev, ...res.data }));
+        if (res.data && res.data.config) {
+          setConfig((prev) => ({ ...prev, ...res.data.config }));
         }
         setLoading(false);
       })
@@ -66,93 +64,58 @@ export default function Configuracoes() {
       )}
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.25rem' }}>
-        {/* WhatsApp / API */}
+        {/* Evolution API */}
         <div className="card">
           <div className="card-header">
-            <h3><i className="fab fa-whatsapp" style={{ marginRight: 8, color: '#25d366' }}></i>Integração WhatsApp</h3>
+            <h3><i className="fab fa-whatsapp" style={{ marginRight: 8, color: '#25d366' }}></i>Evolution API</h3>
           </div>
           <div className="card-body">
             <div className="form-group">
-              <label className="form-label">URL da API (Evolution API)</label>
+              <label className="form-label">URL da Evolution</label>
               <input
                 className="form-input"
-                value={config.whatsappApiUrl}
-                onChange={(e) => handleChange('whatsappApiUrl', e.target.value)}
-                placeholder="https://api.example.com"
+                value={config.evolution_url}
+                onChange={(e) => handleChange('evolution_url', e.target.value)}
+                placeholder="http://localhost:8080"
               />
             </div>
             <div className="form-group">
-              <label className="form-label">Token de Autenticação</label>
+              <label className="form-label">Nome da Instância</label>
+              <input
+                className="form-input"
+                value={config.evolution_instance}
+                onChange={(e) => handleChange('evolution_instance', e.target.value)}
+                placeholder="bot-contracheque"
+              />
+            </div>
+            <div className="form-group">
+              <label className="form-label">API Key</label>
               <input
                 className="form-input"
                 type="password"
-                value={config.whatsappToken}
-                onChange={(e) => handleChange('whatsappToken', e.target.value)}
+                value={config.evolution_api_key}
+                onChange={(e) => handleChange('evolution_api_key', e.target.value)}
                 placeholder="••••••••••••"
               />
             </div>
           </div>
         </div>
 
-        {/* Uploads */}
+        {/* Envio */}
         <div className="card">
           <div className="card-header">
-            <h3><i className="fas fa-folder-open" style={{ marginRight: 8, color: 'var(--accent)' }}></i>Configurações de Upload</h3>
+            <h3><i className="fas fa-paper-plane" style={{ marginRight: 8, color: 'var(--accent)' }}></i>Configurações de Envio</h3>
           </div>
           <div className="card-body">
             <div className="form-group">
-              <label className="form-label">Diretório de Upload</label>
-              <input
-                className="form-input"
-                value={config.uploadDir}
-                onChange={(e) => handleChange('uploadDir', e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Tamanho Máximo do Arquivo (MB)</label>
+              <label className="form-label">Intervalo entre envios (segundos)</label>
               <input
                 className="form-input"
                 type="number"
                 min={1}
-                max={100}
-                value={config.maxFileSize}
-                onChange={(e) => handleChange('maxFileSize', Number(e.target.value))}
+                value={config.intervalo_envio}
+                onChange={(e) => handleChange('intervalo_envio', Number(e.target.value))}
               />
-            </div>
-          </div>
-        </div>
-
-        {/* Automação */}
-        <div className="card">
-          <div className="card-header">
-            <h3><i className="fas fa-robot" style={{ marginRight: 8, color: 'var(--info)' }}></i>Automação</h3>
-          </div>
-          <div className="card-body">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
-                <input
-                  type="checkbox"
-                  checked={config.autoSend}
-                  onChange={(e) => handleChange('autoSend', e.target.checked)}
-                  style={{ width: 18, height: 18, accentColor: 'var(--accent)' }}
-                />
-                <div>
-                  <div style={{ fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>Envio Automático</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Enviar contracheques automaticamente após processamento</div>
-                </div>
-              </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
-                <input
-                  type="checkbox"
-                  checked={config.notifyErrors}
-                  onChange={(e) => handleChange('notifyErrors', e.target.checked)}
-                  style={{ width: 18, height: 18, accentColor: 'var(--accent)' }}
-                />
-                <div>
-                  <div style={{ fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>Notificação de Erros</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Receber notificação quando ocorrer um erro de processamento</div>
-                </div>
-              </label>
             </div>
           </div>
         </div>

@@ -46,9 +46,12 @@ async function enviarPdfDireto({
 
   console.log('[ENVIO] Enviando para Evolution...');
 
-  const evolutionUrl = process.env.EVOLUTION_API_URL || 'http://localhost:8080';
-  const evolutionInstance = process.env.EVOLUTION_INSTANCE || 'bot-contracheque';
-  const evolutionApiKey = process.env.EVOLUTION_API_KEY || '48E7160B065C-45FC-A784-2BA6C7A51C4A';
+  const configuracaoService = require('./configuracaoService');
+  const config = await configuracaoService.obterConfiguracao();
+
+  const evolutionUrl = config.evolution_url;
+  const evolutionInstance = config.evolution_instance;
+  const evolutionApiKey = config.evolution_api_key;
 
   const response = await axios.post(
     `${evolutionUrl}/message/sendMedia/${evolutionInstance}`,
