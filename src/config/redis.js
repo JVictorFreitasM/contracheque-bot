@@ -1,21 +1,34 @@
-const IORedis =
-    require('ioredis');
+const IORedis = require('ioredis');
+const logger = require('./logger');
 
-const connection =
-    new IORedis({
+const redis = new IORedis({
+  host: process.env.REDIS_HOST || 'localhost',
+  port: Number(process.env.REDIS_PORT || 6379),
+  password: process.env.REDIS_PASSWORD || undefined,
+  maxRetriesPerRequest: null,
+  retryStrategy(times) {
+    return Math.min(times * 50, 2000);
+  }
+});
 
-        host:
-            process.env.REDIS_HOST ||
-            'localhost',
+redis.on('connect', () => {
+  logger.info('Redis conectado');
+});
 
-        port:
-            process.env.REDIS_PORT ||
-            6379,
+redis.on('ready', () => {
+  logger.info('Redis pronto');
+});
 
-        maxRetriesPerRequest:
-            null
+redis.on('error', (err) => {
+  logger.error('Erro Redis', err);
+});
 
-    });
+redis.on('close', () => {
+  logger.warn('Redis desconectado');
+});
 
-module.exports =
-    connection;
+redis.on('reconnecting', () => {
+  logger.info('Redis reconectando');
+});
+
+module.exports = redis;

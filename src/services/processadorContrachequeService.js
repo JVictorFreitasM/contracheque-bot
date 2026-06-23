@@ -153,6 +153,19 @@ async function processarArquivo(
         const traceId = `${funcionario.cpf}-${dadosPdf.competencia}-${Date.now()}`;
         const jobId = `${funcionario.cpf}-${dadosPdf.competencia}`;
 
+        const envioRegistro = await envioRepository.criar({
+            codigoFuncionario: funcionario.codigo,
+            cpf: funcionario.cpf,
+            competencia: dadosPdf.competencia,
+            nomeFuncionario: funcionario.nome,
+            arquivoPdf: caminhoPdf,
+            hashArquivo,
+            telefone,
+            status: STATUS.PENDENTE,
+            mensagemErro: null,
+            dataProcessamento: new Date()
+        });
+
         const payloadJob = {
             codigoFuncionario: funcionario.codigo,
             nomeFuncionario: funcionario.nome,
@@ -162,7 +175,8 @@ async function processarArquivo(
             telefone,
             caminhoPdf,
             isTeste: opcoes.isTeste || false,
-            traceId
+            traceId,
+            envioId: envioRegistro.id
         };
 
         logger.info(JSON.stringify({

@@ -4,12 +4,11 @@ const { criptografarPdf } = require('../services/pdfEncryptService');
 const envioRepository = require('../repositories/envioRepository');
 const arquivoService = require('../services/arquivoService');
 const logger = require('../config/logger');
+const prisma = require('../lib/prisma');
+const { STATUS } = require('../utils/statusEnvio');
 require('dotenv').config();
 
-const connection = {
-    host: process.env.REDIS_HOST,
-    port: Number(process.env.REDIS_PORT)
-};
+const connection = require('../config/redis');
 
 logger.info('[WORKER] Iniciando...');
 
@@ -45,7 +44,13 @@ const worker = new Worker(
                 timestamp: new Date().toISOString()
             }));
 
-            // Criptografar PDF
+            const envioRecord = envioId ? await envioRepository.buscarPorId(envioId) : null;
+        if (envioRecord && envioRecord.status === STATUS.PROCESSANDOFINALIZADOCANCELADO) {
+            logger.info(`[WORKER] Job ${job.id} cancelado antes do envio porque o lote foi interrompido.`);
+            return;
+        }
+
+        // Criptografar PDF
             const resultado = await criptografarPdf(
                 caminhoPdf,
                 caminhoPdf.replace('.pdf', '_secure.pdf'),

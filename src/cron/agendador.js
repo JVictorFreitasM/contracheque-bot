@@ -1,14 +1,9 @@
 const cron = require('node-cron');
-const Redis = require('ioredis');
 const logger = require('../config/logger');
 const processadorLote = require('../services/processadorLoteService');
 const wkService = require('../services/wkService');
+const redis = require('../config/redis');
 require('dotenv').config();
-
-const redis = new Redis({
-  host: process.env.REDIS_HOST,
-  port: Number(process.env.REDIS_PORT)
-});
 
 async function iniciarAgendamento() {
     logger.info('[CRON] Agendador iniciado');
@@ -41,13 +36,24 @@ async function verificarEProcessar() {
             const dataHoje = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
             const chaveRedis = `lote_processado_${dataHoje}`;
 
-            const jaProcessou = await redis.get(chaveRedis);
+            let jaProcessou = false;
+            try {
+              jaProcessou = await redis.get(chaveRedis);
+            } catch (redisError) {
+              logger.error(`[CRON] Falha ao acessar o Redis: ${redisError.message}`);
+              return;
+            }
 
             if (!jaProcessou) {
                 logger.info(`[CRON] Hoje é dia ${diaConfigurado}. Iniciando sincronização e processamento do lote...`);
                 
                 // Marca como processado com expiração de 24 horas (86400 segundos)
-                await redis.set(chaveRedis, 'true', 'EX', 86400);
+                try {
+                  await redis.set(chaveRedis, 'true', 'EX', 86400);
+                } catch (setError) {
+                  logger.error(`[CRON] Falha ao atualizar o Redis: ${setError.message}`);
+                  return;
+                }
 
                 // Dispara a sincronização FORÇADA ANTES do lote, para garantir dados atualizados
                 try {
@@ -60,7 +66,11 @@ async function verificarEProcessar() {
                 } catch (syncError) {
                     logger.error(`[CRON] A sincronização do ERP falhou! O processamento de PDFs foi ABORTADO para evitar envio com dados obsoletos.`);
                     // Remove a marcação do redis, permitindo que tente de novo se corrigirem o problema
-                    await redis.del(chaveRedis);
+                    try {
+                      await redis.del(chaveRedis);
+                    } catch (delError) {
+                      logger.error(`[CRON] Falha ao remover a marcação do Redis: ${delError.message}`);
+                    }
                 }
 
             } else {

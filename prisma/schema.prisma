@@ -25,6 +25,7 @@ enum StatusEnvio {
 
   DUPLICADO_HASH
   DUPLICADO_COMPETENCIA
+  PROCESSANDOFINALIZADOCANCELADO
 }
 
 model Funcionario {
@@ -91,6 +92,16 @@ model Envio {
 
 }
 
+model ReprocessamentoLote {
+  id Int @id @default(autoincrement())
+  competencia String
+  tipo String
+  quantidade Int
+  usuario String
+  descricao String?
+  createdAt DateTime @default(now())
+}
+
 model Configuracao {
   id Int @id @default(autoincrement())
   evolution_url String
@@ -99,4 +110,4 @@ model Configuracao {
   intervalo_envio Int @default(30)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
-}
+}

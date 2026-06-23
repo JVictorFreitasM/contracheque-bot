@@ -19,6 +19,20 @@ export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [processamentoRealTime, setProcessamentoRealTime] = useState({
+    loteAtual: 'Carregando...',
+    total: 0,
+    processados: 0,
+    enviados: 0,
+    erros: 0,
+    restantes: 0,
+    tempoMedio: 0,
+    previsaoTermino: '00:00',
+    workerOnline: false,
+    redisOnline: false,
+    evolutionOnline: false
+  });
+
   useEffect(() => {
     fetch('/api/dashboard/indicadores')
       .then((res) => res.json())
@@ -48,6 +62,24 @@ export default function Dashboard() {
         console.error('Erro ao buscar métricas do dashboard:', err);
       })
       .finally(() => setLoading(false));
+
+    // SSE Connection for Real-Time Processing Panel
+    const evtSource = new EventSource('/api/processamento/stream');
+    evtSource.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        setProcessamentoRealTime(data);
+      } catch (err) {
+        console.error('Erro ao parsear dados do SSE:', err);
+      }
+    };
+    evtSource.onerror = () => {
+      console.error('Erro de conexão SSE.');
+    };
+
+    return () => {
+      evtSource.close();
+    };
   }, []);
 
   if (loading) {
@@ -149,7 +181,6 @@ export default function Dashboard() {
           <div className="stat-info">
             <div className="stat-label">Total Processados</div>
             <div className="stat-value">{stats.totalProcessados.toLocaleString('pt-BR')}</div>
-            <div className="stat-change up"><i className="fas fa-arrow-up"></i> 12% este mês</div>
           </div>
         </div>
         <div className="stat-card">
@@ -157,7 +188,6 @@ export default function Dashboard() {
           <div className="stat-info">
             <div className="stat-label">Pendentes</div>
             <div className="stat-value">{stats.pendentes}</div>
-            <div className="stat-change down"><i className="fas fa-arrow-down"></i> 5% vs ontem</div>
           </div>
         </div>
         <div className="stat-card">
@@ -165,7 +195,6 @@ export default function Dashboard() {
           <div className="stat-info">
             <div className="stat-label">Erros</div>
             <div className="stat-value">{stats.erros}</div>
-            <div className="stat-change up"><i className="fas fa-arrow-down"></i> 2 resolvidos</div>
           </div>
         </div>
         <div className="stat-card">
@@ -173,7 +202,6 @@ export default function Dashboard() {
           <div className="stat-info">
             <div className="stat-label">Funcionários</div>
             <div className="stat-value">{stats.funcionarios}</div>
-            <div className="stat-change up"><i className="fas fa-arrow-up"></i> 8 novos</div>
           </div>
         </div>
       </div>
@@ -181,12 +209,62 @@ export default function Dashboard() {
       {/* Charts Row */}
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.25rem' }}>
         <div className="card">
-          <div className="card-header">
-            <h3>Contracheques Processados</h3>
-            <span className="badge info">Últimos 12 meses</span>
+          <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h3>Painel de Processamento</h3>
+            <span className="badge info">Lote: {processamentoRealTime.loteAtual}</span>
           </div>
-          <div className="card-body" style={{ height: 300 }}>
-            <Line data={lineData} options={lineOptions} />
+          <div className="card-body">
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <span style={{ fontWeight: 'bold', color: 'var(--text-primary)' }}>Progresso</span>
+                <span style={{ color: 'var(--text-primary)' }}>{processamentoRealTime.total > 0 ? Math.round((processamentoRealTime.processados / processamentoRealTime.total) * 100) : 0}%</span>
+              </div>
+              <div style={{ height: '12px', background: 'var(--border-color)', borderRadius: '6px', overflow: 'hidden' }}>
+                <div style={{ width: `${processamentoRealTime.total > 0 ? Math.round((processamentoRealTime.processados / processamentoRealTime.total) * 100) : 0}%`, height: '100%', background: '#3b82f6', transition: 'width 0.3s ease' }}></div>
+              </div>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                {processamentoRealTime.processados} / {processamentoRealTime.total} PDFs processados
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ padding: '0.75rem', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Enviados</div>
+                <div style={{ fontWeight: 'bold', fontSize: '1.25rem', color: '#10b981' }}>{processamentoRealTime.enviados}</div>
+              </div>
+              <div style={{ padding: '0.75rem', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Erros</div>
+                <div style={{ fontWeight: 'bold', fontSize: '1.25rem', color: '#ef4444' }}>{processamentoRealTime.erros}</div>
+              </div>
+              <div style={{ padding: '0.75rem', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Restantes</div>
+                <div style={{ fontWeight: 'bold', fontSize: '1.25rem', color: 'var(--text-primary)' }}>{processamentoRealTime.restantes}</div>
+              </div>
+              <div style={{ padding: '0.75rem', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Tempo Médio</div>
+                <div style={{ fontWeight: 'bold', fontSize: '1.25rem', color: 'var(--text-primary)' }}>{processamentoRealTime.tempoMedio}s</div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', background: 'rgba(59, 130, 246, 0.1)', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
+              <span style={{ fontWeight: 500, color: 'var(--text-primary)' }}>Previsão de Término</span>
+              <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#3b82f6' }}>{processamentoRealTime.previsaoTermino}</span>
+            </div>
+
+            <div>
+              <div style={{ fontWeight: 'bold', marginBottom: '0.75rem', fontSize: '0.875rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Status dos Serviços</div>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span className={`badge ${processamentoRealTime.workerOnline ? 'success' : 'danger'}`} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <i className="fas fa-cogs"></i> Worker
+                </span>
+                <span className={`badge ${processamentoRealTime.redisOnline ? 'success' : 'danger'}`} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <i className="fas fa-database"></i> Redis
+                </span>
+                <span className={`badge ${processamentoRealTime.evolutionOnline ? 'success' : 'danger'}`} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <i className="fab fa-whatsapp"></i> Evolution
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="card">

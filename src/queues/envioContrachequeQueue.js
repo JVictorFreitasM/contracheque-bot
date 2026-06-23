@@ -1,12 +1,10 @@
 const { Queue } = require('bullmq');
+const connection = require('../config/redis');
 
 const filaEnvio = new Queue(
     'envio-contracheque',
     {
-        connection: {
-            host: process.env.REDIS_HOST,
-            port: Number(process.env.REDIS_PORT)
-        }
+        connection
     }
 );
 

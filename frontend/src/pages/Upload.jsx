@@ -8,11 +8,14 @@ export default function Upload() {
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState(null);
+  const [validationResult, setValidationResult] = useState(null);
+  const [validating, setValidating] = useState(false);
 
   const onDrop = useCallback((acceptedFiles) => {
     setFiles(acceptedFiles);
     setMessage(null);
     setProgress(0);
+    setValidationResult(null);
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -29,12 +32,12 @@ export default function Upload() {
     if (!files.length) return;
     setUploading(true);
     setProgress(0);
+    setValidationResult(null);
     const formData = new FormData();
     files.forEach((file) => formData.append('files', file));
 
     try {
       const response = await axios.post('/api/uploads', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (e) => {
           const pct = Math.round((e.loaded * 100) / (e.total || 1));
           setProgress(pct);
@@ -49,6 +52,29 @@ export default function Upload() {
       setMessage({ type: 'danger', text: err.response?.data?.error || 'Falha ao enviar os arquivos.' });
     } finally {
       setUploading(false);
+    }
+  };
+
+  const handlePreValidate = async () => {
+    if (!files.length) return;
+    setValidating(true);
+    setMessage(null);
+    setValidationResult(null);
+
+    const formData = new FormData();
+    files.forEach((file) => formData.append('files', file));
+
+    try {
+      const response = await axios.post('/api/uploads/pre-validar', formData);
+      setValidationResult(response.data);
+      setMessage({
+        type: 'success',
+        text: `Pré-validação concluída: ${response.data.validos} válidos, ${response.data.erros} com erro.`,
+      });
+    } catch (err) {
+      setMessage({ type: 'danger', text: err.response?.data?.error || 'Falha ao pré-validar os arquivos.' });
+    } finally {
+      setValidating(false);
     }
   };
 
@@ -121,11 +147,23 @@ export default function Upload() {
                 </div>
               )}
 
-              <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end' }}>
+              <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <button
+                  className="btn btn-secondary"
+                  onClick={handlePreValidate}
+                  disabled={validating || uploading}
+                  id="prevalidate-submit-btn"
+                >
+                  {validating ? (
+                    <><i className="fas fa-spinner fa-spin"></i> Pré-validando...</>
+                  ) : (
+                    <><i className="fas fa-check-circle"></i> Pré-validar</>
+                  )}
+                </button>
                 <button
                   className="btn btn-primary"
                   onClick={handleUpload}
-                  disabled={uploading}
+                  disabled={uploading || validating}
                   id="upload-submit-btn"
                 >
                   {uploading ? (
@@ -139,6 +177,54 @@ export default function Upload() {
           )}
         </div>
       </div>
+
+      {validationResult && (
+        <div className="card" style={{ marginBottom: '1.5rem' }}>
+          <div className="card-header">
+            <h3><i className="fas fa-list-check" style={{ marginRight: 8, color: 'var(--accent)' }}></i>Resultado da Pré-validação</h3>
+          </div>
+          <div className="card-body">
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <div className="stat-card">
+                <div className="stat-label">PDFs válidos</div>
+                <div className="stat-value">{validationResult.validos}</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-label">PDFs com erro</div>
+                <div className="stat-value">{validationResult.erros}</div>
+              </div>
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Arquivo</th>
+                    <th>Funcionário</th>
+                    <th>Competência</th>
+                    <th>Status</th>
+                    <th>Motivo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {validationResult.arquivos.map((item, index) => (
+                    <tr key={`${item.arquivo}-${index}`}>
+                      <td>{item.arquivo}</td>
+                      <td>{item.funcionario || '—'}</td>
+                      <td>{item.competencia || '—'}</td>
+                      <td>
+                        <span className={`badge ${item.status === 'VALIDO' ? 'success' : 'danger'}`}>
+                          {item.status}
+                        </span>
+                      </td>
+                      <td>{item.motivo || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Upload tips */}
       <div className="card">

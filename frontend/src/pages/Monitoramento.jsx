@@ -4,14 +4,18 @@ import axios from 'axios';
 
 export default function Monitoramento() {
   const [metrics, setMetrics] = useState(null);
+  const [health, setHealth] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchMetrics = () => {
-    axios
-      .get('/api/monitoramento')
-      .then((res) => {
-        setMetrics(res.data);
+    Promise.all([
+      axios.get('/api/monitoramento'),
+      axios.get('/api/health')
+    ])
+      .then(([metricsRes, healthRes]) => {
+        setMetrics(metricsRes.data);
+        setHealth(healthRes.data);
         setLoading(false);
         setError(null);
       })
