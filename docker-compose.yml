@@ -20,3 +20,78 @@ services:
 
     ports:
       - "6379:6379"
+
+  evolution-api:
+    container_name: evolution-api
+    image: evoapicloud/evolution-api:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - evolution_instances:/evolution/instances
+    networks:
+      - automacoes
+
+  backend:
+    container_name: contracheque-backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+      - evolution-api
+    environment:
+      DATABASE_URL: "postgres://admin:admin@postgres:5432/contracheque"
+      REDIS_URL: "redis://redis:6379"
+      EVOLUTION_API_URL: "http://evolution-api:8080"
+      PORT: "3001"
+    ports:
+      - "3001:3001"
+    networks:
+      - automacoes
+
+  worker:
+    container_name: contracheque-worker
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: node src/worker.js
+    restart: unless-stopped
+    depends_on:
+      - backend
+      - redis
+      - postgres
+      - evolution-api
+    environment:
+      DATABASE_URL: "postgres://admin:admin@postgres:5432/contracheque"
+      REDIS_URL: "redis://redis:6379"
+      EVOLUTION_API_URL: "http://evolution-api:8080"
+    networks:
+      - automacoes
+
+  frontend:
+    container_name: contracheque-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+    environment:
+      VITE_API_URL: "http://backend:3001"
+    networks:
+      - automacoes
+
+volumes:
+  pgdata:
+  evolution_instances:
+
+networks:
+  automacoes:
+    driver: bridge
