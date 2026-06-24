@@ -15,6 +15,24 @@ export default function Funcionarios() {
   const [totalPages, setTotalPages] = useState(0);
   const [search, setSearch] = useState('');
 
+  const handleToggleBloqueio = async (funcionario, value) => {
+    try {
+      await axios.patch(`/api/funcionarios/${funcionario.codigo}/bloqueio-contracheque`, {
+        bloqueia_contracheque: value,
+      });
+
+      setData((currentData) =>
+        currentData.map((item) =>
+          item.codigo === funcionario.codigo
+            ? { ...item, bloqueia_contracheque: value }
+            : item
+        )
+      );
+    } catch (err) {
+      setError(err.response?.data?.error || 'Erro ao atualizar bloqueio de contracheque');
+    }
+  };
+
   useEffect(() => {
     setLoading(true);
     axios
@@ -101,6 +119,7 @@ export default function Funcionarios() {
                       <th>CPF</th>
                       <th>Matrícula</th>
                       <th>Telefone</th>
+                      <th>Bloqueado</th>
                       <th>Status</th>
                     </tr>
                   </thead>
@@ -112,6 +131,13 @@ export default function Funcionarios() {
                         <td>{item.cpf || '—'}</td>
                         <td>{item.codigo || '—'}</td>
                         <td>{item.telefone || item.phone || '—'}</td>
+                        <td>
+                          <input
+                            type="checkbox"
+                            checked={item.bloqueia_contracheque || false}
+                            onChange={(e) => handleToggleBloqueio(item, e.target.checked)}
+                          />
+                        </td>
                         <td>
                           <span className={`badge ${item.ativo !== false ? 'success' : 'neutral'}`}>
                             {item.ativo !== false ? 'Ativo' : 'Inativo'}

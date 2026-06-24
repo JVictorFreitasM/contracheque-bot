@@ -1,8 +1,5 @@
-const envioQueue =
-    require('../../queues/envioQueue');
-
-const logger =
-    require('../../config/logger');
+const envioQueue = require('../../queues/envioQueue');
+const logger = require('../../config/logger');
 
 async function enviarContracheque(
     funcionario,
@@ -11,32 +8,18 @@ async function enviarContracheque(
     cpf,
     competencia
 ) {
+    logger.info(`[FILA] Criando job para envio do PDF para ${telefone}`);
 
-    logger.info(
-        `[FILA] Criando job para envio do PDF para ${telefone}`
-    );
-
-    const job =
-    await envioQueue.add(
-
+    const job = await envioQueue.add(
         'enviar-pdf',
-
         {
-            codigoFuncionario:
-                funcionario.codigo,
-
-            nomeFuncionario:
-                funcionario.nome,
-
+            codigoFuncionario: funcionario.codigo,
+            nomeFuncionario: funcionario.nome,
             cpf,
-
             competencia,
-
             telefone,
-
             caminhoPdf
         }
-
     );
 
     logger.info(

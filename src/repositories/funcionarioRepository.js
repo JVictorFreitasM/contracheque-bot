@@ -81,6 +81,13 @@ async function buscarPorCodigo(codigo) {
     })
 }
 
+async function atualizarBloqueio(codigo, bloqueiaContracheque) {
+    return prisma.funcionario.update({
+        where: { codigo },
+        data: { bloqueia_contracheque: bloqueiaContracheque }
+    });
+}
+
 async function listarTodos(){
     return prisma.funcionario.findMany()
 }

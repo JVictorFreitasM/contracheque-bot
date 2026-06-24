@@ -35,6 +35,7 @@ async function getFuncionarios(req, res) {
           telefone: true,
           email: true,
           ativo: true,
+          bloqueia_contracheque: true,
           ultimaSincronizacao: true,
           createdAt: true,
           updatedAt: true,
@@ -61,4 +62,25 @@ async function getFuncionarios(req, res) {
   }
 }
 
-module.exports = { getFuncionarios };
+async function atualizarBloqueioContracheque(req, res) {
+  try {
+    const codigo = parseInt(req.params.id, 10);
+    const { bloqueia_contracheque } = req.body;
+
+    if (typeof bloqueia_contracheque !== 'boolean') {
+      return res.status(400).json({ error: 'bloqueia_contracheque deve ser booleano' });
+    }
+
+    await prisma.funcionario.update({
+      where: { codigo },
+      data: { bloqueia_contracheque }
+    });
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Erro ao atualizar bloqueio de contracheque:', err);
+    res.status(500).json({ error: 'Falha ao atualizar bloqueio de contracheque' });
+  }
+}
+
+module.exports = { getFuncionarios, atualizarBloqueioContracheque };

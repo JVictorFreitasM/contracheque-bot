@@ -14,6 +14,7 @@ enum StatusEnvio {
 
   PROCESSADO
   ENVIADO
+  BLOQUEADO
 
   ERRO
   ERRO_ENVIO
@@ -43,6 +44,8 @@ model Funcionario {
   ativo Boolean @default(true)
 
   ultimaSincronizacao DateTime?
+
+  bloqueia_contracheque Boolean @default(false)
 
   createdAt DateTime @default(now())
 

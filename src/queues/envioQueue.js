@@ -1,19 +1,11 @@
-const { Queue } =
-    require('bullmq');
+const { Queue } = require('bullmq');
+const connection = require('../config/redis');
 
-const connection =
-    require('../config/redis');
+const envioQueue = new Queue(
+    'envio-contracheque',
+    {
+        connection
+    }
+);
 
-const envioQueue =
-    new Queue(
-
-        'envio-contracheque',
-
-        {
-            connection
-        }
-
-    );
-
-module.exports =
-    envioQueue;
+module.exports = envioQueue;

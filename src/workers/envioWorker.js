@@ -4,11 +4,20 @@ const { Worker } =
 const connection =
     require('../config/redis');
 
-const n8nService =
-    require('../services/n8nService');
+const evolutionSenderService =
+    require('../services/evolutionSenderService');
+
+const configuracaoService =
+    require('../services/configuracaoService');
 
 const logger =
     require('../config/logger');
+
+function esperar(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
 
 new Worker(
 
@@ -20,22 +29,33 @@ new Worker(
             `[WORKER] Processando envio para ${job.data.telefone}`
         );
 
-        await n8nService.enviarPdf(
-
-            job.data.telefone,
-
-            job.data.caminhoPdf
-
-        );
+        await evolutionSenderService.enviarPdfDireto({
+            telefone: job.data.telefone,
+            caminhoPdf: job.data.caminhoPdf,
+            nomeFuncionario: job.data.nomeFuncionario,
+            competencia: job.data.competencia
+        });
 
         logger.info(
             `[WORKER] PDF enviado para ${job.data.telefone}`
         );
 
+        const config =
+            await configuracaoService.obterConfiguracao();
+        const intervalo =
+            config.intervalo_envio || 30;
+        logger.info(
+            `[WORKER] Aguardando ${intervalo}s`
+        );
+        await esperar(
+            intervalo * 1000
+        );
+
     },
 
     {
-        connection
+        connection,
+        concurrency: 1
     }
 
 );

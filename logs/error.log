@@ -627,3 +627,60 @@ Unique constraint failed on the fields: (`hashArquivo`)
 [2026-06-23 10:53:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_5.pdf: Funcionário sem telefone
 [2026-06-23 10:53:48] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_6.pdf: Funcionário sem telefone
 [2026-06-23 11:03:35] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-23 11:26:25] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-23 11:28:03] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-23 11:30:29] ERROR: [PROCESSADOR] Erro ao processar arquivo C:\Users\Copperline\Desktop\bot-contracheque-n8n-evolutionAPI\contracheque automatico\contracheque-bot\uploads\01_3.pdf: Funcionário sem telefone
+[2026-06-24 08:41:57] ERROR: Erro Redis
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: Erro Redis
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: Erro Redis
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: Erro Redis
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: Erro Redis
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: Erro Redis
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: Erro Redis
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:58] ERROR: Erro Redis
+[2026-06-24 08:41:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:59] ERROR: Erro Redis
+[2026-06-24 08:41:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:41:59] ERROR: Erro Redis
+[2026-06-24 08:41:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:00] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:00] ERROR: Erro Redis
+[2026-06-24 08:42:00] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:00] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:00] ERROR: Erro Redis
+[2026-06-24 08:42:00] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:01] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:01] ERROR: Erro Redis
+[2026-06-24 08:42:01] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:02] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:02] ERROR: Erro Redis
+[2026-06-24 08:42:02] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:02] ERROR: Erro Redis
+[2026-06-24 08:42:02] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:02] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:03] ERROR: Erro Redis
+[2026-06-24 08:42:03] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:03] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:04] ERROR: Erro Redis
+[2026-06-24 08:42:04] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:04] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:05] ERROR: Erro Redis
+[2026-06-24 08:42:05] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-24 08:42:05] ERROR: [WORKER] Erro crítico no worker: 

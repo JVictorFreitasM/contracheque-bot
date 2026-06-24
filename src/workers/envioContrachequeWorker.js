@@ -1,14 +1,21 @@
 const { Worker } = require('bullmq');
 const evolutionSenderService = require('../services/evolutionSenderService');
+const configuracaoService = require('../services/configuracaoService');
 const { criptografarPdf } = require('../services/pdfEncryptService');
 const envioRepository = require('../repositories/envioRepository');
+const funcionarioRepository = require('../repositories/funcionarioRepository');
 const arquivoService = require('../services/arquivoService');
 const logger = require('../config/logger');
-const prisma = require('../lib/prisma');
 const { STATUS } = require('../utils/statusEnvio');
 require('dotenv').config();
 
 const connection = require('../config/redis');
+
+function esperar(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
 
 logger.info('[WORKER] Iniciando...');
 
@@ -47,6 +54,37 @@ const worker = new Worker(
             const envioRecord = envioId ? await envioRepository.buscarPorId(envioId) : null;
         if (envioRecord && envioRecord.status === STATUS.PROCESSANDOFINALIZADOCANCELADO) {
             logger.info(`[WORKER] Job ${job.id} cancelado antes do envio porque o lote foi interrompido.`);
+            return;
+        }
+
+        const funcionario = await funcionarioRepository.buscarPorCodigo(codigoFuncionario);
+        if (funcionario?.bloqueia_contracheque) {
+            logger.info(JSON.stringify({
+                traceId,
+                codigoFuncionario,
+                nomeFuncionario,
+                status: 'BLOQUEADO',
+                arquivo: caminhoPdf,
+                mensagem: 'Envio bloqueado pelo sistema (funcionário opt-out)',
+                timestamp: new Date().toISOString()
+            }));
+
+            if (envioId) {
+                await envioRepository.atualizar(envioId, {
+                    status: 'BLOQUEADO',
+                    mensagemErro: null,
+                    ultimoErro: null,
+                    dataEnvio: null
+                });
+            }
+
+            await arquivoService.moverParaProcessados(caminhoPdf);
+
+            const config = await configuracaoService.obterConfiguracao();
+            const intervalo = config.intervalo_envio || 30;
+            logger.info(`[WORKER] Aguardando ${intervalo}s`);
+            await esperar(intervalo * 1000);
+
             return;
         }
 
@@ -91,6 +129,11 @@ const worker = new Worker(
 
             arquivoService.moverParaProcessados(caminhoPdf);
 
+            const config = await configuracaoService.obterConfiguracao();
+            const intervalo = config.intervalo_envio || 30;
+            logger.info(`[WORKER] Aguardando ${intervalo}s`);
+            await esperar(intervalo * 1000);
+
             logger.info(JSON.stringify({
                 traceId,
                 cpf,
@@ -102,11 +145,6 @@ const worker = new Worker(
                 retryCount: job.attemptsMade
             }));
 
-            // Delay configurável (rate limit)
-            const configuracaoService = require('../services/configuracaoService');
-            const config = await configuracaoService.obterConfiguracao();
-            const delayMs = config.intervalo_envio * 1000;
-            await new Promise(r => setTimeout(r, delayMs));
 
         } catch (erro) {
             logger.error(`[WORKER] Erro no job ${job.id}: ${erro.message}`);
