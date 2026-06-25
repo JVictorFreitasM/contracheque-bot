@@ -5831,3 +5831,104 @@ Unique constraint failed on the fields: (`hashArquivo`)
 [2026-06-24 11:14:59] INFO: Redis conectado
 [2026-06-24 11:14:59] INFO: Redis pronto
 [2026-06-24 11:14:59] INFO: [WORKER] Conectado ao Redis
+[2026-06-25 08:05:37] INFO: =====================================
+[2026-06-25 08:05:37] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-25 08:05:37] INFO: =====================================
+[2026-06-25 08:05:37] INFO: [CRON] Agendador iniciado
+[2026-06-25 08:05:38] INFO: [CRON] Hoje é dia 25, o dia de envio configurado é 5. Aguardando.
+[2026-06-25 08:05:38] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-25 08:05:38] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-25 08:05:39] INFO: [WORKER] Iniciando...
+[2026-06-25 08:05:39] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-25 08:05:39] ERROR: Erro Redis
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] WARN: Redis desconectado
+[2026-06-25 08:05:39] INFO: Redis reconectando
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] ERROR: Erro Redis
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] WARN: Redis desconectado
+[2026-06-25 08:05:39] INFO: Redis reconectando
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] ERROR: Erro Redis
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] WARN: Redis desconectado
+[2026-06-25 08:05:39] INFO: Redis reconectando
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] ERROR: Erro Redis
+[2026-06-25 08:05:39] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:39] WARN: Redis desconectado
+[2026-06-25 08:05:39] INFO: Redis reconectando
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] ERROR: Erro Redis
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] WARN: Redis desconectado
+[2026-06-25 08:05:40] INFO: Redis reconectando
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] ERROR: Erro Redis
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] WARN: Redis desconectado
+[2026-06-25 08:05:40] INFO: Redis reconectando
+[2026-06-25 08:05:40] ERROR: Erro Redis
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] WARN: Redis desconectado
+[2026-06-25 08:05:40] INFO: Redis reconectando
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] ERROR: Erro Redis
+[2026-06-25 08:05:40] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:40] WARN: Redis desconectado
+[2026-06-25 08:05:40] INFO: Redis reconectando
+[2026-06-25 08:05:41] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:41] ERROR: Erro Redis
+[2026-06-25 08:05:41] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:41] WARN: Redis desconectado
+[2026-06-25 08:05:41] INFO: Redis reconectando
+[2026-06-25 08:05:41] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:41] ERROR: Erro Redis
+[2026-06-25 08:05:41] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:41] WARN: Redis desconectado
+[2026-06-25 08:05:41] INFO: Redis reconectando
+[2026-06-25 08:05:42] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:42] ERROR: Erro Redis
+[2026-06-25 08:05:42] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:42] WARN: Redis desconectado
+[2026-06-25 08:05:42] INFO: Redis reconectando
+[2026-06-25 08:05:42] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:42] ERROR: Erro Redis
+[2026-06-25 08:05:42] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:42] WARN: Redis desconectado
+[2026-06-25 08:05:42] INFO: Redis reconectando
+[2026-06-25 08:05:43] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:43] ERROR: Erro Redis
+[2026-06-25 08:05:43] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:43] WARN: Redis desconectado
+[2026-06-25 08:05:43] INFO: Redis reconectando
+[2026-06-25 08:05:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:44] ERROR: Erro Redis
+[2026-06-25 08:05:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:44] WARN: Redis desconectado
+[2026-06-25 08:05:44] INFO: Redis reconectando
+[2026-06-25 08:05:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:44] ERROR: Erro Redis
+[2026-06-25 08:05:44] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:44] WARN: Redis desconectado
+[2026-06-25 08:05:44] INFO: Redis reconectando
+[2026-06-25 08:05:45] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:45] ERROR: Erro Redis
+[2026-06-25 08:05:45] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-25 08:05:45] WARN: Redis desconectado
+[2026-06-25 08:05:45] INFO: Redis reconectando
+[2026-06-25 08:10:05] INFO: =====================================
+[2026-06-25 08:10:05] INFO: BOT DE CONTRACHEQUES INICIADO
+[2026-06-25 08:10:05] INFO: =====================================
+[2026-06-25 08:10:05] INFO: [CRON] Agendador iniciado
+[2026-06-25 08:10:05] INFO: [CRON] Hoje é dia 25, o dia de envio configurado é 5. Aguardando.
+[2026-06-25 08:10:05] INFO: [SERVER] Express iniciado na porta 3000
+[2026-06-25 08:10:05] INFO: [BULL BOARD] Disponível em http://localhost:3000/admin/queues
+[2026-06-25 08:10:06] INFO: [WORKER] Iniciando...
+[2026-06-25 08:10:06] INFO: [WORKER] Inicializado junto com a aplicação principal
+[2026-06-25 08:10:06] INFO: Redis conectado
+[2026-06-25 08:10:06] INFO: Redis pronto
+[2026-06-25 08:10:06] INFO: [WORKER] Conectado ao Redis

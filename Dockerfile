@@ -1,3 +1,4 @@
+# NOTE: This Dockerfile is not used by docker-compose; kept for reference only.
 FROM node:20-alpine AS base
 
 # Set working directory

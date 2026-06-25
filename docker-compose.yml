@@ -12,6 +12,15 @@ services:
 
     ports:
       - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - automacoes
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   redis:
     image: redis:7-alpine
@@ -20,6 +29,13 @@ services:
 
     ports:
       - "6379:6379"
+    networks:
+      - automacoes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   evolution-api:
     container_name: evolution-api
@@ -41,9 +57,12 @@ services:
       dockerfile: backend/Dockerfile
     restart: unless-stopped
     depends_on:
-      - postgres
-      - redis
-      - evolution-api
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      evolution-api:
+        condition: service_started
     environment:
       DATABASE_URL: "postgres://admin:admin@postgres:5432/contracheque"
       REDIS_URL: "redis://redis:6379"
@@ -62,10 +81,14 @@ services:
     command: node src/worker.js
     restart: unless-stopped
     depends_on:
-      - backend
-      - redis
-      - postgres
-      - evolution-api
+      backend:
+        condition: service_started
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      evolution-api:
+        condition: service_started
     environment:
       DATABASE_URL: "postgres://admin:admin@postgres:5432/contracheque"
       REDIS_URL: "redis://redis:6379"
@@ -78,6 +101,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: "http://backend:3001"
     restart: unless-stopped
     depends_on:
       - backend
