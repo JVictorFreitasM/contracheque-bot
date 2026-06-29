@@ -1,7 +1,7 @@
 const IORedis = require('ioredis');
 
 const redis = new IORedis({
-    host: 'localhost',
+    host: 'redis',
     port: 6379
 });
 

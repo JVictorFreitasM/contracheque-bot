@@ -2,10 +2,17 @@ FROM node:20
 
 WORKDIR /app
 
+# Install dependencies
 COPY package*.json ./
+RUN npm ci
 
-RUN npm ci --omit=dev
+# Copy Prisma schema before generation
+COPY prisma ./prisma
 
+# Generate Prisma client
+RUN npx prisma generate
+
+# Copy the rest of the source code
 COPY . .
 
 EXPOSE 3001

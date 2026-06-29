@@ -5932,3 +5932,127 @@ Unique constraint failed on the fields: (`hashArquivo`)
 [2026-06-25 08:10:06] INFO: Redis conectado
 [2026-06-25 08:10:06] INFO: Redis pronto
 [2026-06-25 08:10:06] INFO: [WORKER] Conectado ao Redis
+[2026-06-29 09:14:54] INFO: =====================================
+[2026-06-29 09:14:54] INFO: INICIANDO MODO DE TESTE (ENVIO IMEDIATO)
+[2026-06-29 09:14:54] INFO: =====================================
+[2026-06-29 09:14:55] INFO: [WORKER] Iniciando...
+[2026-06-29 09:14:55] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-29 09:14:55] INFO: [TESTE] Forçando sincronização prévia com ERP...
+[2026-06-29 09:14:55] INFO: [SYNC] Início da Sincronização de Funcionários (ERP -> PostgreSQL)
+[2026-06-29 09:14:55] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:55] ERROR: Erro Redis
+[2026-06-29 09:14:55] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:55] WARN: Redis desconectado
+[2026-06-29 09:14:55] INFO: Redis reconectando
+[2026-06-29 09:14:55] ERROR: Erro Redis
+[2026-06-29 09:14:55] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:55] WARN: Redis desconectado
+[2026-06-29 09:14:55] INFO: Redis reconectando
+[2026-06-29 09:14:55] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] ERROR: Erro Redis
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] WARN: Redis desconectado
+[2026-06-29 09:14:56] INFO: Redis reconectando
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] ERROR: Erro Redis
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] WARN: Redis desconectado
+[2026-06-29 09:14:56] INFO: Redis reconectando
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] ERROR: Erro Redis
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] WARN: Redis desconectado
+[2026-06-29 09:14:56] INFO: Redis reconectando
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] ERROR: Erro Redis
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:56] WARN: Redis desconectado
+[2026-06-29 09:14:56] INFO: Redis reconectando
+[2026-06-29 09:14:56] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] ERROR: Erro Redis
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] WARN: Redis desconectado
+[2026-06-29 09:14:57] INFO: Redis reconectando
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] ERROR: Erro Redis
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] WARN: Redis desconectado
+[2026-06-29 09:14:57] INFO: Redis reconectando
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] ERROR: Erro Redis
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:57] WARN: Redis desconectado
+[2026-06-29 09:14:57] INFO: Redis reconectando
+[2026-06-29 09:14:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:58] ERROR: Erro Redis
+[2026-06-29 09:14:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:58] WARN: Redis desconectado
+[2026-06-29 09:14:58] INFO: Redis reconectando
+[2026-06-29 09:14:58] ERROR: Erro Redis
+[2026-06-29 09:14:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:58] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:58] WARN: Redis desconectado
+[2026-06-29 09:14:58] INFO: Redis reconectando
+[2026-06-29 09:14:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:59] ERROR: Erro Redis
+[2026-06-29 09:14:59] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:14:59] WARN: Redis desconectado
+[2026-06-29 09:14:59] INFO: Redis reconectando
+[2026-06-29 09:17:19] INFO: =====================================
+[2026-06-29 09:17:19] INFO: INICIANDO MODO DE TESTE (ENVIO IMEDIATO)
+[2026-06-29 09:17:19] INFO: =====================================
+[2026-06-29 09:17:20] INFO: [WORKER] Iniciando...
+[2026-06-29 09:17:20] INFO: [TESTE] Worker iniciado localmente para o teste.
+[2026-06-29 09:17:20] INFO: [TESTE] Forçando sincronização prévia com ERP...
+[2026-06-29 09:17:20] INFO: [SYNC] Início da Sincronização de Funcionários (ERP -> PostgreSQL)
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] ERROR: Erro Redis
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:20] WARN: Redis desconectado
+[2026-06-29 09:17:20] INFO: Redis reconectando
+[2026-06-29 09:17:20] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:21] ERROR: Erro Redis
+[2026-06-29 09:17:21] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:21] WARN: Redis desconectado
+[2026-06-29 09:17:21] INFO: Redis reconectando
+[2026-06-29 09:17:21] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:21] ERROR: Erro Redis
+[2026-06-29 09:17:21] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:21] WARN: Redis desconectado
+[2026-06-29 09:17:21] INFO: Redis reconectando
+[2026-06-29 09:17:21] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:22] ERROR: Erro Redis
+[2026-06-29 09:17:22] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:22] WARN: Redis desconectado
+[2026-06-29 09:17:22] INFO: Redis reconectando
+[2026-06-29 09:17:22] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:22] ERROR: Erro Redis
+[2026-06-29 09:17:22] ERROR: [WORKER] Erro crítico no worker: 
+[2026-06-29 09:17:22] WARN: Redis desconectado
+[2026-06-29 09:17:22] INFO: Redis reconectando
+[2026-06-29 09:17:22] ERROR: [WORKER] Erro crítico no worker: 

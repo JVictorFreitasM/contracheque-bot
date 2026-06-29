@@ -1,6 +1,7 @@
 // src/pages/Dashboard.jsx
 import { useState, useEffect } from 'react';
 import { Line, Doughnut } from 'react-chartjs-2';
+import { apiFetch } from '../services/apiFetch';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,8 +16,24 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Filler, Tooltip, Legend);
 
+
+
 export default function Dashboard() {
-  const [stats, setStats] = useState(null);
+  const [stats, setStats] = useState({
+    totalProcessados: 0,
+    pendentes: 0,
+    erros: 0,
+    funcionarios: 0,
+    processadosMes: [],
+    meses: [],
+    statusDistribuicao: {
+      enviados: 0,
+      pendentes: 0,
+      erros: 0,
+    },
+    ultimaSincronizacao: null,
+    proximoLote: null,
+  });
   const [loading, setLoading] = useState(true);
 
   const [processamentoRealTime, setProcessamentoRealTime] = useState({
@@ -34,28 +51,35 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    fetch('/api/dashboard/indicadores')
-      .then((res) => res.json())
+    apiFetch('/api/dashboard/indicadores')
       .then((result) => {
+        if (!result) {
+          console.warn('Dashboard endpoint returned null/invalid data');
+          return;
+        }
         setStats({
-          totalProcessados: result.enviados + result.pendentes + result.erros + (result.duplicidades || 0),
-          pendentes: result.pendentes,
-          erros: result.erros,
-          funcionarios: result.funcionariosSincronizados || 0,
+          totalProcessados:
+            (result.enviados ?? 0) +
+            (result.pendentes ?? 0) +
+            (result.erros ?? 0) +
+            (result.duplicidades ?? 0),
+          pendentes: result.pendentes ?? 0,
+          erros: result.erros ?? 0,
+          funcionarios: result.funcionariosSincronizados ?? 0,
           processadosMes: [
-            result.pendentes,
-            result.enviados,
-            result.erros,
-            result.duplicados || 0,
+            result.pendentes ?? 0,
+            result.enviados ?? 0,
+            result.erros ?? 0,
+            result.duplicados ?? 0,
           ],
-          meses: ['Pendentes', 'Enviados', 'Erros', 'Duplicados'],
+          meses: result.meses ?? ['Pendentes', 'Enviados', 'Erros', 'Duplicados'],
           statusDistribuicao: {
-            enviados: result.enviados,
-            pendentes: result.pendentes,
-            erros: result.erros,
+            enviados: result.enviados ?? 0,
+            pendentes: result.pendentes ?? 0,
+            erros: result.erros ?? 0,
           },
-          ultimaSincronizacao: result.ultimaSincronizacao,
-          proximoLote: result.proximoLote,
+          ultimaSincronizacao: result.ultimaSincronizacao ?? null,
+          proximoLote: result.proximoLote ?? null,
         });
       })
       .catch((err) => {
