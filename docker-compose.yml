@@ -20,22 +20,22 @@ services:
     networks:
       - automacoes
 
-backend:
-  image: contracheque-bot-backend:latest
-  container_name: contracheque-backend
-  restart: unless-stopped
-  depends_on:
-    - postgres
-    - redis
-  environment:
-    DATABASE_URL: postgres://admin:admin@postgres:5432/contracheque
-    REDIS_URL: redis://redis:6379
-    PORT: 3001
-  ports:
-    - "3001:3001"
-    - "5555:5555"
-  networks:
-    - automacoes
+  backend:
+    image: contracheque-bot-backend:latest
+    container_name: contracheque-backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DATABASE_URL: postgres://admin:admin@postgres:5432/contracheque
+      REDIS_URL: redis://redis:6379
+      PORT: 3001
+    ports:
+      - "3001:3001"
+      - "5555:5555"
+    networks:
+      - automacoes
 
   worker:
     image: contracheque-bot-worker:latest
