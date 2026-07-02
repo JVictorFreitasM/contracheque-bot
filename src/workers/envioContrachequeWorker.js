@@ -101,7 +101,7 @@ async function iniciarWorker() {
                 competencia
             });
 
-
+            const whatsappMessageId = response?.key?.id || null;
 
             if (envioId) {
                 // Se é um reenvio, o registro já existe, basta atualizar
@@ -109,7 +109,11 @@ async function iniciarWorker() {
                     status: 'ENVIADO',
                     mensagemErro: null,
                     ultimoErro: null,
-                    dataEnvio: new Date()
+                    dataEnvio: new Date(),
+                    whatsappMessageId,
+                    statusEntregaWhatsapp: null,
+                    dataEntregaWhatsapp: null,
+                    dataLeituraWhatsapp: null
                 });
             } else {
                 // Primeiro envio, deve criar o registro
@@ -121,7 +125,8 @@ async function iniciarWorker() {
                     arquivoPdf: caminhoPdf,
                     hashArquivo,
                     status: 'ENVIADO',
-                    dataEnvio: new Date()
+                    dataEnvio: new Date(),
+                    whatsappMessageId
                 });
             }
 

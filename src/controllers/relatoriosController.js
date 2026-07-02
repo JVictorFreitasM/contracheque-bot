@@ -13,6 +13,11 @@ async function getRelatorios(req, res) {
     const ativos = await prisma.funcionario.count({ where: { ativo: true } });
     const inativos = await prisma.funcionario.count({ where: { ativo: false } });
 
+    // Confirmação de entrega/leitura via webhook da Evolution API (só preenchido
+    // quando a instância envia os eventos de MESSAGES_UPDATE)
+    const entregues = await prisma.envio.count({ where: { dataEntregaWhatsapp: { not: null } } });
+    const lidos = await prisma.envio.count({ where: { dataLeituraWhatsapp: { not: null } } });
+
     const statusMap = porStatus.reduce((acc, item) => {
       acc[item.status] = item._count.status;
       return acc;
@@ -25,6 +30,8 @@ async function getRelatorios(req, res) {
         processando: statusMap[STATUS.PROCESSANDO] || 0,
         enviado: statusMap[STATUS.ENVIADO] || 0,
         erro: statusMap[STATUS.ERRO] || 0,
+        entregue: entregues,
+        lido: lidos,
       },
       totalFuncionarios,
       funcionarios: {

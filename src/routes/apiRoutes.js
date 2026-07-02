@@ -14,6 +14,7 @@ const { getFuncionarios, atualizarBloqueioContracheque } = require('../controlle
 const { getRelatorios } = require('../controllers/relatoriosController');
 const { reenviarContracheque, reenviarTodosErros } = require('../controllers/reenvioController');
 const { getProcessamentoStatus, streamProcessamentoStatus } = require('../controllers/processamentoController');
+const { receberWebhook } = require('../controllers/webhookController');
 
 const monitoramentoController = (req, res) => {
   res.json({
@@ -48,5 +49,6 @@ router.get('/monitoramento', monitoramentoController);
 router.get('/processamento/status', getProcessamentoStatus);
 router.get('/processamento/stream', streamProcessamentoStatus);
 router.route('/configuracoes').get(configuracoesController.obterConfiguracoes).put(configuracoesController.atualizarConfiguracoes);
+router.post('/webhooks/evolution', receberWebhook);
 
 module.exports = router;

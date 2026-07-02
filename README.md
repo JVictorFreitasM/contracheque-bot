@@ -277,6 +277,27 @@ Prefixo base: `/api`
 | `GET` | `/configuracoes` | Obtém as configurações atuais do sistema |
 | `PUT` | `/configuracoes` | Atualiza as configurações do sistema |
 
+### Webhooks
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `POST` | `/webhooks/evolution` | Recebe eventos de status de mensagem (`MESSAGES_UPDATE`) da Evolution API para confirmar entrega/leitura |
+
+---
+
+## Confirmação de entrega/leitura (webhook da Evolution API)
+
+O sistema registra `dataEntregaWhatsapp` e `dataLeituraWhatsapp` em cada `Envio` a partir de eventos de status de mensagem (`MESSAGES_UPDATE`) enviados pela própria Evolution API via webhook. Para habilitar:
+
+1. Na instância da Evolution API, configure a URL do webhook apontando para:
+   ```
+   http://<host-do-backend>:<porta>/api/webhooks/evolution?token=<EVOLUTION_WEBHOOK_TOKEN>
+   ```
+   (substitua `<host-do-backend>:<porta>` pelo endereço público/interno onde o backend está acessível e `<EVOLUTION_WEBHOOK_TOKEN>` pelo valor definido na variável de ambiente de mesmo nome).
+2. Habilite o evento `MESSAGES_UPDATE` (ou equivalente) na configuração de eventos do webhook da instância.
+3. Defina `EVOLUTION_WEBHOOK_TOKEN` no `.env` do backend — a rota valida esse token via query string (`?token=...`) em toda requisição recebida, para evitar que qualquer requisição externa forje eventos de entrega falsos. Se a variável não for definida, o webhook aceita requisições sem validação de token (não recomendado em produção).
+4. Se o `messageId` recebido no evento não corresponder a nenhum `Envio` conhecido, a requisição é logada como aviso e respondida com `200 OK` (para a Evolution API não ficar reenviando o webhook).
+
 ---
 
 ## Estrutura de pastas

@@ -88,11 +88,22 @@ model Envio {
 
   dataEnvio DateTime?
 
+  // Confirmação de entrega/leitura via webhook da Evolution API
+  statusEntregaWhatsapp String?   // ex: SENT, DELIVERED, READ
+
+  dataEntregaWhatsapp DateTime?
+
+  dataLeituraWhatsapp DateTime?
+
+  whatsappMessageId String?   // ID da mensagem retornado pela Evolution API no envio, usado para correlacionar com o webhook
+
   createdAt DateTime @default(now())
 
   updatedAt DateTime @default(now()) @updatedAt
 
   @@unique([cpf, competencia])
+
+  @@index([whatsappMessageId])
 
 }
 

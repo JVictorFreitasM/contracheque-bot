@@ -48,6 +48,14 @@ async function buscarPorCpfCompetencia(
     });
 }
 
+async function buscarPorWhatsappMessageId(whatsappMessageId) {
+    return prisma.envio.findFirst({
+        where: {
+            whatsappMessageId
+        }
+    });
+}
+
 async function listar() {
     return prisma.envio.findMany({
         orderBy: {
@@ -73,6 +81,7 @@ module.exports = {
     buscarPorId,
     buscarPorHash,
     buscarPorCpfCompetencia,
+    buscarPorWhatsappMessageId,
     listar,
     listarPorStatus
 };

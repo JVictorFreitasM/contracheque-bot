@@ -81,6 +81,26 @@ export default function Relatorios() {
         </div>
       </div>
 
+      {/* Status de entrega/leitura (WhatsApp) */}
+      {reportData?.status && (
+        <div className="card" style={{ marginBottom: '1.5rem' }}>
+          <div className="card-body" style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+            <div>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Enviados</span>
+              <div style={{ fontSize: '1.4rem', fontWeight: 600 }}>{reportData.status.enviado}</div>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Entregues</span>
+              <div style={{ fontSize: '1.4rem', fontWeight: 600 }}>{reportData.status.entregue ?? 0}</div>
+            </div>
+            <div>
+              <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Lidos</span>
+              <div style={{ fontSize: '1.4rem', fontWeight: 600 }}>{reportData.status.lido ?? 0}</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Report cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
         {reportTypes.map((r) => (

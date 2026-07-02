@@ -24,6 +24,10 @@ EVOLUTION_API_URL=http://localhost:8080
 EVOLUTION_INSTANCE=bot-contracheque
 # Chave sensível — não commitar valor real, preencher apenas localmente/no servidor
 EVOLUTION_API_KEY=sua_chave_aqui
+# Token usado para validar requisições recebidas em POST /api/webhooks/evolution
+# (deve ser incluído como ?token=... na URL configurada na instância da Evolution API).
+# Sensível — não commitar valor real. Se deixado vazio, o webhook não valida token (não recomendado em produção)
+EVOLUTION_WEBHOOK_TOKEN=
 
 # Agendamento
 MODO_SIMULACAO=
