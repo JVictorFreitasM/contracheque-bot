@@ -8,6 +8,11 @@ export default function Lotes() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [agendamentos, setAgendamentos] = useState([]);
+  const [agendamentosLoading, setAgendamentosLoading] = useState(true);
+  const [agendamentosError, setAgendamentosError] = useState(null);
+  const [cancelandoAgendamentoId, setCancelandoAgendamentoId] = useState(null);
   const [selectedLote, setSelectedLote] = useState(null);
   const [progresso, setProgresso] = useState(null);
   const [progressoLoading, setProgressoLoading] = useState(false);
@@ -46,6 +51,39 @@ export default function Lotes() {
         setLoading(false);
       });
   }, [page, limit, search]);
+
+  const fetchAgendamentos = () => {
+    setAgendamentosLoading(true);
+    axios
+      .get('/api/agendamentos')
+      .then((res) => {
+        setAgendamentos(res.data?.data || []);
+        setAgendamentosError(null);
+      })
+      .catch((err) => {
+        setAgendamentosError(err.response?.data?.error || 'Erro ao buscar agendamentos');
+      })
+      .finally(() => setAgendamentosLoading(false));
+  };
+
+  useEffect(() => {
+    fetchAgendamentos();
+  }, []);
+
+  const handleCancelarAgendamento = async (id) => {
+    const confirmed = window.confirm('Tem certeza que deseja cancelar este agendamento?');
+    if (!confirmed) return;
+
+    setCancelandoAgendamentoId(id);
+    try {
+      await axios.post(`/api/agendamentos/${id}/cancelar`);
+      fetchAgendamentos();
+    } catch (err) {
+      setAgendamentosError(err.response?.data?.error || 'Falha ao cancelar agendamento');
+    } finally {
+      setCancelandoAgendamentoId(null);
+    }
+  };
 
   const handleSearch = (term) => {
     setSearch(term);
@@ -189,6 +227,62 @@ export default function Lotes() {
             <div className="stat-label">Em Processamento (nesta pág)</div>
             <div className="stat-value">{data.filter((l) => l.status === 'processando').length || 0}</div>
           </div>
+        </div>
+      </div>
+
+      <div className="card mb-4">
+        <div className="card-header">
+          <h3><i className="fas fa-clock" style={{ marginRight: 8, color: 'var(--text-muted)' }}></i>Agendamentos de Lote</h3>
+        </div>
+        <div className="card-body">
+          {agendamentosError && (
+            <div className="alert alert-danger">{agendamentosError}</div>
+          )}
+          {agendamentosLoading ? (
+            <div className="skeleton" style={{ height: 42, borderRadius: 6 }}></div>
+          ) : agendamentos.length === 0 ? (
+            <p className="text-muted mb-0">Nenhum agendamento de lote encontrado. Lotes enviados com data/hora específica na tela de Upload aparecem aqui.</p>
+          ) : (
+            <div className="table-container">
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Data/hora prevista</th>
+                    <th>Arquivos</th>
+                    <th>Status</th>
+                    <th>Executado em</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {agendamentos.map((item) => (
+                    <tr key={item.id}>
+                      <td>{new Date(item.dataHoraEnvio).toLocaleString('pt-BR')}</td>
+                      <td>{item.arquivos?.length || 0}</td>
+                      <td>
+                        <span className={`badge ${item.status === 'EXECUTADO' ? 'success' : item.status === 'CANCELADO' ? 'secondary' : 'warning'}`}>
+                          {item.status}
+                        </span>
+                      </td>
+                      <td>{item.executadoEm ? new Date(item.executadoEm).toLocaleString('pt-BR') : '—'}</td>
+                      <td>
+                        {item.status === 'PENDENTE' && (
+                          <button
+                            type="button"
+                            className="btn btn-sm btn-danger"
+                            onClick={() => handleCancelarAgendamento(item.id)}
+                            disabled={cancelandoAgendamentoId === item.id}
+                          >
+                            {cancelandoAgendamentoId === item.id ? 'Cancelando...' : 'Cancelar'}
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </div>
 

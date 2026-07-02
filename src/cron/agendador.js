@@ -3,6 +3,7 @@ const logger = require('../config/logger');
 const processadorLote = require('../services/processadorLoteService');
 const wkService = require('../services/wkService');
 const redis = require('../config/redis');
+const agendamentoLoteRepository = require('../repositories/agendamentoLoteRepository');
 require('dotenv').config();
 
 async function iniciarAgendamento() {
@@ -23,8 +24,51 @@ async function iniciarAgendamento() {
         await verificarEProcessar();
     });
 
+    // Verifica a cada minuto se há agendamentos de lote (upload com data/hora
+    // específica) prontos para disparar
+    cron.schedule('* * * * *', async () => {
+        await verificarAgendamentosLote();
+    });
+
     // Também verifica na inicialização, caso o app tenha reiniciado no meio do dia
     await verificarEProcessar();
+}
+
+async function verificarAgendamentosLote() {
+    try {
+        const agora = new Date();
+        const pendentesVencidos = await agendamentoLoteRepository.buscarPendentesVencidos(agora);
+
+        for (const agendamento of pendentesVencidos) {
+            const chaveLock = `agendamento_lote_lock_${agendamento.id}`;
+
+            let lockAdquirido = false;
+            try {
+                // SET NX EX: só adquire a trava se ninguém mais estiver processando este agendamento
+                const resultado = await redis.set(chaveLock, 'true', 'EX', 300, 'NX');
+                lockAdquirido = resultado === 'OK';
+            } catch (redisError) {
+                logger.error(`[CRON] Falha ao acessar o Redis para o agendamento ${agendamento.id}: ${redisError.message}`);
+                continue;
+            }
+
+            if (!lockAdquirido) {
+                continue;
+            }
+
+            logger.info(`[CRON] Disparando agendamento de lote ${agendamento.id} (previsto para ${agendamento.dataHoraEnvio.toISOString()}), ${agendamento.arquivos.length} arquivo(s).`);
+
+            try {
+                await processadorLote.processarPasta({ arquivos: agendamento.arquivos });
+                await agendamentoLoteRepository.marcarExecutado(agendamento.id);
+                logger.info(`[CRON] Agendamento de lote ${agendamento.id} concluído.`);
+            } catch (erro) {
+                logger.error(`[CRON] Erro ao processar agendamento de lote ${agendamento.id}: ${erro.message}`);
+            }
+        }
+    } catch (erro) {
+        logger.error(`[CRON] Erro ao verificar agendamentos de lote: ${erro.message}`);
+    }
 }
 
 async function verificarEProcessar() {
@@ -86,5 +130,6 @@ async function verificarEProcessar() {
 
 module.exports = {
     iniciarAgendamento,
-    verificarEProcessar
+    verificarEProcessar,
+    verificarAgendamentosLote
 };

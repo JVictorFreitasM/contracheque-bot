@@ -146,3 +146,21 @@ model SincronizacaoWK {
 
   createdAt DateTime @default(now())
 }
+
+model AgendamentoLote {
+  id Int @id @default(autoincrement())
+
+  dataHoraEnvio DateTime
+
+  // PENDENTE, EXECUTADO, CANCELADO
+  status String @default("PENDENTE")
+
+  // Nomes dos arquivos (na pasta uploads) associados a este agendamento
+  arquivos String[]
+
+  criadoPor String?
+
+  createdAt DateTime @default(now())
+
+  executadoEm DateTime?
+}

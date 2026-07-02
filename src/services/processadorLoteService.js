@@ -26,7 +26,9 @@ async function processarPasta(opcoes = {}) {
             pastaUploads
         );
 
-    const pdfs = arquivos.filter(arquivo => arquivo.toLowerCase().endsWith('.pdf'));
+    const pdfs = arquivos
+        .filter(arquivo => arquivo.toLowerCase().endsWith('.pdf'))
+        .filter(arquivo => !opcoes.arquivos || opcoes.arquivos.includes(arquivo));
 
     if (pdfs.length === 0) {
         logger.info('Nenhum PDF pendente encontrado na fila de uploads.');

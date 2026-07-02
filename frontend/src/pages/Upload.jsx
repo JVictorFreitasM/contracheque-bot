@@ -10,6 +10,7 @@ export default function Upload() {
   const [message, setMessage] = useState(null);
   const [validationResult, setValidationResult] = useState(null);
   const [validating, setValidating] = useState(false);
+  const [dataHoraEnvio, setDataHoraEnvio] = useState('');
 
   const onDrop = useCallback((acceptedFiles) => {
     setFiles(acceptedFiles);
@@ -35,6 +36,9 @@ export default function Upload() {
     setValidationResult(null);
     const formData = new FormData();
     files.forEach((file) => formData.append('files', file));
+    if (dataHoraEnvio) {
+      formData.append('dataHoraEnvio', new Date(dataHoraEnvio).toISOString());
+    }
 
     try {
       const response = await axios.post('/api/uploads', formData, {
@@ -48,6 +52,7 @@ export default function Upload() {
         text: response.data.message || `Enviado ${files.length} arquivo${files.length > 1 ? 's' : ''} com sucesso!`,
       });
       setFiles([]);
+      setDataHoraEnvio('');
     } catch (err) {
       setMessage({ type: 'danger', text: err.response?.data?.error || 'Falha ao enviar os arquivos.' });
     } finally {
@@ -146,6 +151,20 @@ export default function Upload() {
                   <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
                 </div>
               )}
+
+              <div style={{ marginTop: '1rem' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                  Quando este lote deve ser enviado? (deixe em branco para usar o agendamento padrão do sistema)
+                </label>
+                <input
+                  type="datetime-local"
+                  value={dataHoraEnvio}
+                  onChange={(e) => setDataHoraEnvio(e.target.value)}
+                  disabled={uploading}
+                  className="form-input"
+                  style={{ padding: '0.45rem 0.6rem', maxWidth: 260 }}
+                />
+              </div>
 
               <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <button
