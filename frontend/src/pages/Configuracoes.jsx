@@ -7,7 +7,8 @@ export default function Configuracoes() {
     evolution_url: '',
     evolution_instance: '',
     evolution_api_key: '',
-    intervalo_envio: 30
+    intervalo_envio: 30,
+    mensagem_template: ''
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -40,6 +41,21 @@ export default function Configuracoes() {
 
   const handleChange = (key, value) => {
     setConfig((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const renderizarPreview = (template) => {
+    const texto = (template || '')
+      .replace(/\{nome\}/g, 'João da Silva')
+      .replace(/\{competencia\}/g, '06/2026');
+
+    // Renderiza *negrito* do WhatsApp visualmente, com escape básico de HTML
+    const escapado = texto
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    const comNegrito = escapado.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+    return comNegrito.replace(/\n/g, '<br/>');
   };
 
   if (loading) {
@@ -115,6 +131,48 @@ export default function Configuracoes() {
                 min={1}
                 value={config.intervalo_envio}
                 onChange={(e) => handleChange('intervalo_envio', Number(e.target.value))}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mensagem do WhatsApp */}
+      <div className="card" style={{ marginTop: '1.25rem' }}>
+        <div className="card-header">
+          <h3><i className="fas fa-comment-dots" style={{ marginRight: 8, color: 'var(--accent)' }}></i>Mensagem do WhatsApp</h3>
+        </div>
+        <div className="card-body">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+            <div className="form-group">
+              <label className="form-label">Template da mensagem</label>
+              <textarea
+                className="form-input"
+                rows={6}
+                style={{ fontFamily: 'inherit', resize: 'vertical' }}
+                value={config.mensagem_template}
+                onChange={(e) => handleChange('mensagem_template', e.target.value)}
+                placeholder="Olá *{nome}*&#10;Segue em anexo o seu contracheque de *{competencia}*."
+              />
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '0.4rem' }}>
+                Use <code>{'{nome}'}</code> para o nome do funcionário e <code>{'{competencia}'}</code> para o mês/ano de referência.
+                Use <code>*texto*</code> para deixar um trecho em negrito no WhatsApp.
+              </p>
+            </div>
+            <div>
+              <label className="form-label">Prévia (com dados de exemplo)</label>
+              <div
+                style={{
+                  padding: '1rem',
+                  background: 'var(--bg-primary)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-md)',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.6,
+                  minHeight: 120,
+                  whiteSpace: 'normal',
+                }}
+                dangerouslySetInnerHTML={{ __html: renderizarPreview(config.mensagem_template) }}
               />
             </div>
           </div>

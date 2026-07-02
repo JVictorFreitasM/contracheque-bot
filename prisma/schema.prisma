@@ -123,6 +123,7 @@ model Configuracao {
   evolution_instance String
   evolution_api_key String
   intervalo_envio Int @default(30)
+  mensagem_template String @default("Olá *{nome}*\nSegue em anexo o seu contracheque.\n🔒 Para acessar o PDF, utilize como senha os 3 últimos dígitos do seu CPF.\nEm caso de dúvidas, entre em contato com o setor de Gente.")
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }

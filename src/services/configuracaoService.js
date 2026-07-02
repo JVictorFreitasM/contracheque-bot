@@ -10,13 +10,14 @@ class ConfiguracaoService {
             const evolutionInstance = process.env.EVOLUTION_INSTANCE || 'bot-contracheque';
             const evolutionApiKey = process.env.EVOLUTION_API_KEY || '48E7160B065C-45FC-A784-2BA6C7A51C4A';
             const intervaloEnvio = 30; // Valor padrão em segundos
-            
+
             config = await configuracaoRepository.criarConfiguracaoInicial({
                 evolution_url: evolutionUrl,
                 evolution_instance: evolutionInstance,
                 evolution_api_key: evolutionApiKey,
                 intervalo_envio: intervaloEnvio
             });
+            // mensagem_template usa o @default do schema quando não informado aqui
         }
         
         return config;
@@ -30,7 +31,8 @@ class ConfiguracaoService {
             evolution_url: dados.evolution_url,
             evolution_instance: dados.evolution_instance,
             evolution_api_key: dados.evolution_api_key,
-            intervalo_envio: dados.intervalo_envio ? parseInt(dados.intervalo_envio, 10) : 30
+            intervalo_envio: dados.intervalo_envio ? parseInt(dados.intervalo_envio, 10) : 30,
+            mensagem_template: dados.mensagem_template
         };
 
         return configuracaoRepository.atualizarConfiguracao(dadosAtualizacao);

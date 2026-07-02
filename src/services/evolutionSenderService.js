@@ -1,5 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
+const renderizarMensagem = require('../utils/renderizarMensagem');
 
 /**
  * Envia PDF diretamente para Evolution API
@@ -34,20 +35,25 @@ async function enviarPdfDireto({
 
   console.log('[VALIDAÇÃO] PDF íntegro ✔');
 
+  const configuracaoService = require('./configuracaoService');
+  const config = await configuracaoService.obterConfiguracao();
+
+  const caption = renderizarMensagem(config.mensagem_template, {
+    nome: nomeFuncionario,
+    competencia
+  });
+
   // 4. Montar payload Evolution
   const payload = {
     number: telefone,
     mediatype: "document",
     mimetype: "application/pdf",
-    caption: `Olá, ${nomeFuncionario || 'Colaborador'}. Segue seu contracheque referente a ${competencia || 'competência atual'}.`,
+    caption,
     fileName: caminhoPdf.split('/').pop(),
     media: base64
   };
 
   console.log('[ENVIO] Enviando para Evolution...');
-
-  const configuracaoService = require('./configuracaoService');
-  const config = await configuracaoService.obterConfiguracao();
 
   const evolutionUrl = config.evolution_url;
   const evolutionInstance = config.evolution_instance;
