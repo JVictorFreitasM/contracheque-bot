@@ -1,12 +1,36 @@
+# Banco de dados
+# String de conexão do PostgreSQL usada pelo Prisma
 DATABASE_URL=
 
+# ERP WK Radar
+# URL base da API do ERP WK (usada para autenticação e busca de funcionários/folha)
+WK_BASE_URL=
 WK_EMPRESA=
 WK_USUARIO=
 WK_SENHA=
 
+# Redis
+# Usado pelas filas do BullMQ. REDIS_HOST/REDIS_PORT são usados para montar a conexão
+# por padrão; se preferir, defina REDIS_URL diretamente (ela tem prioridade sobre host/port)
 REDIS_HOST=
 REDIS_PORT=
+# REDIS_URL=redis://localhost:6379
 
+# Evolution API (WhatsApp)
+# Valores usados apenas como fallback inicial ao criar a configuração no banco
+# (tabela Configuracao); depois de criada, a configuração real é editada pela
+# tela de Configurações do frontend, não por estas variáveis
+EVOLUTION_API_URL=http://localhost:8080
+EVOLUTION_INSTANCE=bot-contracheque
+# Chave sensível — não commitar valor real, preencher apenas localmente/no servidor
+EVOLUTION_API_KEY=sua_chave_aqui
+
+# Agendamento
 MODO_SIMULACAO=
+# Dia do mês em que o envio automático de contracheques é disparado (padrão: 5)
 DIA_ENVIO_CONTRACHEQUES=
-PORT=
+
+# Servidor
+PORT=3000
+# Ambiente de execução (ex.: production habilita logs em formato JSON, sem "pretty print")
+# NODE_ENV=production
