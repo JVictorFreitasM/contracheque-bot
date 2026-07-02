@@ -9,6 +9,13 @@ export default function Relatorios() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Filtros usados na exportação (CSV/Excel)
+  const [filtroCompetencia, setFiltroCompetencia] = useState('');
+  const [filtroStatus, setFiltroStatus] = useState('');
+  const [incluirCpfCompleto, setIncluirCpfCompleto] = useState(false);
+  const [exportando, setExportando] = useState(null); // 'csv' | 'xlsx' | null
+  const [exportError, setExportError] = useState(null);
+
   useEffect(() => {
     axios
       .get('/api/relatorios')
@@ -28,6 +35,37 @@ export default function Relatorios() {
       setGenerating(false);
       alert(`Relatório "${tipo}" gerado com sucesso! (implementar download)`);
     }, 1500);
+  };
+
+  const handleExport = async (formato) => {
+    setExportando(formato);
+    setExportError(null);
+    try {
+      const params = { formato };
+      if (filtroCompetencia) params.competencia = filtroCompetencia;
+      if (filtroStatus) params.status = filtroStatus;
+      if (incluirCpfCompleto) params.cpfCompleto = 'true';
+
+      const response = await axios.get('/api/relatorios/exportar', {
+        params,
+        responseType: 'blob',
+      });
+
+      const extensao = formato === 'xlsx' ? 'xlsx' : 'csv';
+      const dataArquivo = new Date().toISOString().split('T')[0];
+      const url = URL.createObjectURL(response.data);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `relatorio-${dataArquivo}.${extensao}`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      setExportError(err.response?.data?.error || 'Erro ao exportar relatório');
+    } finally {
+      setExportando(null);
+    }
   };
 
   const reportTypes = [
@@ -78,6 +116,85 @@ export default function Relatorios() {
               {p.charAt(0).toUpperCase() + p.slice(1)}
             </button>
           ))}
+        </div>
+      </div>
+
+      {/* Exportação */}
+      <div className="card" style={{ marginBottom: '1.5rem' }}>
+        <div className="card-header">
+          <h3><i className="fas fa-file-export" style={{ marginRight: 8, color: 'var(--text-muted)' }}></i>Exportar envios</h3>
+        </div>
+        <div className="card-body">
+          {exportError && (
+            <div className="alert alert-danger" style={{ marginBottom: '1rem' }}>
+              <i className="fas fa-exclamation-circle"></i> {exportError}
+            </div>
+          )}
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', flexWrap: 'wrap' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                Competência
+              </label>
+              <input
+                type="text"
+                placeholder="ex: 06/2026"
+                value={filtroCompetencia}
+                onChange={(e) => setFiltroCompetencia(e.target.value)}
+                className="form-input"
+                style={{ padding: '0.45rem 0.6rem' }}
+              />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 4 }}>
+                Status
+              </label>
+              <select
+                value={filtroStatus}
+                onChange={(e) => setFiltroStatus(e.target.value)}
+                className="form-input"
+                style={{ padding: '0.45rem 0.6rem' }}
+              >
+                <option value="">Todos</option>
+                <option value="PENDENTE">Pendente</option>
+                <option value="PROCESSANDO">Processando</option>
+                <option value="ENVIADO">Enviado</option>
+                <option value="BLOQUEADO">Bloqueado</option>
+                <option value="ERRO">Erro</option>
+              </select>
+            </div>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', color: 'var(--text-secondary)', paddingBottom: '0.5rem' }}>
+              <input
+                type="checkbox"
+                checked={incluirCpfCompleto}
+                onChange={(e) => setIncluirCpfCompleto(e.target.checked)}
+              />
+              Incluir CPF completo (por padrão, apenas os 3 últimos dígitos são exportados)
+            </label>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => handleExport('csv')}
+                disabled={exportando !== null}
+              >
+                {exportando === 'csv' ? (
+                  <><i className="fas fa-spinner fa-spin"></i> Exportando...</>
+                ) : (
+                  <><i className="fas fa-file-csv"></i> Exportar CSV</>
+                )}
+              </button>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => handleExport('xlsx')}
+                disabled={exportando !== null}
+              >
+                {exportando === 'xlsx' ? (
+                  <><i className="fas fa-spinner fa-spin"></i> Exportando...</>
+                ) : (
+                  <><i className="fas fa-file-excel"></i> Exportar Excel</>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
