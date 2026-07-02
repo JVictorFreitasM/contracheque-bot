@@ -126,3 +126,23 @@ model Configuracao {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }
+
+model SincronizacaoWK {
+  id Int @id @default(autoincrement())
+
+  dataInicio DateTime
+
+  dataFim DateTime?
+
+  sucesso Boolean @default(false)
+
+  totalRecebidos Int?
+
+  totalSincronizados Int?
+
+  totalIgnorados Int?
+
+  mensagemErro String?
+
+  createdAt DateTime @default(now())
+}

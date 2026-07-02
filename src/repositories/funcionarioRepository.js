@@ -92,10 +92,20 @@ async function listarTodos(){
     return prisma.funcionario.findMany()
 }
 
+async function contarPorStatus() {
+    const [ativos, inativos] = await Promise.all([
+        prisma.funcionario.count({ where: { ativo: true } }),
+        prisma.funcionario.count({ where: { ativo: false } })
+    ]);
+
+    return { ativos, inativos };
+}
+
 module.exports = {
     salvar,
     buscarPorCpf,
     buscarPorCodigo,
     listarTodos,
-    inativarNaoSincronizados
+    inativarNaoSincronizados,
+    contarPorStatus
 }

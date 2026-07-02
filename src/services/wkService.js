@@ -1,5 +1,6 @@
 const axios = require('../lib/axios');
 const funcionarioRepository = require('../repositories/funcionarioRepository');
+const sincronizacaoWKRepository = require('../repositories/sincronizacaoWKRepository');
 const logger = require('../config/logger');
 
 let tokenCache = null;
@@ -98,6 +99,8 @@ async function sincronizarFuncionarios() {
     const inicio = Date.now();
     const dataSincronizacao = new Date();
 
+    const registroSincronizacao = await sincronizacaoWKRepository.iniciar(dataSincronizacao);
+
     try {
         const funcionarios = await listarFuncionarios();
 
@@ -136,10 +139,25 @@ async function sincronizarFuncionarios() {
         const tempoDecorrido = ((Date.now() - inicio) / 1000).toFixed(2);
         logger.info(`[SYNC] Sincronização finalizada em ${tempoDecorrido}s. Recebidos: ${funcionarios.length} | Inseridos/Atualizados: ${total} | Ignorados (sem CPF): ${ignorados}`);
 
+        await sincronizacaoWKRepository.finalizar(registroSincronizacao.id, {
+            dataFim: new Date(),
+            sucesso: true,
+            totalRecebidos: funcionarios.length,
+            totalSincronizados: total,
+            totalIgnorados: ignorados
+        });
+
         return { total, ignorados };
 
     } catch (erro) {
         logger.error(`[SYNC] Falha crítica na sincronização ERP -> PostgreSQL: ${erro.message}`);
+
+        await sincronizacaoWKRepository.finalizar(registroSincronizacao.id, {
+            dataFim: new Date(),
+            sucesso: false,
+            mensagemErro: erro.message
+        });
+
         throw erro;
     }
 }

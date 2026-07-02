@@ -5,17 +5,20 @@ import axios from 'axios';
 export default function Monitoramento() {
   const [metrics, setMetrics] = useState(null);
   const [health, setHealth] = useState(null);
+  const [wkStatus, setWkStatus] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchMetrics = () => {
     Promise.all([
       axios.get('/api/monitoramento'),
-      axios.get('/api/health')
+      axios.get('/api/health'),
+      axios.get('/api/wk/status')
     ])
-      .then(([metricsRes, healthRes]) => {
+      .then(([metricsRes, healthRes, wkStatusRes]) => {
         setMetrics(metricsRes.data);
         setHealth(healthRes.data);
+        setWkStatus(wkStatusRes.data);
         setLoading(false);
         setError(null);
       })
@@ -30,6 +33,11 @@ export default function Monitoramento() {
     const interval = setInterval(fetchMetrics, 5000); // refresh every 5s
     return () => clearInterval(interval);
   }, []);
+
+  const formatDataHora = (isoString) => {
+    if (!isoString) return '—';
+    return new Date(isoString).toLocaleString('pt-BR');
+  };
 
   const formatUptime = (seconds) => {
     if (!seconds) return '0s';
@@ -124,6 +132,78 @@ export default function Monitoramento() {
               <div style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-secondary)' }}>Falhas</div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: '1.5rem' }}>
+        <div className="card-header">
+          <h3><i className="fas fa-arrows-rotate" style={{ marginRight: 8, color: 'var(--text-muted)' }}></i>Saúde da Integração WK Radar</h3>
+          {wkStatus?.ultimaSincronizacao && (
+            <span className={`badge ${wkStatus.ultimaSincronizacao.sucesso ? 'success' : 'danger'}`}>
+              {wkStatus.ultimaSincronizacao.sucesso ? 'Última sincronização OK' : 'Última sincronização falhou'}
+            </span>
+          )}
+        </div>
+        <div className="card-body">
+          {!wkStatus?.ultimaSincronizacao ? (
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Nenhuma sincronização registrada ainda.</p>
+          ) : (
+            <>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Última execução</div>
+                  <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>{formatDataHora(wkStatus.ultimaSincronizacao.dataInicio)}</div>
+                </div>
+                <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Sincronizados</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--success)' }}>{wkStatus.ultimaSincronizacao.totalSincronizados ?? '—'}</div>
+                </div>
+                <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Ignorados (sem CPF)</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--warning)' }}>{wkStatus.ultimaSincronizacao.totalIgnorados ?? '—'}</div>
+                </div>
+                <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Funcionários ativos</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{wkStatus.funcionarios?.ativos ?? '—'}</div>
+                </div>
+              </div>
+
+              {!wkStatus.ultimaSincronizacao.sucesso && wkStatus.ultimaSincronizacao.mensagemErro && (
+                <div className="alert alert-danger" style={{ marginBottom: '1rem' }}>
+                  <i className="fas fa-exclamation-circle"></i> {wkStatus.ultimaSincronizacao.mensagemErro}
+                </div>
+              )}
+
+              {wkStatus.historico?.length > 0 && (
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th>Data/hora</th>
+                      <th>Status</th>
+                      <th>Recebidos</th>
+                      <th>Sincronizados</th>
+                      <th>Ignorados</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {wkStatus.historico.map((registro) => (
+                      <tr key={registro.id}>
+                        <td>{formatDataHora(registro.dataInicio)}</td>
+                        <td>
+                          <span className={`badge ${registro.sucesso ? 'success' : 'danger'}`}>
+                            {registro.sucesso ? 'Sucesso' : 'Falha'}
+                          </span>
+                        </td>
+                        <td>{registro.totalRecebidos ?? '—'}</td>
+                        <td>{registro.totalSincronizados ?? '—'}</td>
+                        <td>{registro.totalIgnorados ?? '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </>
+          )}
         </div>
       </div>
     </>
