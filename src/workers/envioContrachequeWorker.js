@@ -11,15 +11,18 @@ require('dotenv').config();
 
 const connection = require('../config/redis');
 
-function esperar(ms) {
-    return new Promise(resolve => {
-        setTimeout(resolve, ms);
-    });
-}
-
 logger.info('[WORKER] Iniciando...');
 
-const worker = new Worker(
+// TODO: opção B — hoje o intervalo é lido uma única vez na inicialização e
+// usado para configurar o `limiter` do Worker. Mudanças em intervalo_envio
+// feitas na tela de Configurações só têm efeito após reiniciar o worker
+// (ex.: `docker restart contracheque-worker`), pois o BullMQ não permite
+// alterar o limiter de um Worker já criado sem fechá-lo e recriá-lo.
+async function iniciarWorker() {
+    const config = await configuracaoService.obterConfiguracao();
+    const intervaloMs = (config.intervalo_envio || 30) * 1000;
+
+    const worker = new Worker(
     'envio-contracheque',
     async (job) => {
         if (job.data.isTeste) {
@@ -80,11 +83,6 @@ const worker = new Worker(
 
             await arquivoService.moverParaProcessados(caminhoPdf);
 
-            const config = await configuracaoService.obterConfiguracao();
-            const intervalo = config.intervalo_envio || 30;
-            logger.info(`[WORKER] Aguardando ${intervalo}s`);
-            await esperar(intervalo * 1000);
-
             return;
         }
 
@@ -128,11 +126,6 @@ const worker = new Worker(
             }
 
             arquivoService.moverParaProcessados(caminhoPdf);
-
-            const config = await configuracaoService.obterConfiguracao();
-            const intervalo = config.intervalo_envio || 30;
-            logger.info(`[WORKER] Aguardando ${intervalo}s`);
-            await esperar(intervalo * 1000);
 
             logger.info(JSON.stringify({
                 traceId,
@@ -194,22 +187,36 @@ const worker = new Worker(
     },
     {
         connection,
-        concurrency: 1
+        concurrency: 1,
+        limiter: {
+            max: 1,
+            duration: intervaloMs
+        }
     }
-);
+    );
 
-worker.on('ready', () => {
-    logger.info('[WORKER] Conectado ao Redis');
-});
+    worker.on('ready', () => {
+        logger.info('[WORKER] Conectado ao Redis');
+    });
 
-worker.on('completed', (job) => {
-    logger.info(`[WORKER] Job ${job.id} finalizado`);
-});
+    worker.on('completed', (job) => {
+        logger.info(`[WORKER] Job ${job.id} finalizado`);
+    });
 
-worker.on('failed', (job, err) => {
-    logger.error(`[WORKER] Job ${job?.id} falhou na tentativa ${job?.attemptsMade}. Erro: ${err.message}`);
-});
+    worker.on('failed', (job, err) => {
+        logger.error(`[WORKER] Job ${job?.id} falhou na tentativa ${job?.attemptsMade}. Erro: ${err.message}`);
+    });
 
-worker.on('error', (err) => {
-    logger.error(`[WORKER] Erro crítico no worker: ${err.message}`);
+    worker.on('error', (err) => {
+        logger.error(`[WORKER] Erro crítico no worker: ${err.message}`);
+    });
+
+    logger.info(`[WORKER] Rate limiter configurado: 1 envio a cada ${intervaloMs / 1000}s`);
+
+    return worker;
+}
+
+iniciarWorker().catch((erro) => {
+    logger.error(`[WORKER] Falha ao iniciar worker: ${erro.message}`);
+    process.exit(1);
 });
