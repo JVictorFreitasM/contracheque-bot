@@ -32,7 +32,9 @@ class ConfiguracaoService {
             evolution_instance: dados.evolution_instance,
             evolution_api_key: dados.evolution_api_key,
             intervalo_envio: dados.intervalo_envio ? parseInt(dados.intervalo_envio, 10) : 30,
-            mensagem_template: dados.mensagem_template
+            mensagem_template: dados.mensagem_template,
+            sincronizacao_hora: dados.sincronizacao_hora !== undefined ? parseInt(dados.sincronizacao_hora, 10) : 3,
+            sincronizacao_minuto: dados.sincronizacao_minuto !== undefined ? parseInt(dados.sincronizacao_minuto, 10) : 0
         };
 
         return configuracaoRepository.atualizarConfiguracao(dadosAtualizacao);

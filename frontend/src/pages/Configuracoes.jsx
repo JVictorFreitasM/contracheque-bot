@@ -8,7 +8,9 @@ export default function Configuracoes() {
     evolution_instance: '',
     evolution_api_key: '',
     intervalo_envio: 30,
-    mensagem_template: ''
+    mensagem_template: '',
+    sincronizacao_hora: 3,
+    sincronizacao_minuto: 0
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -41,6 +43,13 @@ export default function Configuracoes() {
 
   const handleChange = (key, value) => {
     setConfig((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const horarioSincronizacao = `${String(config.sincronizacao_hora ?? 3).padStart(2, '0')}:${String(config.sincronizacao_minuto ?? 0).padStart(2, '0')}`;
+
+  const handleHorarioChange = (value) => {
+    const [hora, minuto] = value.split(':').map(Number);
+    setConfig((prev) => ({ ...prev, sincronizacao_hora: hora, sincronizacao_minuto: minuto }));
   };
 
   const renderizarPreview = (template) => {
@@ -132,6 +141,18 @@ export default function Configuracoes() {
                 value={config.intervalo_envio}
                 onChange={(e) => handleChange('intervalo_envio', Number(e.target.value))}
               />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Horário da sincronização diária com o ERP</label>
+              <input
+                className="form-input"
+                type="time"
+                value={horarioSincronizacao}
+                onChange={(e) => handleHorarioChange(e.target.value)}
+              />
+              <small style={{ color: 'var(--text-muted)' }}>
+                Todo dia, neste horário, o sistema busca a lista atualizada de funcionários no WK Radar.
+              </small>
             </div>
           </div>
         </div>

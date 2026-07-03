@@ -163,6 +163,10 @@ export default function Monitoramento() {
                   <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--warning)' }}>{wkStatus.ultimaSincronizacao.totalIgnorados ?? '—'}</div>
                 </div>
                 <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Com erro</div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--danger)' }}>{wkStatus.ultimaSincronizacao.totalComErro ?? '—'}</div>
+                </div>
+                <div style={{ padding: '1rem', background: 'var(--bg-primary)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Funcionários ativos</div>
                   <div style={{ fontSize: '1.4rem', fontWeight: 700 }}>{wkStatus.funcionarios?.ativos ?? '—'}</div>
                 </div>
@@ -183,6 +187,7 @@ export default function Monitoramento() {
                       <th>Recebidos</th>
                       <th>Sincronizados</th>
                       <th>Ignorados</th>
+                      <th>Com erro</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -197,6 +202,7 @@ export default function Monitoramento() {
                         <td>{registro.totalRecebidos ?? '—'}</td>
                         <td>{registro.totalSincronizados ?? '—'}</td>
                         <td>{registro.totalIgnorados ?? '—'}</td>
+                        <td>{registro.totalComErro ?? '—'}</td>
                       </tr>
                     ))}
                   </tbody>

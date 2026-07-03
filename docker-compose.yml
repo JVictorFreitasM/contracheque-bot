@@ -20,6 +20,8 @@ services:
     networks:
       - automacoes
 
+  # Worker de envio roda apenas neste container dedicado (Opção A da OS-12).
+  # src/index.js NÃO inicia mais o worker embutido, para não processar jobs em duplicidade.
   backend:
     image: contracheque-bot-backend:latest
     container_name: contracheque-backend
@@ -27,6 +29,8 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgres://admin:admin@postgres:5432/contracheque
       REDIS_URL: redis://redis:6379
@@ -34,6 +38,10 @@ services:
     ports:
       - "3001:3001"
       - "5555:5555"
+    volumes:
+      - contracheque_uploads:/app/uploads
+      - contracheque_processados:/app/processados
+      - contracheque_erro:/app/erro
     networks:
       - automacoes
 
@@ -44,9 +52,15 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgres://admin:admin@postgres:5432/contracheque
       REDIS_URL: redis://redis:6379
+    volumes:
+      - contracheque_uploads:/app/uploads
+      - contracheque_processados:/app/processados
+      - contracheque_erro:/app/erro
     networks:
       - automacoes
 
@@ -67,3 +81,6 @@ networks:
 
 volumes:
   pgdata:
+  contracheque_uploads:
+  contracheque_processados:
+  contracheque_erro:

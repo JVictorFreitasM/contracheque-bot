@@ -34,6 +34,8 @@ function moverParaProcessados(caminhoPdf) {
         destino
     );
 
+    return destino;
+
 }
 
 function moverParaErro(caminhoPdf) {
@@ -55,6 +57,8 @@ function moverParaErro(caminhoPdf) {
         caminhoPdf,
         destino
     );
+
+    return destino;
 
 }
 

@@ -20,6 +20,11 @@ async function registrarErroProcessamento({
         `[PROCESSAMENTO] Registrando erro. Status: ${status}`
     );
 
+    const novoCaminho =
+        arquivoService.moverParaErro(
+            caminhoPdf
+        );
+
     await envioRepository.criar({
 
         codigoFuncionario:
@@ -37,7 +42,7 @@ async function registrarErroProcessamento({
             dadosPdf?.nome,
 
         arquivoPdf:
-            caminhoPdf,
+            novoCaminho,
 
         hashArquivo,
 
@@ -47,12 +52,8 @@ async function registrarErroProcessamento({
 
     });
 
-    arquivoService.moverParaErro(
-        caminhoPdf
-    );
-
     logger.warn(
-        `[PROCESSAMENTO] Arquivo movido para pasta de erro: ${caminhoPdf}`
+        `[PROCESSAMENTO] Arquivo movido para pasta de erro: ${novoCaminho}`
     );
 
     return {

@@ -22,7 +22,8 @@ Thumbs.db
 docker-compose.yml
 
 # Environment files
-
+.env
+.env.*
 
 # IDE / editor settings
 .vscode

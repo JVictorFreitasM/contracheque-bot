@@ -124,6 +124,8 @@ model Configuracao {
   evolution_api_key String
   intervalo_envio Int @default(30)
   mensagem_template String @default("Olá *{nome}*\nSegue em anexo o seu contracheque.\n🔒 Para acessar o PDF, utilize como senha os 3 últimos dígitos do seu CPF.\nEm caso de dúvidas, entre em contato com o setor de Gente.")
+  sincronizacao_hora Int @default(3)
+  sincronizacao_minuto Int @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }
@@ -142,6 +144,8 @@ model SincronizacaoWK {
   totalSincronizados Int?
 
   totalIgnorados Int?
+
+  totalComErro Int?
 
   mensagemErro String?
 

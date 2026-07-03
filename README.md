@@ -75,7 +75,9 @@ flowchart LR
 | `postgres` | PostgreSQL | Armazena funcionários, lotes, envios e status |
 | `redis` | Redis | Fila de jobs (BullMQ) e locks do agendador |
 
-> ⚠️ **Atenção:** verifique se o `backend` não está iniciando o worker internamente (`require('./workers/envioContrachequeWorker')` em `src/index.js`) **e** o container `worker` rodando o mesmo arquivo ao mesmo tempo. Isso causaria processamento duplicado de jobs (e contracheques enviados duas vezes). Mantenha o worker rodando em **apenas um** dos dois lugares.
+> ⚠️ **Worker único (decisão OS-12, Opção A):** o processamento da fila roda **apenas** no container `worker` dedicado. `src/index.js` (backend) não inicia mais o worker embutido — foi removida a chamada `require('./workers/envioContrachequeWorker')` — justamente para não processar o mesmo job duas vezes (e enviar o contracheque duplicado). Se no futuro for necessário simplificar a operação (um container a menos), a alternativa seria a Opção B: remover o serviço `worker` do `docker-compose.yml` e voltar a rodar o worker embutido no `backend` — mas isso abre mão de escalar o worker independentemente do backend.
+>
+> Os containers `backend` e `worker` compartilham os volumes nomeados `contracheque_uploads`, `contracheque_processados` e `contracheque_erro` (ver `docker-compose.yml`), montados em `/app/uploads`, `/app/processados` e `/app/erro` em ambos — sem isso, o `worker` não conseguiria ler os PDFs criados pelo `backend`, já que são containers com filesystems separados.
 
 ---
 
@@ -205,7 +207,9 @@ Arquivo `.env`, na raiz do projeto:
 | `DIA_ENVIO_CONTRACHEQUES` | Dia do mês em que o processamento de PDFs é disparado | `5` |
 | `PORT` | Porta em que o backend escuta | `3001` |
 
-> 🔒 **Segurança:** não versione o `.env` real no Git. Mantenha-o fora da imagem Docker (via `.dockerignore`) e monte-o como volume no `docker-compose.yml`, ou injete via variáveis de ambiente do servidor/CI.
+> 🔒 **Segurança:** não versione o `.env` real no Git. Ele está excluído do build da imagem via `.dockerignore` (`.env`, `.env.*`) — nunca fica gravado nas camadas Docker. O `docker-compose.yml` referencia esse `.env` via `env_file` nos serviços `backend` e `worker`, então ele só é lido **no momento de subir os containers** (`docker compose up`), diretamente do host/servidor.
+>
+> **Isso também significa que, a partir desta versão, alterar uma variável de ambiente não exige mais rebuild de imagem:** basta editar o `.env` no servidor e rodar `docker compose up -d` — o Compose recria os containers automaticamente ao detectar a mudança. As variáveis já declaradas em `environment:` no `docker-compose.yml` (como `DATABASE_URL` e `REDIS_URL`) continuam tendo prioridade sobre o `env_file` em caso de sobreposição.
 
 ---
 
@@ -345,24 +349,29 @@ Para gerar as imagens localmente e transportar para um servidor sem acesso ao re
 
 ```bash
 # 1. Buildar as imagens
-./build.sh
+./Build.sh
 
-# 2. Exportar para um único arquivo .tar
-docker save -o contracheque-bot.tar \
+# 2. Exportar para um único arquivo .tar (inclui postgres/redis, para o servidor
+#    sem internet não precisar baixar nada)
+docker save -o contracheque-bot-stack.tar \
+  postgres:17 \
+  redis:7-alpine \
   contracheque-bot-backend:latest \
   contracheque-bot-worker:latest \
   contracheque-bot-frontend:latest
 
 # 3. Transferir para o servidor
-scp contracheque-bot.tar usuario@ip-do-servidor:/caminho/destino/
+scp contracheque-bot-stack.tar usuario@ip-do-servidor:/caminho/destino/
 scp docker-compose.yml usuario@ip-do-servidor:/caminho/destino/
 scp .env usuario@ip-do-servidor:/caminho/destino/
 
 # 4. No servidor: carregar as imagens e subir
-docker load -i contracheque-bot.tar
+docker load -i contracheque-bot-stack.tar
 docker compose up -d
 docker exec -it contracheque-backend npx prisma migrate deploy
 ```
+
+> Depois desse primeiro deploy, alterar uma variável de ambiente **não** exige repetir esse processo inteiro — edite o `.env` no servidor e rode `docker compose up -d` (ver seção [Variáveis de ambiente](#variáveis-de-ambiente)).
 
 ---
 
@@ -374,7 +383,8 @@ docker exec -it contracheque-backend npx prisma migrate deploy
 | Dashboard com tela em branco | API indisponível / dados nulos não tratados no frontend | Conferir se `backend` está `Up`; checar console do navegador |
 | `ERR_CONNECTION_REFUSED` no navegador | Backend não está rodando ou nginx não está fazendo proxy corretamente | Conferir `nginx.conf` (`proxy_pass http://backend:3001`) e `docker compose ps` |
 | Tabelas não existem no banco | Migrations não aplicadas | `docker exec -it contracheque-backend npx prisma migrate deploy` |
-| Contracheque enviado duas vezes | Worker duplicado (rodando dentro do backend **e** em container separado) | Manter o consumo da fila em apenas um processo |
+| Contracheque enviado duas vezes | Worker duplicado (rodando dentro do backend **e** em container separado) | Já resolvido (OS-12, Opção A): `src/index.js` não inicia mais o worker embutido. Se isso reaparecer, confira se alguém reintroduziu `require('./workers/envioContrachequeWorker')` em `src/index.js` |
+| Worker não encontra o PDF (`ENOENT`/"arquivo não encontrado") | `backend` e `worker` sem volume compartilhado para `uploads/`, `processados/` e `erro/` | Confirmar os volumes `contracheque_uploads`, `contracheque_processados` e `contracheque_erro` no `docker-compose.yml`, montados nos dois serviços |
 | Erro de CORS no navegador | Origem do frontend não está na lista `allowedOrigins` do backend | Atualizar `src/app.js` com o domínio/IP real de produção |
 
 ---

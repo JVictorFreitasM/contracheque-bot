@@ -110,6 +110,7 @@ async function sincronizarFuncionarios() {
 
         let total = 0;
         let ignorados = 0;
+        let comErro = 0;
 
         for (const funcionario of funcionarios) {
             const cpf = funcionario.documento?.cpf;
@@ -119,35 +120,41 @@ async function sincronizarFuncionarios() {
                 continue;
             }
 
-            await funcionarioRepository.salvar({
-                codigo: funcionario.codigo,
-                cpf,
-                nome: funcionario.nome,
-                telefone: funcionario.endereco?.celular
-                    ? `${funcionario.endereco.dddCelular || ''}${funcionario.endereco.celular}`
-                    : null,
-                email: funcionario.endereco?.emailCorporativo,
-                ativo: true,
-                ultimaSincronizacao: dataSincronizacao
-            });
+            try {
+                await funcionarioRepository.salvar({
+                    codigo: funcionario.codigo,
+                    cpf,
+                    nome: funcionario.nome,
+                    telefone: funcionario.endereco?.celular
+                        ? `${funcionario.endereco.dddCelular || ''}${funcionario.endereco.celular}`
+                        : null,
+                    email: funcionario.endereco?.emailCorporativo,
+                    ativo: true,
+                    ultimaSincronizacao: dataSincronizacao
+                });
 
-            total++;
+                total++;
+            } catch (erroFuncionario) {
+                comErro++;
+                logger.error(`[SYNC] Falha ao salvar funcionário código ${funcionario.codigo}: ${erroFuncionario.message}`);
+            }
         }
 
         await funcionarioRepository.inativarNaoSincronizados(dataSincronizacao);
 
         const tempoDecorrido = ((Date.now() - inicio) / 1000).toFixed(2);
-        logger.info(`[SYNC] Sincronização finalizada em ${tempoDecorrido}s. Recebidos: ${funcionarios.length} | Inseridos/Atualizados: ${total} | Ignorados (sem CPF): ${ignorados}`);
+        logger.info(`[SYNC] Sincronização finalizada em ${tempoDecorrido}s. Recebidos: ${funcionarios.length} | Inseridos/Atualizados: ${total} | Ignorados (sem CPF): ${ignorados} | Com erro: ${comErro}`);
 
         await sincronizacaoWKRepository.finalizar(registroSincronizacao.id, {
             dataFim: new Date(),
             sucesso: true,
             totalRecebidos: funcionarios.length,
             totalSincronizados: total,
-            totalIgnorados: ignorados
+            totalIgnorados: ignorados,
+            totalComErro: comErro
         });
 
-        return { total, ignorados };
+        return { total, ignorados, comErro };
 
     } catch (erro) {
         logger.error(`[SYNC] Falha crítica na sincronização ERP -> PostgreSQL: ${erro.message}`);

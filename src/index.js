@@ -1,3 +1,5 @@
+// Fallback apenas para rodar fora do Docker (dev local); em produção as variáveis
+// vêm do docker-compose (env_file/environment), nunca embutidas na imagem.
 require('dotenv').config();
 
 const logger = require('./config/logger');
@@ -20,9 +22,9 @@ async function iniciar() {
         // Inicia o agendador de tarefas
         await agendador.iniciarAgendamento();
 
-        // Inicia o Worker
-        require('./workers/envioContrachequeWorker');
-        logger.info('[WORKER] Inicializado junto com a aplicação principal');
+        // O processamento da fila roda apenas no container `worker` dedicado
+        // (ver docker-compose.yml) — não iniciar o worker aqui para evitar
+        // processamento duplicado de jobs (OS-12, Opção A).
 
     } catch (erro) {
         logger.error(`Erro crítico ao iniciar: ${erro.message}`);

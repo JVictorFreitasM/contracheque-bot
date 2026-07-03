@@ -4,20 +4,13 @@ const processadorLote = require('../services/processadorLoteService');
 const wkService = require('../services/wkService');
 const redis = require('../config/redis');
 const agendamentoLoteRepository = require('../repositories/agendamentoLoteRepository');
+const configuracaoService = require('../services/configuracaoService');
+// Fallback apenas para rodar fora do Docker (dev local); em produção as variáveis
+// vêm do docker-compose (env_file/environment), nunca embutidas na imagem.
 require('dotenv').config();
 
 async function iniciarAgendamento() {
     logger.info('[CRON] Agendador iniciado');
-
-    // Executa todo dia às 03:00 da manhã para sincronização de ERP
-    cron.schedule('0 3 * * *', async () => {
-        logger.info('[CRON] Disparando sincronização diária programada (03:00)');
-        try {
-            await wkService.sincronizarFuncionarios();
-        } catch (erro) {
-            logger.error(`[CRON] Erro na sincronização diária: ${erro.message}`);
-        }
-    });
 
     // Executa todo dia à meia-noite
     cron.schedule('0 0 * * *', async () => {
@@ -30,8 +23,63 @@ async function iniciarAgendamento() {
         await verificarAgendamentosLote();
     });
 
+    // Verifica a cada minuto se o horário configurado para a sincronização
+    // diária com o ERP (Configuracao.sincronizacao_hora/minuto) já chegou
+    cron.schedule('* * * * *', async () => {
+        await verificarESincronizarErp();
+    });
+
     // Também verifica na inicialização, caso o app tenha reiniciado no meio do dia
+    // ou exatamente no minuto configurado para a sincronização
     await verificarEProcessar();
+    await verificarESincronizarErp();
+}
+
+async function verificarESincronizarErp() {
+    try {
+        const config = await configuracaoService.obterConfiguracao();
+
+        const agora = new Date();
+        const horaAtual = agora.getHours();
+        const minutoAtual = agora.getMinutes();
+
+        if (horaAtual === config.sincronizacao_hora && minutoAtual === config.sincronizacao_minuto) {
+            const dataHoje = agora.toISOString().split('T')[0];
+            const chaveRedis = `sincronizacao_erp_executada_${dataHoje}`;
+
+            let jaExecutou = false;
+            try {
+                jaExecutou = await redis.get(chaveRedis);
+            } catch (redisError) {
+                logger.error(`[CRON] Falha ao acessar o Redis para checar sincronização: ${redisError.message}`);
+                return;
+            }
+
+            if (!jaExecutou) {
+                try {
+                    await redis.set(chaveRedis, 'true', 'EX', 86400);
+                } catch (setError) {
+                    logger.error(`[CRON] Falha ao marcar sincronização no Redis: ${setError.message}`);
+                    return;
+                }
+
+                logger.info(`[CRON] Disparando sincronização diária programada (${String(config.sincronizacao_hora).padStart(2, '0')}:${String(config.sincronizacao_minuto).padStart(2, '0')})`);
+                try {
+                    await wkService.sincronizarFuncionarios();
+                } catch (erro) {
+                    logger.error(`[CRON] Erro na sincronização diária: ${erro.message}`);
+                    // Remove a marcação para permitir nova tentativa no próximo minuto, caso o erro seja transitório
+                    try {
+                        await redis.del(chaveRedis);
+                    } catch (delError) {
+                        logger.error(`[CRON] Falha ao remover marcação do Redis após erro: ${delError.message}`);
+                    }
+                }
+            }
+        }
+    } catch (erro) {
+        logger.error(`[CRON] Erro ao verificar horário de sincronização: ${erro.message}`);
+    }
 }
 
 async function verificarAgendamentosLote() {
@@ -131,5 +179,6 @@ async function verificarEProcessar() {
 module.exports = {
     iniciarAgendamento,
     verificarEProcessar,
-    verificarAgendamentosLote
+    verificarAgendamentosLote,
+    verificarESincronizarErp
 };

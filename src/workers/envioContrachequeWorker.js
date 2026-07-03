@@ -7,6 +7,8 @@ const funcionarioRepository = require('../repositories/funcionarioRepository');
 const arquivoService = require('../services/arquivoService');
 const logger = require('../config/logger');
 const { STATUS } = require('../utils/statusEnvio');
+// Fallback apenas para rodar fora do Docker (dev local); em produção as variáveis
+// vêm do docker-compose (env_file/environment), nunca embutidas na imagem.
 require('dotenv').config();
 
 const connection = require('../config/redis');
@@ -72,16 +74,17 @@ async function iniciarWorker() {
                 timestamp: new Date().toISOString()
             }));
 
+            const novoCaminhoBloqueado = arquivoService.moverParaProcessados(caminhoPdf);
+
             if (envioId) {
                 await envioRepository.atualizar(envioId, {
                     status: 'BLOQUEADO',
+                    arquivoPdf: novoCaminhoBloqueado,
                     mensagemErro: null,
                     ultimoErro: null,
                     dataEnvio: null
                 });
             }
-
-            await arquivoService.moverParaProcessados(caminhoPdf);
 
             return;
         }
@@ -103,10 +106,13 @@ async function iniciarWorker() {
 
             const whatsappMessageId = response?.key?.id || null;
 
+            const novoCaminhoEnviado = arquivoService.moverParaProcessados(caminhoPdf);
+
             if (envioId) {
                 // Se é um reenvio, o registro já existe, basta atualizar
                 await envioRepository.atualizar(envioId, {
                     status: 'ENVIADO',
+                    arquivoPdf: novoCaminhoEnviado,
                     mensagemErro: null,
                     ultimoErro: null,
                     dataEnvio: new Date(),
@@ -122,15 +128,13 @@ async function iniciarWorker() {
                     cpf,
                     competencia,
                     nomeFuncionario,
-                    arquivoPdf: caminhoPdf,
+                    arquivoPdf: novoCaminhoEnviado,
                     hashArquivo,
                     status: 'ENVIADO',
                     dataEnvio: new Date(),
                     whatsappMessageId
                 });
             }
-
-            arquivoService.moverParaProcessados(caminhoPdf);
 
             logger.info(JSON.stringify({
                 traceId,
@@ -149,9 +153,12 @@ async function iniciarWorker() {
             
             // Só move pra erro e registra se esgotaram as tentativas
             if (job.attemptsMade >= job.opts.attempts) {
+                const novoCaminhoErro = arquivoService.moverParaErro(caminhoPdf);
+
                 if (envioId) {
                     await envioRepository.atualizar(envioId, {
                         status: 'ERRO',
+                        arquivoPdf: novoCaminhoErro,
                         mensagemErro: erro.message,
                         ultimoErro: erro.message
                     });
@@ -161,14 +168,13 @@ async function iniciarWorker() {
                         cpf,
                         competencia,
                         nomeFuncionario,
-                        arquivoPdf: caminhoPdf,
+                        arquivoPdf: novoCaminhoErro,
                         hashArquivo,
                         status: 'ERRO',
                         mensagemErro: erro.message
                     });
                 }
 
-                arquivoService.moverParaErro(caminhoPdf);
                 logger.error(JSON.stringify({
                     traceId,
                     cpf,

@@ -1,36 +1,28 @@
 const prisma = require("../lib/prisma");
 
-// async function salvar(dados){
-//     return prisma.funcionario.upsert({
-//         where: {
-//             cpf: dados.cpf
-//         },
-//         update: {
-//             nome: dados.nome,
-//             telefone: dados.telefone,
-//             email: dados.email
-//         },
-//         create: dados
-//     })
-// }
 async function salvar(funcionario) {
-await prisma.funcionario.upsert({
-    where: {
-        cpf: funcionario.cpf
-    },
+try {
+    await prisma.funcionario.upsert({
+        where: {
+            codigo: funcionario.codigo
+        },
 
-    update: {
-        codigo: funcionario.codigo,
-        nome: funcionario.nome,
-        telefone: funcionario.telefone,
-        email: funcionario.email,
-        ativo: true,
-        ultimaSincronizacao:
-            funcionario.ultimaSincronizacao
-    },
+        update: {
+            cpf: funcionario.cpf,
+            nome: funcionario.nome,
+            telefone: funcionario.telefone,
+            email: funcionario.email,
+            ativo: true,
+            ultimaSincronizacao:
+                funcionario.ultimaSincronizacao
+        },
 
-    create: funcionario
-});
+        create: funcionario
+    });
+} catch (erro) {
+    erro.message = `[Funcionario codigo=${funcionario.codigo} cpf=${funcionario.cpf}] ${erro.message}`;
+    throw erro;
+}
 }
 
 async function inativarNaoSincronizados(

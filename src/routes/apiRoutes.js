@@ -51,6 +51,7 @@ router.post('/contracheques/reenviar-erros', reenviarTodosErros);
 router.get('/monitoramento', monitoramentoController);
 router.get('/processamento/status', getProcessamentoStatus);
 router.get('/processamento/stream', streamProcessamentoStatus);
+// TODO: proteger esta rota quando o sistema de login for implementado
 router.route('/configuracoes').get(configuracoesController.obterConfiguracoes).put(configuracoesController.atualizarConfiguracoes);
 router.post('/webhooks/evolution', receberWebhook);
 router.get('/wk/status', getWkStatus);
