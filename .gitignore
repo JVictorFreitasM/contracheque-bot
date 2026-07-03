@@ -7,3 +7,6 @@ node_modules
 /erro
 /uploads
 /processados
+*.tar
+*.tar.gz
+logs/

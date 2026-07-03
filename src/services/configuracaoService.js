@@ -1,4 +1,5 @@
 const configuracaoRepository = require('../repositories/configuracaoRepository');
+const evolutionWebhookService = require('./evolutionWebhookService');
 
 class ConfiguracaoService {
     async obterConfiguracao() {
@@ -37,7 +38,11 @@ class ConfiguracaoService {
             sincronizacao_minuto: dados.sincronizacao_minuto !== undefined ? parseInt(dados.sincronizacao_minuto, 10) : 0
         };
 
-        return configuracaoRepository.atualizarConfiguracao(dadosAtualizacao);
+        const configAtualizada = await configuracaoRepository.atualizarConfiguracao(dadosAtualizacao);
+
+        evolutionWebhookService.configurarWebhook(configAtualizada);
+
+        return configAtualizada;
     }
 }
 

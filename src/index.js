@@ -5,6 +5,8 @@ require('dotenv').config();
 const logger = require('./config/logger');
 const app = require('./app');
 const agendador = require('./cron/agendador');
+const configuracaoService = require('./services/configuracaoService');
+const evolutionWebhookService = require('./services/evolutionWebhookService');
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,6 +23,11 @@ async function iniciar() {
 
         // Inicia o agendador de tarefas
         await agendador.iniciarAgendamento();
+
+        // Garante que a instância da Evolution API está configurada para
+        // notificar o bot sobre status de entrega/leitura das mensagens
+        const config = await configuracaoService.obterConfiguracao();
+        await evolutionWebhookService.configurarWebhook(config);
 
         // O processamento da fila roda apenas no container `worker` dedicado
         // (ver docker-compose.yml) — não iniciar o worker aqui para evitar
