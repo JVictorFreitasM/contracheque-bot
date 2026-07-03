@@ -12,7 +12,7 @@ function gerarSenhaCpf(cpf) {
         throw new Error('CPF inválido para geração de senha');
     }
 
-    return cpfLimpo.slice(-3);
+    return cpfLimpo.slice(0, 3);
 }
 
 async function criptografarPdf(caminhoEntrada, caminhoSaida, cpf) {
