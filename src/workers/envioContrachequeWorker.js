@@ -41,9 +41,9 @@ async function iniciarWorker() {
             hashArquivo,
             telefone,
             caminhoPdf,
-            envioId, // Novo campo injetado em caso de reenvio
             traceId
         } = job.data;
+        let { envioId } = job.data; // Novo campo injetado em caso de reenvio; reatribuído após criação do registro
 
         let caminhoFinal = null;
         try {
@@ -74,16 +74,23 @@ async function iniciarWorker() {
                 timestamp: new Date().toISOString()
             }));
 
-            const novoCaminhoBloqueado = arquivoService.moverParaProcessados(caminhoPdf);
-
             if (envioId) {
                 await envioRepository.atualizar(envioId, {
                     status: 'BLOQUEADO',
-                    arquivoPdf: novoCaminhoBloqueado,
+                    arquivoPdf: caminhoPdf,
                     mensagemErro: null,
                     ultimoErro: null,
                     dataEnvio: null
                 });
+            }
+
+            try {
+                const novoCaminhoBloqueado = arquivoService.moverParaProcessados(caminhoPdf);
+                if (envioId) {
+                    await envioRepository.atualizar(envioId, { arquivoPdf: novoCaminhoBloqueado });
+                }
+            } catch (erroMove) {
+                logger.error(`[WORKER] Envio ${envioId} marcado como BLOQUEADO, mas falhou ao mover arquivo para processados/: ${erroMove.message}. Arquivo permanece em uploads/.`);
             }
 
             return;
@@ -106,13 +113,13 @@ async function iniciarWorker() {
 
             const whatsappMessageId = response?.key?.id || null;
 
-            const novoCaminhoEnviado = arquivoService.moverParaProcessados(caminhoPdf);
-
+            // 1. Marca ENVIADO no banco IMEDIATAMENTE após o sucesso do envio,
+            //    antes de qualquer operação de arquivo que possa falhar.
             if (envioId) {
                 // Se é um reenvio, o registro já existe, basta atualizar
                 await envioRepository.atualizar(envioId, {
                     status: 'ENVIADO',
-                    arquivoPdf: novoCaminhoEnviado,
+                    arquivoPdf: caminhoPdf,
                     mensagemErro: null,
                     ultimoErro: null,
                     dataEnvio: new Date(),
@@ -123,17 +130,28 @@ async function iniciarWorker() {
                 });
             } else {
                 // Primeiro envio, deve criar o registro
-                await envioRepository.criar({
+                const envioCriado = await envioRepository.criar({
                     codigoFuncionario,
                     cpf,
                     competencia,
                     nomeFuncionario,
-                    arquivoPdf: novoCaminhoEnviado,
+                    arquivoPdf: caminhoPdf,
                     hashArquivo,
                     status: 'ENVIADO',
                     dataEnvio: new Date(),
                     whatsappMessageId
                 });
+                envioId = envioCriado.id;
+            }
+
+            // 2. Só DEPOIS do status estar salvo, tenta mover o arquivo.
+            //    Falha aqui é só "limpeza pendente" — não deve derrubar o job nem
+            //    fazer o BullMQ reprocessar um envio que já foi concluído com sucesso.
+            try {
+                const novoCaminhoEnviado = arquivoService.moverParaProcessados(caminhoPdf);
+                await envioRepository.atualizar(envioId, { arquivoPdf: novoCaminhoEnviado });
+            } catch (erroMove) {
+                logger.error(`[WORKER] Envio ${envioId} concluído com sucesso, mas falhou ao mover arquivo para processados/: ${erroMove.message}. Arquivo permanece em uploads/.`);
             }
 
             logger.info(JSON.stringify({
@@ -153,26 +171,32 @@ async function iniciarWorker() {
             
             // Só move pra erro e registra se esgotaram as tentativas
             if (job.attemptsMade >= job.opts.attempts) {
-                const novoCaminhoErro = arquivoService.moverParaErro(caminhoPdf);
-
                 if (envioId) {
                     await envioRepository.atualizar(envioId, {
                         status: 'ERRO',
-                        arquivoPdf: novoCaminhoErro,
+                        arquivoPdf: caminhoPdf,
                         mensagemErro: erro.message,
                         ultimoErro: erro.message
                     });
                 } else {
-                    await envioRepository.criar({
+                    const envioCriado = await envioRepository.criar({
                         codigoFuncionario,
                         cpf,
                         competencia,
                         nomeFuncionario,
-                        arquivoPdf: novoCaminhoErro,
+                        arquivoPdf: caminhoPdf,
                         hashArquivo,
                         status: 'ERRO',
                         mensagemErro: erro.message
                     });
+                    envioId = envioCriado.id;
+                }
+
+                try {
+                    const novoCaminhoErro = arquivoService.moverParaErro(caminhoPdf);
+                    await envioRepository.atualizar(envioId, { arquivoPdf: novoCaminhoErro });
+                } catch (erroMove) {
+                    logger.error(`[WORKER] Envio ${envioId} marcado como ERRO, mas falhou ao mover arquivo para erro/: ${erroMove.message}. Arquivo permanece em uploads/.`);
                 }
 
                 logger.error(JSON.stringify({

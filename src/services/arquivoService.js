@@ -14,6 +14,21 @@ function garantirPasta(caminho) {
 
 }
 
+function moverArquivo(origem, destino) {
+
+    try {
+        fs.renameSync(origem, destino);
+    } catch (erro) {
+        if (erro.code === 'EXDEV') {
+            fs.copyFileSync(origem, destino);
+            fs.unlinkSync(origem);
+        } else {
+            throw erro;
+        }
+    }
+
+}
+
 function moverParaProcessados(caminhoPdf) {
 
     const pastaDestino =
@@ -29,7 +44,7 @@ function moverParaProcessados(caminhoPdf) {
             path.basename(caminhoPdf)
         );
 
-    fs.renameSync(
+    moverArquivo(
         caminhoPdf,
         destino
     );
@@ -53,7 +68,7 @@ function moverParaErro(caminhoPdf) {
             path.basename(caminhoPdf)
         );
 
-    fs.renameSync(
+    moverArquivo(
         caminhoPdf,
         destino
     );

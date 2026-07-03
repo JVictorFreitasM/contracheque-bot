@@ -13,7 +13,7 @@ export default function Relatorios() {
   const [filtroCompetencia, setFiltroCompetencia] = useState('');
   const [filtroStatus, setFiltroStatus] = useState('');
   const [incluirCpfCompleto, setIncluirCpfCompleto] = useState(false);
-  const [exportando, setExportando] = useState(null); // 'csv' | 'xlsx' | null
+  const [exportando, setExportando] = useState(null); // 'csv' | 'xlsx' | 'pdf' | null
   const [exportError, setExportError] = useState(null);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function Relatorios() {
         responseType: 'blob',
       });
 
-      const extensao = formato === 'xlsx' ? 'xlsx' : 'csv';
+      const extensao = formato === 'xlsx' ? 'xlsx' : formato === 'pdf' ? 'pdf' : 'csv';
       const dataArquivo = new Date().toISOString().split('T')[0];
       const url = URL.createObjectURL(response.data);
       const link = document.createElement('a');
@@ -191,6 +191,17 @@ export default function Relatorios() {
                   <><i className="fas fa-spinner fa-spin"></i> Exportando...</>
                 ) : (
                   <><i className="fas fa-file-excel"></i> Exportar Excel</>
+                )}
+              </button>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => handleExport('pdf')}
+                disabled={exportando !== null}
+              >
+                {exportando === 'pdf' ? (
+                  <><i className="fas fa-spinner fa-spin"></i> Exportando...</>
+                ) : (
+                  <><i className="fas fa-file-pdf"></i> Exportar PDF</>
                 )}
               </button>
             </div>
