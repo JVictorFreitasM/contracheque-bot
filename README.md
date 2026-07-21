@@ -2,6 +2,9 @@
 
 Sistema de automação de envio de contracheques para funcionários via WhatsApp. Sincroniza dados de funcionários diretamente do ERP **WK Radar**, lê os PDFs de contracheque enviados para uma pasta, valida cada documento contra o cadastro do funcionário e envia via **Evolution API**.
 
+<img width="1873" height="1043" alt="Gestão-de-Contracheques-07-21-2026_11_07_AM" src="https://github.com/user-attachments/assets/fa950f6c-f50f-45e8-bd7d-0d61ae39de10" />
+
+
 ## Sumário
 
 - [Visão geral do fluxo](#visão-geral-do-fluxo)
