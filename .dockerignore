@@ -33,6 +33,10 @@ docker-compose.yml
 dist
 build
 *.tsbuildinfo
+# ...exceto idp-client/dist (OS 08-B): é o pacote já compilado, precisa ir pro
+# contexto do build do backend/worker para o `npm ci` conseguir instalá-lo (file:./idp-client)
+!idp-client/dist
+!idp-client/dist/**
 
 # Test artifacts
 coverage

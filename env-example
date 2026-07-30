@@ -35,6 +35,30 @@ MODO_SIMULACAO=
 DIA_ENVIO_CONTRACHEQUES=
 
 # Servidor
-PORT=3000
+# 3001 (não 3000) — porta do IdP colidia com o default do Bot; ver OS 08-A/08-B, resolução
+# do conflito de porta: IdP fica em 3000, Bot em 3001
+PORT=3001
 # Ambiente de execução (ex.: production habilita logs em formato JSON, sem "pretty print")
 # NODE_ENV=production
+
+# IdP centralizado (OS 08-B)
+# URL base do IdP, usada server-to-server (troca de code por token, JWKS) - de onde
+# o backend rodar. Rodando via `npm start` direto no host (sem Docker), é localhost mesmo
+IDP_URL=http://localhost:3000
+# Opcional — só necessário se o backend rodar containerizado (Docker) enquanto o IdP
+# roda no host: nesse caso IDP_URL vira http://host.docker.internal:3000 (visível só
+# de dentro do container) e IDP_AUTHORIZE_URL precisa ser http://localhost:3000 (o
+# valor que o NAVEGADOR do usuário consegue resolver, usado só no redirect de
+# /auth/login). Sem Docker, não precisa definir - cai no próprio IDP_URL.
+# IDP_AUTHORIZE_URL=http://localhost:3000
+# Credenciais do sistema cadastradas no painel do IdP (OS 08-A). Sensível — não commitar valor real
+IDP_CLIENT_ID=
+IDP_CLIENT_SECRET=
+# Deve bater exatamente com um dos redirectUris cadastrados no sistema no IdP
+IDP_REDIRECT_URI=http://localhost:3001/auth/callback
+# Segredo usado pelo express-session para assinar o cookie de sessão local (não é enviado ao IdP).
+# Sensível — não commitar valor real, gerar uma string aleatória por ambiente
+SESSION_SECRET=
+# Origem do frontend (Vite dev server) — usada para redirecionar de volta ao painel após
+# login/logout no IdP, já que o callback roda no backend (porta acima), não no Vite
+FRONTEND_URL=http://localhost:5173

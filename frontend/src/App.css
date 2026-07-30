@@ -124,6 +124,32 @@
   background: rgba(255, 255, 255, 0.14);
 }
 
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.6rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+}
+
+.sidebar-user span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-user a {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.sidebar-user a:hover {
+  opacity: 1;
+}
+
 .main-content {
   margin-left: 280px;
   flex: 1;

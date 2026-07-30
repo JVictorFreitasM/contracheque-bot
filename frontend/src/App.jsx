@@ -10,6 +10,8 @@ import Funcionarios from './pages/Funcionarios';
 import Relatorios from './pages/Relatorios';
 import Configuracoes from './pages/Configuracoes';
 import Monitoramento from './pages/Monitoramento';
+import AuthGate from './components/AuthGate';
+import { logoutUrl } from './services/auth';
 import './App.css';
 
 const NAV_ITEMS = [
@@ -40,7 +42,7 @@ const PAGE_TITLES = {
   '/monitoramento': 'Monitoramento',
 };
 
-function AppContent() {
+function AppContent({ user }) {
   const location = useLocation();
   const [isDark, setIsDark] = useState(() => localStorage.getItem('theme') === 'dark');
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -89,6 +91,15 @@ function AppContent() {
         </nav>
 
         <div className="sidebar-footer">
+          {user && (
+            <div className="sidebar-user">
+              <i className="fas fa-user-circle"></i>
+              <span>{user.name} ({user.role})</span>
+              <a href={logoutUrl()} title="Sair">
+                <i className="fas fa-right-from-bracket"></i>
+              </a>
+            </div>
+          )}
           <button className="theme-toggle" onClick={() => setIsDark((prev) => !prev)}>
             <i className={isDark ? 'fas fa-sun' : 'fas fa-moon'}></i>
             {isDark ? 'Tema Claro' : 'Tema Escuro'}
@@ -137,7 +148,7 @@ function AppContent() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <AuthGate>{(user) => <AppContent user={user} />}</AuthGate>
     </BrowserRouter>
   );
 }

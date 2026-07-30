@@ -2,9 +2,12 @@
 FROM node:20
  
 WORKDIR /app
- 
+
 # Install dependencies
 COPY package*.json ./
+# idp-client é uma dependência local (file:./idp-client, OS 08-B) - precisa estar no
+# contexto ANTES do npm ci, senão ele não resolve o pacote
+COPY idp-client ./idp-client
 RUN npm ci
  
 # Copy Prisma schema before generation
