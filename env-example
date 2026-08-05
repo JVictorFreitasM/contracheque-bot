@@ -59,6 +59,10 @@ IDP_REDIRECT_URI=http://localhost:3001/auth/callback
 # Segredo usado pelo express-session para assinar o cookie de sessão local (não é enviado ao IdP).
 # Sensível — não commitar valor real, gerar uma string aleatória por ambiente
 SESSION_SECRET=
+# Cookie de sessão só é enviado em conexão HTTPS quando true (OS 15-A). Manter "false"
+# apenas em ambiente localhost sem HTTPS; mudar para "true" assim que o sistema tiver
+# certificado (OS 14, ainda não iniciada) — cookie.secure=true bloqueia o cookie em HTTP puro.
+COOKIE_SECURE=false
 # Origem do frontend (Vite dev server) — usada para redirecionar de volta ao painel após
 # login/logout no IdP, já que o callback roda no backend (porta acima), não no Vite
 FRONTEND_URL=http://localhost:5173

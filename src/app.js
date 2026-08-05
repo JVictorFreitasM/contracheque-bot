@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const session = require('express-session');
+const { RedisStore } = require('connect-redis');
+const { createClient } = require('redis');
 const { createBullBoard } = require('@bull-board/api');
 const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter');
 const { ExpressAdapter } = require('@bull-board/express');
@@ -44,22 +46,30 @@ app.options(/.*/, cors());
 app.use(express.json());
 
 // ==============================
-// SESSÃO (OS 08-B)
+// SESSÃO (OS 08-B / OS 15-A)
 // ==============================
 // Sessão local do sistema cliente - guarda os tokens do IdP (req.session.idpAuth),
-// nunca expostos ao front. MemoryStore (default) é suficiente para o piloto em
-// localhost com um único processo; produção/multi-instância precisa de um store
-// persistente (ex.: connect-redis, já que Redis já é dependência do projeto) - fora
-// do escopo desta OS.
+// nunca expostos ao front. Store em Redis para sobreviver a restart do container e
+// funcionar com múltiplas instâncias do backend (OS 15-A, item 2.2). Cliente próprio
+// (pacote `redis`, não o `ioredis` usado pelo BullMQ) - connect-redis só fala o
+// dialeto de comandos do node-redis v4; usar o cliente ioredis aqui causa
+// "ReplyError: ERR syntax error" e a sessão silenciosamente não é salva.
+const sessionRedisClient = createClient({
+  url: process.env.REDIS_URL || `redis://${process.env.REDIS_HOST || 'localhost'}:${process.env.REDIS_PORT || 6379}`,
+});
+sessionRedisClient.on('error', (err) => logger.error('[SESSION REDIS] Erro de conexão', err));
+sessionRedisClient.connect().catch((err) => logger.error('[SESSION REDIS] Falha ao conectar', err));
+
 app.use(session({
+  store: new RedisStore({ client: sessionRedisClient, prefix: 'sess:' }),
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    // OS 08-B seção 5: localhost sem HTTPS - `secure: false` vale só neste ambiente
-    // de teste local. Ao migrar para a rede da empresa isso deve voltar a `true`.
-    secure: false,
+    // COOKIE_SECURE=false em localhost sem HTTPS; true assim que o sistema tiver
+    // certificado (OS 14). Ver env-example (OS 15-A, item 2.1).
+    secure: process.env.COOKIE_SECURE === 'true',
     sameSite: 'lax',
   },
 }));

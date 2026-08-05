@@ -35,6 +35,11 @@ const configuracoesController = require('../controllers/configuracoesController'
 router.get('/me', requireAuth, getMe);
 router.get('/dashboard/indicadores', requireAuth, getMetrics);
 router.get('/status/servicos', requireAuth, getStatus);
+// OS 15-A, item 2.4: verificado que /health não é consultada por Docker healthcheck
+// nem uptime monitor externo (nenhum HEALTHCHECK no Dockerfile, nenhum healthcheck:
+// no docker-compose.yml) - único consumidor é a tela Monitoramento.jsx do próprio
+// painel autenticado. Condição da OS para liberar a rota não se confirma, então
+// requireAuth permanece. Reavaliar se um healthcheck externo for adicionado depois.
 router.get('/health', requireAuth, getHealth);
 router.post('/uploads', requireAuth, require('../middlewares/multerUpload'), handleUpload);
 router.post('/uploads/pre-validar', requireAuth, require('../middlewares/multerUpload'), preValidarUploads);
