@@ -13,9 +13,9 @@ export interface IdpClientConfig {
   clientSecret: string;
   redirectUri: string;
   /**
-   * URL base do IdP usada só para montar o redirect de /auth/login pro
-   * navegador do usuário (GET /authorize). Só precisa ser diferente de
-   * `idpUrl` quando o sistema cliente roda em topologia onde o backend e o
+   * URL base do IdP usada só para montar os redirects que vão pro navegador
+   * do usuário (GET /authorize e GET /session/end). Só precisa ser diferente
+   * de `idpUrl` quando o sistema cliente roda em topologia onde o backend e o
    * navegador do usuário não enxergam o IdP pelo mesmo hostname/porta - ex.:
    * backend containerizado falando com o IdP via host.docker.internal, mas o
    * navegador (no host) precisa de localhost. @default idpUrl

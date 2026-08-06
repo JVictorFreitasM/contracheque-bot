@@ -58,7 +58,7 @@ app.listen(3001);
 | Campo | Obrigatório | Default | Descrição |
 |---|---|---|---|
 | `idpUrl` | sim | — | URL base do IdP usada server-to-server (troca de code por token, JWKS, revoke) - chamada de dentro do processo/container do sistema cliente. |
-| `authorizeUrl` | não | `idpUrl` | URL base do IdP usada só pra montar o redirect de `/auth/login` pro navegador (`GET /authorize`). Só precisa divergir de `idpUrl` quando backend e navegador não enxergam o IdP pelo mesmo hostname/porta - ex.: backend containerizado falando com o IdP via `host.docker.internal`, mas o navegador (no host) precisa de `localhost` (ver OS 08-B). |
+| `authorizeUrl` | não | `idpUrl` | URL base do IdP usada só pra montar os redirects que vão pro navegador (`GET /authorize` e `GET /session/end`). Só precisa divergir de `idpUrl` quando backend e navegador não enxergam o IdP pelo mesmo hostname/porta - ex.: backend containerizado falando com o IdP via `host.docker.internal`, mas o navegador (no host) precisa de `localhost` (ver OS 08-B). |
 | `clientId` / `clientSecret` | sim | — | Credenciais do sistema, cadastradas no painel de administração (OS 06). `clientSecret` só no backend, nunca no front (OS 07 seção 4). |
 | `redirectUri` | sim | — | Deve bater exatamente com um dos `redirectUris` cadastrados no sistema no IdP. |
 | `loginPath` / `callbackPath` / `logoutPath` | não | `/auth/login`, `/auth/callback`, `/auth/logout` | Paths montados no router. |
