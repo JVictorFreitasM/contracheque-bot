@@ -51,6 +51,9 @@ IDP_URL=http://localhost:3000
 # valor que o NAVEGADOR do usuário consegue resolver, usado só no redirect de
 # /auth/login). Sem Docker, não precisa definir - cai no próprio IDP_URL.
 # IDP_AUTHORIZE_URL=http://localhost:3000
+# OS 17: menu central do IdP (OS 13), usado no link "Voltar aos sistemas" das telas
+# de erro de login. Sem definir, cai em `${IDP_URL}/home`.
+# IDP_HOME_URL=http://localhost:3000/home
 # Credenciais do sistema cadastradas no painel do IdP (OS 08-A). Sensível — não commitar valor real
 IDP_CLIENT_ID=
 IDP_CLIENT_SECRET=

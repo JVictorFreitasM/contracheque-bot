@@ -5,3 +5,5 @@
 // VITE_FRONTEND_URL (definidas em frontend/.env), com fallback para localhost em dev.
 export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
 export const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+// OS 17: menu central do IdP (OS 13) - destino do botão "Voltar aos sistemas".
+export const IDP_HOME_URL = import.meta.env.VITE_IDP_HOME_URL || 'http://localhost:3000/home';

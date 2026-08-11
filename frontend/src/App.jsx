@@ -12,6 +12,7 @@ import Configuracoes from './pages/Configuracoes';
 import Monitoramento from './pages/Monitoramento';
 import AuthGate from './components/AuthGate';
 import { logoutUrl } from './services/auth';
+import { IDP_HOME_URL } from './config/backend';
 import './App.css';
 
 const NAV_ITEMS = [
@@ -68,6 +69,10 @@ function AppContent({ user }) {
               <span>Painel de Gestão</span>
             </div>
           </div>
+          <a href={IDP_HOME_URL} className="sidebar-link" title="Voltar aos sistemas">
+            <i className="fas fa-arrow-left"></i>
+            Voltar aos sistemas
+          </a>
         </div>
 
         <nav className="sidebar-nav">

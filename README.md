@@ -12,8 +12,10 @@ Sistema de automação de envio de contracheques para funcionários via WhatsApp
 - [Pré-requisitos](#pré-requisitos)
 - [Como rodar do zero (passo a passo)](#como-rodar-do-zero-passo-a-passo)
 - [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Autenticação (SSO via IdP)](#autenticação-sso-via-idp)
 - [Endpoints da API](#endpoints-da-api)
 - [Estrutura de pastas](#estrutura-de-pastas)
+- [Screenshots](#screenshots)
 - [Deploy em produção](#deploy-em-produção)
 - [Troubleshooting](#troubleshooting)
 
@@ -68,6 +70,7 @@ flowchart LR
     User[Navegador do usuário] -->|":5173"| FE
     BE -->|HTTPS| WKR[WK Radar API]
     WK -->|HTTPS| EVO[Evolution API]
+    BE <-->|OAuth2/JWT - login/SSO| IDP[IdP centralizado]
 ```
 
 | Serviço | Tecnologia | Responsabilidade |
@@ -205,12 +208,38 @@ Arquivo `.env`, na raiz do projeto:
 | `MODO_SIMULACAO` | Se `true`, não envia mensagens de fato (modo de teste) | `false` |
 | `DIA_ENVIO_CONTRACHEQUES` | Dia do mês em que o processamento de PDFs é disparado | `5` |
 | `PORT` | Porta em que o backend escuta | `3001` |
+| `IDP_URL` | URL do IdP centralizado, usada server-to-server (troca de code por token, JWKS, revoke) | `http://host.docker.internal:3000` |
+| `IDP_AUTHORIZE_URL` | URL do IdP usada só nos redirects pro navegador (`/authorize`, `/session/end`). Só precisa divergir de `IDP_URL` em topologias Docker | `http://localhost:3000` |
+| `IDP_CLIENT_ID` / `IDP_CLIENT_SECRET` | Credenciais do sistema cadastradas no painel do IdP | — |
+| `IDP_REDIRECT_URI` | Deve bater com um `redirectUri` cadastrado no IdP | `http://localhost:3001/auth/callback` |
+| `SESSION_SECRET` | Segredo usado pra assinar o cookie de sessão local | — |
+| `COOKIE_SECURE` | `true` só quando houver HTTPS; `false` em localhost | `false` |
+| `FRONTEND_URL` | Origem do frontend, usada nos redirects de pós-login/logout | `http://localhost:5173` |
+
+---
+
+## Autenticação (SSO via IdP)
+
+O acesso ao painel é feito via login único (SSO) contra um IdP centralizado, usando o pacote interno `@copperline/idp-client` (OAuth2/JWT). O backend expõe `GET /auth/login`, `/auth/callback` e `/auth/logout`; a sessão (tokens do IdP) fica só no backend, em Redis, nunca no navegador. Praticamente todas as rotas de `/api` exigem sessão válida (`requireAuth`), exceto o webhook da Evolution API (que tem validação própria via token). O Bull Board (`/admin/queues`) exige, além de sessão, papel `admin`. O logout encerra tanto a sessão local quanto a sessão do IdP (RP-Initiated Logout via `/session/end`), evitando reautenticação silenciosa via SSO.
+
+Configuração completa do SDK, comportamento de `requireAuth`/`requireRole`
+e limitações do modelo JWT em `docs/CLIENT_SDK.md` no repositório do IdP
+(`Centralizador de login`).
 
 ---
 
 ## Endpoints da API
 
-Prefixo base: `/api`
+Prefixo base: `/api`. Salvo indicação contrária, toda rota abaixo exige sessão autenticada (`requireAuth`) — ver [Autenticação](#autenticação-sso-via-idp).
+
+### Autenticação
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/auth/login` | Inicia o login, redireciona pro IdP |
+| `GET` | `/auth/callback` | Callback do IdP, troca `code` por token e cria a sessão local |
+| `GET` | `/auth/logout` | Encerra a sessão local e a sessão do IdP |
+| `GET` | `/me` | Dados do usuário logado (`{ user }`) |
 
 ### Dashboard e status
 
@@ -280,7 +309,7 @@ Prefixo base: `/api`
 
 | Método | Rota | Descrição |
 |---|---|---|
-| `POST` | `/webhooks/evolution` | Recebe eventos de status de mensagem (`MESSAGES_UPDATE`) da Evolution API para confirmar entrega/leitura |
+| `POST` | `/webhooks/evolution` | Recebe eventos de status de mensagem (`MESSAGES_UPDATE`) da Evolution API para confirmar entrega/leitura — **única rota sem `requireAuth`**, valida via `EVOLUTION_WEBHOOK_TOKEN` próprio |
 
 ---
 
@@ -307,6 +336,7 @@ contracheque-bot/
 │   └── Dockerfile
 ├── worker/
 │   └── Dockerfile
+├── idp-client/                # pacote interno de integração com o IdP (SSO)
 ├── frontend/
 │   ├── Dockerfile
 │   ├── nginx.conf
@@ -335,6 +365,15 @@ contracheque-bot/
 ├── env-example
 └── package.json
 ```
+
+---
+
+## Screenshots
+
+![Dashboard](screenshots/contracheque%20dash.jpg)
+![Configurações](screenshots/contracheque%20configs.png)
+
+_(pendente: telas de Upload, Lotes e Relatórios)_
 
 ---
 

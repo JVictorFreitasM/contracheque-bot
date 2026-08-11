@@ -84,6 +84,12 @@
   transition: all var(--transition-fast);
 }
 
+.sidebar-header .sidebar-link {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .sidebar-link:hover {
   background: rgba(255, 255, 255, 0.08);
 }

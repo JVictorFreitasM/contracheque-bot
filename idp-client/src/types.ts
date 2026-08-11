@@ -2,25 +2,26 @@
 // secao 3.2) - normalmente lida de variaveis de ambiente pelo proprio
 // sistema (IDP_URL, IDP_CLIENT_ID, IDP_CLIENT_SECRET, IDP_REDIRECT_URI).
 export interface IdpClientConfig {
-  /**
-   * URL base do IdP usada SERVER-TO-SERVER (troca de code por token, JWKS,
-   * revoke) - chamada de dentro do processo/container do sistema cliente, sem
-   * barra final (ex.: "http://192.168.x.x:4000").
-   */
+  /** URL base do IdP, sem barra final (ex.: "http://192.168.x.x:4000"). */
   idpUrl: string;
+  /**
+   * URL base do IdP como o NAVEGADOR do usuario a enxerga - so precisa ser
+   * definida quando difere de `idpUrl` (ex.: backend containerizado falando
+   * com o IdP via host.docker.internal/nome-de-servico, mas o navegador do
+   * usuario, fora do container, precisa de localhost). Usada apenas no
+   * redirect browser-facing de /auth/login; chamadas server-to-server
+   * (/token, JWKS, /revoke) sempre usam `idpUrl`. @default idpUrl
+   */
+  authorizeUrl?: string;
+  /**
+   * Menu central do IdP (OS 13) - usado como destino do botao "Voltar aos
+   * sistemas" nas telas de erro de login (OS 17). @default `${idpUrl}/home`
+   */
+  homeUrl?: string;
   clientId: string;
   /** Nunca deve chegar ao front do sistema cliente (OS 07, secao 4). */
   clientSecret: string;
   redirectUri: string;
-  /**
-   * URL base do IdP usada só para montar os redirects que vão pro navegador
-   * do usuário (GET /authorize e GET /session/end). Só precisa ser diferente
-   * de `idpUrl` quando o sistema cliente roda em topologia onde o backend e o
-   * navegador do usuário não enxergam o IdP pelo mesmo hostname/porta - ex.:
-   * backend containerizado falando com o IdP via host.docker.internal, mas o
-   * navegador (no host) precisa de localhost. @default idpUrl
-   */
-  authorizeUrl?: string;
 
   /** @default "/auth/login" */
   loginPath?: string;
