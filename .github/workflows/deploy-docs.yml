@@ -1,0 +1,39 @@
+name: Deploy API Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/routes/**"
+      - "src/swagger.js"
+      - "src/app.js"
+      - "scripts/export-openapi.js"
+      - "docs/**"
+      - ".github/workflows/deploy-docs.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Gera docs/openapi.json lendo so os comentarios @swagger das rotas -
+      # nao precisa subir o backend (sem Postgres, Redis, SESSION_SECRET).
+      - name: Export OpenAPI spec
+        run: npm run docs:export
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs

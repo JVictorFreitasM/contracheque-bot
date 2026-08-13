@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Contracheque Bot API",
+    "description": "Exemplos de requisicoes - sessao via cookie (login em /auth/login, fora do Postman)",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Autenticacao",
+      "item": [
+        {
+          "name": "Login (abrir no navegador)",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/auth/login", "host": ["{{api_url}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "Usuario logado",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/api/me", "host": ["{{api_url}}"], "path": ["api", "me"] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/auth/logout", "host": ["{{api_url}}"], "path": ["auth", "logout"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Indicadores",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/api/dashboard/indicadores", "host": ["{{api_url}}"], "path": ["api", "dashboard", "indicadores"] }
+          }
+        },
+        {
+          "name": "Status dos servicos",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/api/status/servicos", "host": ["{{api_url}}"], "path": ["api", "status", "servicos"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Uploads",
+      "item": [
+        {
+          "name": "Upload de contracheques",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [{ "key": "files", "type": "file", "src": "/path/to/contracheque.pdf" }]
+            },
+            "url": { "raw": "{{api_url}}/api/uploads", "host": ["{{api_url}}"], "path": ["api", "uploads"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Envios",
+      "item": [
+        {
+          "name": "Listar pendentes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{api_url}}/api/pendentes?page=1&limit=20",
+              "host": ["{{api_url}}"],
+              "path": ["api", "pendentes"],
+              "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "20" }]
+            }
+          }
+        },
+        {
+          "name": "Listar lotes",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/api/lotes", "host": ["{{api_url}}"], "path": ["api", "lotes"] }
+          }
+        },
+        {
+          "name": "Reenviar todos os erros",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "{{api_url}}/api/contracheques/reenviar-erros", "host": ["{{api_url}}"], "path": ["api", "contracheques", "reenviar-erros"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Relatorios",
+      "item": [
+        {
+          "name": "Resumo",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{api_url}}/api/relatorios", "host": ["{{api_url}}"], "path": ["api", "relatorios"] }
+          }
+        },
+        {
+          "name": "Exportar (CSV)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{api_url}}/api/relatorios/exportar?formato=csv",
+              "host": ["{{api_url}}"],
+              "path": ["api", "relatorios", "exportar"],
+              "query": [{ "key": "formato", "value": "csv" }]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [{ "key": "api_url", "value": "http://localhost:3001" }]
+}

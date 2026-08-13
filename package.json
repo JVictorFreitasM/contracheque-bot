@@ -8,7 +8,8 @@
     "start": "node src/index.js",
     "teste-envio": "node src/scripts/testeEnvio.js",
     "teste-envio-local": "node src/scripts/testeEnvioSemSync.js",
-    "worker-envio": "node src/workers/envioContrachequeWorker.js"
+    "worker-envio": "node src/workers/envioContrachequeWorker.js",
+    "docs:export": "node scripts/export-openapi.js"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,8 @@
     "pdf-parse": "^1.1.1",
     "pdfkit": "^0.19.1",
     "redis": "^6.2.0",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1",
     "winston": "^3.19.0"
   },
   "devDependencies": {

@@ -10,3 +10,6 @@ node_modules
 *.tar
 *.tar.gz
 logs/
+# Gerado por `npm run docs:export` (le os comentarios @swagger das rotas) -
+# nunca editar a mao, e regenerado no CI antes do deploy pro GitHub Pages.
+docs/openapi.json
