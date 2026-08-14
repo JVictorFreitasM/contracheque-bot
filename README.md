@@ -14,6 +14,7 @@ Sistema de automação de envio de contracheques para funcionários via WhatsApp
 - [Variáveis de ambiente](#variáveis-de-ambiente)
 - [Autenticação (SSO via IdP)](#autenticação-sso-via-idp)
 - [Endpoints da API](#endpoints-da-api)
+- [Documentação interativa (Swagger/ReDoc)](#documentação-interativa-swaggerredoc)
 - [Estrutura de pastas](#estrutura-de-pastas)
 - [Screenshots](#screenshots)
 - [Deploy em produção](#deploy-em-produção)
@@ -310,6 +311,26 @@ Prefixo base: `/api`. Salvo indicação contrária, toda rota abaixo exige sess�
 | Método | Rota | Descrição |
 |---|---|---|
 | `POST` | `/webhooks/evolution` | Recebe eventos de status de mensagem (`MESSAGES_UPDATE`) da Evolution API para confirmar entrega/leitura — **única rota sem `requireAuth`**, valida via `EVOLUTION_WEBHOOK_TOKEN` próprio |
+
+---
+
+## Documentação interativa (Swagger/ReDoc)
+
+A API é documentada via [Swagger/OpenAPI](https://swagger.io/specification/), com anotações
+`@swagger` nas rotas (`src/routes/apiRoutes.js`, `src/app.js`).
+
+Com o backend rodando, disponível direto na porta do backend (não passa pelo proxy do nginx):
+
+| URL | Conteúdo |
+|---|---|
+| `http://<host-do-backend>:3001/api-docs` | Swagger UI — interativo, permite testar os endpoints |
+| `http://<host-do-backend>:3001/redoc` | ReDoc — leitura, mais confortável pra navegar |
+| `http://<host-do-backend>:3001/api-docs.json` | Spec OpenAPI crua (JSON) |
+
+Sem precisar subir o backend, `npm run docs:export` gera `docs/openapi.json` só lendo os
+comentários `@swagger` (script usado no CI, `.github/workflows/deploy-docs.yml`, que publica a
+pasta `docs/` — spec, guias de autenticação/erros/rate limit e exemplos de uso — no GitHub Pages a
+cada push em `main`).
 
 ---
 
